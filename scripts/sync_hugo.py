@@ -237,9 +237,12 @@ def _format_citation_html(pub: dict) -> str:
     if authors:
         parts.append(_html_escape(format_authors(authors)))
 
-    # Year
+    # Year — for accepted papers, show (Accepted) instead of year
     year = pub.get("year", "")
-    if year:
+    status = pub.get("status", "")
+    if status and status.lower() == "accepted":
+        parts.append("(Accepted).")
+    elif year:
         parts.append(f"({year}).")
 
     # Title
@@ -315,7 +318,8 @@ def _generate_pub_card_html(pub: dict) -> str:
 
     # Build citation parts
     citation_parts = [citation_html]
-    if status:
+    # Show status badge only for non-accepted statuses (e.g., working papers under review)
+    if status and status.lower() != "accepted":
         citation_parts.append(f'<span class="pub-card-status">{_html_escape(status)}</span>')
     if awards:
         for award in awards:

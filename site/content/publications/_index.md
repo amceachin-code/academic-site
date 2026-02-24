@@ -35,12 +35,21 @@ the competitive effects of choice programs on traditional public schools.
 <div class="pub-theme-content">
 <div class="pub-card-list">
 
+<div class="pub-card-wrapper">
 <div class="pub-card">
   <span class="pub-card-type-badge">Journal Article</span>
   <h3 class="pub-card-title">Impacts of Academic Recovery Interventions on Student Achievement in 2022-23</h3>
+  <p class="pub-card-summary">COVID catch-up programs promised a lot but delivered less than hoped. Across eight school districts in 2022-23, most programs reached fewer students than planned and produced few measurable gains. The exception: intensive interventions like subject-specific tutoring, small-group reading, and placement with highly effective teachers actually moved the needle. The lesson is clear but humbling: intensive support works, it's just really hard to pull off at scale.</p>
   <div class="pub-card-citation">
-    Carbonari, M.V., DeArmond, M., Dewey, D., Dizon-Ross, E., Goldhaber, D., Kane, T.J., McDonald, A., McEachin, A., Morton, E., Muroga, A., Salazar, A., &amp; Staiger, D.O. (2025). Impacts of Academic Recovery Interventions on Student Achievement in 2022-23. <em>Educational Evaluation and Policy Analysis</em>. <span class="pub-card-status">Accepted</span>
+    Carbonari, M.V., DeArmond, M., Dewey, D., Dizon-Ross, E., Goldhaber, D., Kane, T.J., McDonald, A., McEachin, A., Morton, E., Muroga, A., Salazar, A., &amp; Staiger, D.O. (Accepted). Impacts of Academic Recovery Interventions on Student Achievement in 2022-23. <em>Educational Evaluation and Policy Analysis</em>.
   </div>
+  <div class="pub-card-links">
+    <a href="/uploads/publications/carbonari-2025.pdf" class="pub-card-link" target="_blank" rel="noopener">PDF</a>
+  </div>
+</div>
+<div class="pub-card-image">
+  <img src="/images/publications/carbonari-2025.jpg" alt="Impacts of Academic Recovery Interventions on Student Achievement in 2022-23" />
+</div>
 </div>
 
 <div class="pub-card">
