@@ -452,8 +452,13 @@ def generate_publications_index(pubs: list, theme_order: list):
 # Media page generation
 # ---------------------------------------------------------------------------
 
-def generate_media_page(media_data: dict):
+def generate_media_page(media_data: dict, pubs: list = None):
     """Generate the Commentary & Media page at site/content/media/_index.md."""
+    # Build pub ID -> title lookup
+    pub_titles = {}
+    if pubs:
+        for p in pubs:
+            pub_titles[p.get("id", "")] = p.get("title", "")
     MEDIA_DIR.mkdir(parents=True, exist_ok=True)
 
     commentary = media_data.get("commentary", [])
@@ -511,10 +516,11 @@ def generate_media_page(media_data: dict):
         lines.append("")
         for item in news_coverage:
             pub_id = item.get("publication_id", "")
+            pub_title = pub_titles.get(pub_id, pub_id)
             outlets = item.get("outlets", [])
             if outlets:
                 outlet_names = [o.get("name", "") for o in outlets]
-                lines.append(f"- **{pub_id}**: {', '.join(outlet_names)}")
+                lines.append(f"- **{pub_title}**: {', '.join(outlet_names)}")
                 lines.append("")
 
     # Podcasts & Interviews
@@ -635,7 +641,7 @@ def main(data: dict = None):
     generate_publications_index(pubs, theme_order)
 
     # Media
-    generate_media_page(data.get("media", {}))
+    generate_media_page(data.get("media", {}), pubs)
 
     # Code/Software
     generate_code_page(data.get("software", {}))

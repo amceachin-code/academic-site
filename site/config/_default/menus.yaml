@@ -11,9 +11,6 @@ main:
     url: "/media/"
     weight: 30
 
-  - name: CV
-    url: "/cv/"
-    weight: 40
 
   - name: Code
     url: "/code/"

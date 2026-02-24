@@ -18,4 +18,9 @@ authors:
   - "Staiger, D.O."
 publication_type: "Journal Article"
 publication: "*American Educational Research Journal*, 62(5), 982-1018"
+summary: "Summer school seemed like an obvious fix for pandemic learning loss, and many districts doubled down on it. But a look at eight districts serving 400,000 students tells a more sobering story. Attendance was low (only 13% of students participated), and the academic gains were modest at best: a small positive effect in math, and nothing measurable in reading. The bottom line: summer school helped the students who showed up, but with so few attending, it barely made a dent in overall pandemic losses."
+image: "callen-2025.jpg"
+links:
+  - label: "PDF"
+    url: "/uploads/publications/callen-2025.pdf"
 ---

@@ -37,6 +37,16 @@ header.header {
   padding-block: 0.5rem !important;
 }
 
+/* Right-align nav menu items */
+nav.navbar {
+  justify-content: space-between !important;
+}
+
+.navbar-nav {
+  justify-content: flex-end !important;
+  margin-left: auto !important;
+}
+
 /* Single subtle line below the entire header — matches Courthoud */
 .page-header {
   background-color: #ffffff !important;
@@ -114,9 +124,14 @@ body {
 .prose,
 .prose p,
 .prose li,
+.prose strong,
 .bio-text,
 .bio-text p {
   color: #444444 !important;
+}
+
+.prose strong {
+  color: #1b4965 !important;
 }
 
 /* Prevent dark mode from applying dark backgrounds */
@@ -139,9 +154,9 @@ a:hover {
    Avatar + icons pinned left; text flows normally on the right
    ======================================== */
 
-/* Mountain sketch backdrop on the homepage bio section and publications page */
+/* Mountain sketch backdrop on all pages */
 .blox-resume-biography,
-.page-body:has(.pub-theme-section) {
+.page-body {
   position: relative;
 }
 
@@ -150,11 +165,13 @@ a:hover {
 }
 
 .blox-resume-biography::before,
-.page-body:has(.pub-theme-section)::before {
+.page-body::before {
   content: "";
-  position: absolute;
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
+  height: 100vh;
   background-image: url("/images/mountains-backdrop.png");
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -164,23 +181,17 @@ a:hover {
   z-index: 0;
 }
 
-/* Bio section: fill the section from bottom */
+/* Bio section: absolute within its container */
 .blox-resume-biography::before {
+  position: absolute;
   bottom: 0;
+  top: auto;
   height: 100%;
-}
-
-/* Publications page: fixed to viewport height, anchored at top so it
-   stays visible when collapsible sections expand the container */
-.page-body:has(.pub-theme-section)::before {
-  top: 0;
-  height: 100vh;
-  position: fixed;
 }
 
 /* Ensure all content sits above the backdrop */
 #profile.resume-biography,
-.page-body:has(.pub-theme-section) > div {
+.page-body > div {
   position: relative;
   z-index: 1;
 }
@@ -398,16 +409,29 @@ a.btn:hover,
    The Hugo theme wraps section content in:
      div.max-w-prose.mx-auto > article.prose
    Override the narrow prose max-width so image cards have room. */
-.page-body > div:has(.pub-card-list) {
+/* Widen and left-align all content pages */
+.page-body > div.max-w-prose {
   max-width: 1100px !important;
   margin-left: 2rem !important;
   margin-right: auto !important;
   justify-content: flex-start !important;
 }
 
-.page-body > div:has(.pub-card-list) > article {
+.page-body > div.max-w-prose > article {
   max-width: 1100px !important;
   width: 100% !important;
+}
+
+/* Match publications intro font size on all prose content */
+.page-body > div.max-w-prose > article.prose {
+  font-size: 1.05rem !important;
+  line-height: 1.7 !important;
+}
+
+.page-body > div.max-w-prose > article.prose p,
+.page-body > div.max-w-prose > article.prose li {
+  font-size: 1.05rem !important;
+  line-height: 1.7 !important;
 }
 
 /* Container for a group of cards under a type heading */

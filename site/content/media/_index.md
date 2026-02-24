@@ -24,8 +24,8 @@ title: "Commentary & Media"
 
 ## Selected News Coverage
 
-- **goldhaber-2023-remote-instruction**: CNN, New York Times, Washington Post
+- **The Educational Consequences of Remote and Hybrid Instruction During the Pandemic**: CNN, New York Times, Washington Post
 
-- **barrett-2021-discipline-disparities**: The 74 Million, Chalkbeat, Fordham Institute, NPR, The Advocate, The Economist, The Root
+- **Disparities in student discipline by race and family income**: The 74 Million, Chalkbeat, Fordham Institute, NPR, The Advocate, The Economist, The Root
 
-- **ahn-2017-ohio-online**: EdSurge, Education Week, Politico, The Hechinger Report, The 74 Million, USA Today, Vox
+- **Student enrollment patterns and achievement in Ohio's online charter schools**: EdSurge, Education Week, Politico, The Hechinger Report, The 74 Million, USA Today, Vox
