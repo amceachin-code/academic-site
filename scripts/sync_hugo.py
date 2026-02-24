@@ -283,7 +283,7 @@ def _format_citation_html(pub: dict) -> str:
     return " ".join(parts)
 
 
-def _generate_pub_card_html(pub: dict) -> str:
+def _generate_pub_card_html(pub: dict, image_index: int = 0) -> str:
     """Generate the HTML for a single publication card."""
     pub_id = pub["id"]
     title = pub.get("title", "")
@@ -329,8 +329,10 @@ def _generate_pub_card_html(pub: dict) -> str:
     card_lines = []
 
     # If image exists, wrap card + image in a side-by-side row
+    # Alternate layout: odd = text-left/image-right, even = image-left/text-right
     if image:
-        card_lines.append(f'<div class="pub-card-wrapper">')
+        reverse_class = " pub-card-wrapper--reverse" if image_index % 2 == 1 else ""
+        card_lines.append(f'<div class="pub-card-wrapper{reverse_class}">')
 
     card_lines.append(f'<div class="pub-card">')
     type_label = _pub_type_label(pub_type)
@@ -379,20 +381,19 @@ def generate_publications_index(pubs: list, theme_order: list):
         "",
         '<div class="pub-intro">',
         "<p>",
-        "My research uses causal inference methods to understand how education policies",
-        "and programs shape student outcomes, with particular attention to how effects",
-        "vary across student populations. My work falls into four interconnected themes.",
+        "I study how education policies and programs affect students, and, critically,",
+        "which students they affect most.",
         "</p>",
         "<p>",
-        "Much of my recent research examines <strong>out-of-school and disrupted learning</strong>,",
-        "including the educational consequences of the COVID-19 pandemic, summer learning",
-        "loss, and the effectiveness of academic recovery interventions. A second line of",
-        "work investigates <strong>accountability</strong> systems\u2014how federal and state policies",
-        "like NCLB, ESEA waivers, and ESSA shape school and teacher quality. I also study",
-        "<strong>exclusionary practices</strong> in education, including discipline disparities,",
-        "curricular tracking, and how school structures contribute to segregation. Finally,",
-        "my work on <strong>school choice</strong> evaluates charter schools, virtual schooling, and",
-        "the competitive effects of choice programs on traditional public schools.",
+        "Four themes run through this work. Much of my recent research focuses on",
+        "<strong>out-of-school and disrupted learning</strong>: the COVID-19 pandemic's toll",
+        "on achievement, summer learning loss, and whether recovery interventions can",
+        "close the gap. A second line examines <strong>accountability</strong>, how federal",
+        "and state policies like NCLB, ESEA waivers, and ESSA shape school and teacher",
+        "quality. I also study <strong>exclusionary practices</strong>: discipline disparities,",
+        "curricular tracking, and how school structures deepen segregation. Finally, my",
+        "work on <strong>school choice</strong> asks whether charters, virtual schooling, and",
+        "choice markets improve outcomes or simply reshuffle them.",
         "</p>",
         "</div>",
         "",
@@ -429,8 +430,12 @@ def generate_publications_index(pubs: list, theme_order: list):
         lines.append(f'<div class="pub-card-list">')
         lines.append("")
 
+        image_counter = 0
         for pub in theme_pubs:
-            lines.append(_generate_pub_card_html(pub))
+            has_image = bool(pub.get("image", ""))
+            lines.append(_generate_pub_card_html(pub, image_index=image_counter))
+            if has_image:
+                image_counter += 1
             lines.append("")
 
         lines.append("</div>")

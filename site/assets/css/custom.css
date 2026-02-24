@@ -430,6 +430,11 @@ a.btn:hover,
   min-width: 0;
 }
 
+/* Alternating layout: even-indexed image cards show image on left */
+.pub-card-wrapper--reverse {
+  flex-direction: row-reverse;
+}
+
 /* Individual publication card */
 .pub-card {
   background: #ffffff;

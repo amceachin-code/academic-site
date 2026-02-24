@@ -241,6 +241,7 @@
       "pub-card-title",
       "pub-card-type-badge",
       "pub-card-wrapper",
+      "pub-card-wrapper--reverse",
       "pub-intro",
       "pub-theme-content",
       "pub-theme-count",

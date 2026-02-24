@@ -7,20 +7,19 @@ cascade:
 
 <div class="pub-intro">
 <p>
-My research uses causal inference methods to understand how education policies
-and programs shape student outcomes, with particular attention to how effects
-vary across student populations. My work falls into four interconnected themes.
+I study how education policies and programs affect students, and, critically,
+which students they affect most.
 </p>
 <p>
-Much of my recent research examines <strong>out-of-school and disrupted learning</strong>,
-including the educational consequences of the COVID-19 pandemic, summer learning
-loss, and the effectiveness of academic recovery interventions. A second line of
-work investigates <strong>accountability</strong> systems—how federal and state policies
-like NCLB, ESEA waivers, and ESSA shape school and teacher quality. I also study
-<strong>exclusionary practices</strong> in education, including discipline disparities,
-curricular tracking, and how school structures contribute to segregation. Finally,
-my work on <strong>school choice</strong> evaluates charter schools, virtual schooling, and
-the competitive effects of choice programs on traditional public schools.
+Four themes run through this work. Much of my recent research focuses on
+<strong>out-of-school and disrupted learning</strong>: the COVID-19 pandemic's toll
+on achievement, summer learning loss, and whether recovery interventions can
+close the gap. A second line examines <strong>accountability</strong>, how federal
+and state policies like NCLB, ESEA waivers, and ESSA shape school and teacher
+quality. I also study <strong>exclusionary practices</strong>: discipline disparities,
+curricular tracking, and how school structures deepen segregation. Finally, my
+work on <strong>school choice</strong> asks whether charters, virtual schooling, and
+choice markets improve outcomes or simply reshuffle them.
 </p>
 </div>
 
@@ -52,12 +51,21 @@ the competitive effects of choice programs on traditional public schools.
 </div>
 </div>
 
+<div class="pub-card-wrapper pub-card-wrapper--reverse">
 <div class="pub-card">
   <span class="pub-card-type-badge">Journal Article</span>
   <h3 class="pub-card-title">Summer School as a Learning Loss Recovery Strategy After COVID-19: Evidence from Summer 2022</h3>
+  <p class="pub-card-summary">Summer school seemed like an obvious fix for pandemic learning loss, and many districts doubled down on it. But a look at eight districts serving 400,000 students tells a more sobering story. Attendance was low (only 13% of students participated), and the academic gains were modest at best: a small positive effect in math, and nothing measurable in reading. The bottom line: summer school helped the students who showed up, but with so few attending, it barely made a dent in overall pandemic losses.</p>
   <div class="pub-card-citation">
     Callen, I., Carbonari, M.V., DeArmond, M., Dewey, D., Dizon-Ross, E., Goldhaber, D., Isaacs, J., Kane, T.J., Kuhfeld, M., McDonald, A., McEachin, A., Morton, E., Muroga, A., &amp; Staiger, D.O. (2025). Summer School as a Learning Loss Recovery Strategy After COVID-19: Evidence from Summer 2022. <em>American Educational Research Journal</em>, 62(5), 982-1018.
   </div>
+  <div class="pub-card-links">
+    <a href="/uploads/publications/callen-2025.pdf" class="pub-card-link" target="_blank" rel="noopener">PDF</a>
+  </div>
+</div>
+<div class="pub-card-image">
+  <img src="/images/publications/callen-2025.jpg" alt="Summer School as a Learning Loss Recovery Strategy After COVID-19: Evidence from Summer 2022" />
+</div>
 </div>
 
 <div class="pub-card">
@@ -481,7 +489,7 @@ the competitive effects of choice programs on traditional public schools.
 </div>
 </div>
 
-<div class="pub-card-wrapper">
+<div class="pub-card-wrapper pub-card-wrapper--reverse">
 <div class="pub-card">
   <span class="pub-card-type-badge">Journal Article</span>
   <h3 class="pub-card-title">Disparities in student discipline by race and family income</h3>
