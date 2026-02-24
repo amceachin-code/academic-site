@@ -1,0 +1,625 @@
+/*
+ * Custom CSS — Courthoud-inspired clean academic style
+ * White background, dark teal (#1b4965) accents, clean typography
+ */
+
+/* ========================================
+   Navigation Bar — white with dark teal text
+   Override HugoBlox header wrapper backgrounds
+   ======================================== */
+
+/* Override theme color variables to prevent dark header */
+:root {
+  --color-header-bg: #ffffff !important;
+  --color-header-fg: #1b4965 !important;
+}
+
+/* Force white on ALL header-related elements; kill borders, shadows, padding */
+#page-bg,
+#site-header,
+#site-header.header,
+header#site-header,
+header.header,
+nav.navbar,
+header nav,
+.hb-navbar,
+nav[class*="navbar"] {
+  background-color: #ffffff !important;
+  box-shadow: none !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+}
+
+#site-header.header,
+header.header {
+  padding-block: 0.5rem !important;
+}
+
+/* Single subtle line below the entire header — matches Courthoud */
+.page-header {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: none !important;
+}
+
+nav.navbar a,
+header nav a,
+.hb-navbar a,
+nav[class*="navbar"] a {
+  color: #1b4965 !important;
+  font-weight: 500 !important;
+  text-transform: none;
+  font-size: 0.95rem;
+}
+
+nav.navbar a:hover,
+header nav a:hover,
+.hb-navbar a:hover,
+nav[class*="navbar"] a:hover {
+  color: #3a7ca5 !important;
+}
+
+/* Hide dark mode toggle (not needed — light-only site) */
+.theme-toggle,
+button.theme-toggle {
+  display: none !important;
+}
+
+/* Site name in nav — uppercase like Courthoud */
+.navbar-brand,
+nav a[href="/"] {
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  font-size: 1.1rem !important;
+  color: #1b4965 !important;
+}
+
+/* ========================================
+   Body and Typography
+   ======================================== */
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  color: #444444;
+  line-height: 1.75;
+  background-color: #ffffff;
+}
+
+/* Override HugoBlox theme text color variables (header vars set above) */
+:root {
+  --color-foreground: #444444 !important;
+  --color-text: #444444 !important;
+}
+
+/* Override Tailwind prose text color to match */
+.prose,
+.prose p,
+.prose li,
+.bio-text,
+.bio-text p {
+  color: #444444 !important;
+}
+
+/* Prevent dark mode from applying dark backgrounds */
+.dark {
+  --color-header-bg: #ffffff !important;
+  --color-background: #ffffff !important;
+}
+
+/* Links */
+a {
+  color: #1b4965;
+}
+
+a:hover {
+  color: #3a7ca5;
+}
+
+/* ========================================
+   Biography / Hero Section — side-by-side layout
+   Avatar + icons pinned left; text flows normally on the right
+   ======================================== */
+
+/* Mountain sketch backdrop on the homepage bio section */
+.blox-resume-biography {
+  position: relative;
+  overflow: hidden;
+}
+
+.blox-resume-biography::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-image: url("/images/mountains-backdrop.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure all content sits above the backdrop */
+#profile.resume-biography {
+  position: relative;
+  z-index: 1;
+}
+
+#profile.resume-biography {
+  position: relative !important;
+  display: block !important;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2rem;
+  min-height: 300px;
+  /* Reserve left column space: 240px avatar + 5rem gap */
+  padding-left: calc(240px + 5rem + 2rem) !important;
+}
+
+/* Avatar pinned to the top-left */
+.avatar-wrapper {
+  position: absolute !important;
+  left: 2rem;
+  top: 3rem;
+  margin-top: 0 !important;
+  width: 240px !important;
+  height: 240px !important;
+}
+
+.avatar-wrapper .avatar {
+  width: 240px !important;
+  height: 240px !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Social icons pinned under avatar */
+#profile > ul.network-icon {
+  position: absolute !important;
+  left: 2rem;
+  top: calc(3rem + 250px);
+  width: 240px !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* All text elements flow normally in the right area */
+#profile > *:not(.avatar-wrapper):not(ul.network-icon) {
+  text-align: left !important;
+}
+
+/* Bio prose — full width, smaller font, no extra spacing */
+.prose {
+  max-width: none !important;
+}
+
+#profile .prose,
+#profile > div.prose,
+.resume-biography .prose {
+  max-width: none !important;
+  padding-top: 0 !important;
+  margin-top: 0.5rem !important;
+  font-size: 1.125rem !important;
+  line-height: 1.7 !important;
+}
+
+#profile .prose p,
+.resume-biography .prose p,
+#profile .bio-text p {
+  font-size: 1.125rem !important;
+  line-height: 1.7 !important;
+  margin-top: 0.75em !important;
+  margin-bottom: 0.75em !important;
+}
+
+/* Social link icons — dark teal */
+.network-icon li a {
+  color: #1b4965 !important;
+}
+
+.network-icon li a:hover {
+  color: #3a7ca5 !important;
+}
+
+/* Name heading — tight spacing */
+.resume-biography .text-3xl {
+  color: #1b4965;
+  font-weight: 700;
+  margin-top: 0 !important;
+  margin-bottom: 0.1rem !important;
+}
+
+/* Role — tight spacing */
+.resume-biography h3 {
+  color: #444444;
+  font-weight: 400;
+  margin-top: 0 !important;
+  margin-bottom: 0.1rem !important;
+}
+
+/* Affiliation */
+#profile > div.mb-2 {
+  margin-bottom: 0.75rem !important;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 768px) {
+  #profile.resume-biography {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding-left: 2rem !important;
+    min-height: auto;
+  }
+  .avatar-wrapper {
+    position: relative !important;
+    left: auto;
+    top: auto;
+  }
+  #profile > ul.network-icon {
+    position: relative !important;
+    left: auto;
+    top: auto;
+    width: auto !important;
+    margin-top: 1rem !important;
+  }
+  #profile > *:not(.avatar-wrapper):not(ul.network-icon) {
+    text-align: center !important;
+  }
+}
+
+/* ========================================
+   Sections — alternating light gray and white
+   ======================================== */
+
+.hbb-section:nth-child(even) {
+  background-color: #f8f9fa !important;
+}
+
+.hbb-section:nth-child(odd) {
+  background-color: #ffffff !important;
+}
+
+/* Section headings */
+.article-container h2,
+.prose h2 {
+  color: #1b4965;
+  border-bottom: none;
+  font-weight: 600;
+  margin-top: 1.5em;
+}
+
+/* ========================================
+   Publication / Content Pages
+   ======================================== */
+
+.article-container ul li,
+.prose ul li {
+  margin-bottom: 0.75em;
+}
+
+/* Publication type badges */
+.badge {
+  background-color: #1b4965 !important;
+  color: #ffffff !important;
+}
+
+/* ========================================
+   Footer — subtle
+   ======================================== */
+
+footer {
+  background-color: #f8f9fa !important;
+  border-top: 1px solid #e2e8f0;
+  color: #666666;
+}
+
+footer a {
+  color: #1b4965;
+}
+
+/* ========================================
+   Buttons — outlined style like Courthoud's "Download CV"
+   ======================================== */
+
+/* Download CV button — outlined style, no dark fill */
+.btn-outline-primary,
+a.btn,
+#profile a[href*="CV"],
+#profile a.inline-flex {
+  border: 2px solid #1b4965 !important;
+  color: #1b4965 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+}
+
+.btn-outline-primary:hover,
+a.btn:hover,
+#profile a[href*="CV"]:hover,
+#profile a.inline-flex:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #3a7ca5 !important;
+  border-color: #3a7ca5 !important;
+}
+
+/* ========================================
+   Publication Cards — card-based layout for /publications/
+   ======================================== */
+
+/* Widen the publications content container to fit card + image side-by-side.
+   The Hugo theme wraps section content in:
+     div.max-w-prose.mx-auto > article.prose
+   Override the narrow prose max-width so image cards have room. */
+.page-body > div:has(.pub-card-list) {
+  max-width: 1100px !important;
+  margin-left: 2rem !important;
+  margin-right: auto !important;
+  justify-content: flex-start !important;
+}
+
+.page-body > div:has(.pub-card-list) > article {
+  max-width: 1100px !important;
+}
+
+/* Container for a group of cards under a type heading */
+.pub-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/* Wrapper for cards with images — side-by-side: card left, image right */
+.pub-card-wrapper {
+  display: flex;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.pub-card-wrapper .pub-card {
+  flex: 1 1 50%;
+  min-width: 0;
+}
+
+/* Individual publication card */
+.pub-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.pub-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Title — dark teal, bold */
+.pub-card-title {
+  color: #1b4965 !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  line-height: 1.4 !important;
+  margin: 0 0 0.5rem 0 !important;
+  border-bottom: none !important;
+}
+
+/* Plain-language summary */
+.pub-card-summary {
+  color: #444444 !important;
+  font-weight: 400;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Article image — beside the card, matches card height */
+.pub-card-image {
+  flex: 0 0 45%;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+
+.pub-card-image img {
+  width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* APA citation below the body */
+.pub-card-citation {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #555555;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* Status badge (e.g., "Accepted", "Revisions Requested") */
+.pub-card-status {
+  display: inline-block;
+  font-style: italic;
+  color: #666666;
+  margin-left: 0.5rem;
+}
+
+.pub-card-status::before {
+  content: "— ";
+}
+
+/* Award badge */
+.pub-card-award {
+  display: inline-block;
+  background-color: #f0f7fa;
+  color: #1b4965;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+}
+
+/* Link buttons row */
+.pub-card-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+/* Individual link button — outlined, matching site style */
+.pub-card-link {
+  display: inline-block;
+  border: 1.5px solid #1b4965;
+  color: #1b4965 !important;
+  background: transparent;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.75rem;
+  border-radius: 4px;
+  text-decoration: none !important;
+  transition: all 0.15s ease;
+}
+
+.pub-card-link:hover {
+  color: #3a7ca5 !important;
+  border-color: #3a7ca5;
+}
+
+/* ========================================
+   Collapsible Theme Sections — <details>/<summary>
+   ======================================== */
+
+/* The <details> wrapper for each theme */
+.pub-theme-section {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+/* The <summary> clickable header */
+.pub-theme-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  background: #f8f9fa;
+  border-radius: 8px;
+  list-style: none;
+  transition: background-color 0.15s ease;
+}
+
+.pub-theme-section[open] > .pub-theme-header {
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.pub-theme-header:hover {
+  background: #eef2f6;
+}
+
+/* Remove default marker in all browsers */
+.pub-theme-header::-webkit-details-marker {
+  display: none;
+}
+
+/* Chevron indicator — right-pointing triangle, rotates 90deg on open */
+.pub-theme-header::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 6px solid #1b4965;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.pub-theme-section[open] > .pub-theme-header::before {
+  transform: rotate(90deg);
+}
+
+/* Theme name */
+.pub-theme-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #1b4965;
+}
+
+/* Publication count in header */
+.pub-theme-count {
+  font-size: 0.9rem;
+  color: #666666;
+  font-weight: 400;
+}
+
+/* Content area inside the collapsible */
+.pub-theme-content {
+  padding: 1rem 1.25rem;
+}
+
+/* Type badge — small muted pill on each card */
+.pub-card-type-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #1b4965;
+  background: #f0f7fa;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  margin-bottom: 0.4rem;
+}
+
+/* ---- Responsive: mobile adjustments ---- */
+@media (max-width: 768px) {
+  /* Stack wrapper vertically and hide images on mobile */
+  .pub-card-wrapper {
+    flex-direction: column;
+  }
+
+  .pub-card-image {
+    display: none;
+  }
+
+  .pub-card {
+    padding: 1rem;
+  }
+
+  /* Theme section mobile tweaks */
+  .pub-theme-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .pub-theme-name {
+    font-size: 1rem;
+  }
+
+  .pub-theme-content {
+    padding: 0.75rem;
+  }
+}

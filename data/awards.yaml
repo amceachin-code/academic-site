@@ -1,0 +1,58 @@
+# awards.yaml — Honors, awards, and fellowships
+awards:
+  - title: "Raymond Vernon Memorial Award"
+    organization: "Journal of Policy Analysis and Management"
+    year: 2021
+    description: "For 'The Kids on the Bus' (Domina, Carlson, Carter, Lenard, McEachin, & Perera)"
+
+  - title: "Achieve Award"
+    organization: "NWEA"
+    year: 2022
+
+  - title: "Outstanding Reviewer"
+    organization: "Educational Evaluation and Policy Analysis"
+    year: 2019
+
+  - title: "Outstanding Reviewer"
+    organization: "Educational Researcher"
+    year: 2017
+
+  - title: "Emerging Education Policy Scholar"
+    organization: "Fordham Institute, Washington, D.C."
+    year: 2012
+    end_year: 2013
+
+  - title: "Kingsbury Data Award"
+    organization: "NWEA"
+    year: 2012
+
+  - title: "Order of the Arete"
+    organization: "University of Southern California"
+    year: 2012
+
+  - title: "Provost Fellow Travel Grant"
+    organization: "University of Southern California"
+    year: 2011
+
+  - title: "Roe L. Johns Travel Grant"
+    organization: "Association for Education Finance and Policy"
+    year: 2010
+
+  - title: "Division L Travel Grant"
+    organization: "American Education Research Association"
+    year: 2010
+
+  - title: "Provost Fellowship"
+    organization: "University of Southern California"
+    year: 2008
+    end_year: 2012
+
+  - title: "National Service Award"
+    organization: "AmeriCorps"
+    year: 2006
+    end_year: 2008
+
+  - title: "Dean's List"
+    organization: "Cornell University"
+    year: 2005
+    end_year: 2006

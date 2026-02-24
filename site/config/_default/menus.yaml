@@ -1,0 +1,20 @@
+main:
+  - name: Home
+    url: "/"
+    weight: 10
+
+  - name: Publications
+    url: "/publications/"
+    weight: 20
+
+  - name: Commentary & Media
+    url: "/media/"
+    weight: 30
+
+  - name: CV
+    url: "/cv/"
+    weight: 40
+
+  - name: Code
+    url: "/code/"
+    weight: 50

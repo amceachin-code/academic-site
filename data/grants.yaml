@@ -1,0 +1,154 @@
+# grants.yaml — Research grants and funding
+grants:
+  - id: air-road-to-recovery
+    title: "Road to Recovery"
+    funder: "AIR Equity Initiative"
+    role: "co-PI"
+    collaborators: "Dan Goldhaber (PI), Tom Kane (co-PI)"
+    start_year: 2022
+    end_year: 2025
+    amount: 2200000
+
+  - id: smith-richardson-road-recovery
+    title: "Road to Recovery"
+    funder: "Smith Richardson Foundation"
+    role: "co-PI"
+    collaborators: "Dan Goldhaber (PI), Tom Kane (co-PI)"
+    start_year: 2022
+    end_year: 2024
+    amount: 400000
+
+  - id: ies-math-science
+    title: "Math and Science Acceleration Challenges"
+    funder: "Institute of Education Sciences"
+    role: "co-PI"
+    collaborators: "Luminary Labs"
+    start_year: 2022
+    end_year: 2023
+    amount: 1200000
+
+  - id: accelerate-road-recovery
+    title: "Road to Recovery"
+    funder: "Accelerate"
+    role: "co-PI"
+    collaborators: "Tom Kane (PI), Dan Goldhaber (co-PI)"
+    start_year: 2022
+    end_year: 2023
+    amount: 750000
+
+  - id: walton-covid-catchup
+    title: "Monitoring COVID Catch-Up"
+    funder: "Walton Family Foundation"
+    role: "co-PI"
+    collaborators: "Tom Kane (PI), Dan Goldhaber (co-PI)"
+    start_year: 2021
+    end_year: 2022
+    amount: 750000
+
+  - id: ies-covid-assessment
+    title: "Using Student Achievement Data to Monitor Progress and Performance: Methodological Challenges Presented by COVID-19"
+    funder: "Institute of Education Sciences"
+    role: "co-PI"
+    collaborators: "Jon Schweig (PI), Megan Kuhfeld (co-PI)"
+    start_year: 2020
+    end_year: 2022
+    amount: 748928
+
+  - id: smith-richardson-wake-county
+    title: "Socioeconomic Segregation and Educational Opportunity: Research Partnerships with Wake County Public School System"
+    funder: "Smith Richardson Foundation"
+    role: "co-PI"
+    collaborators: "Thurston Domina (PI), Deven Carlson and Matthew Lenard (co-PIs)"
+    start_year: 2019
+    end_year: 2020
+    amount: 208360
+
+  - id: nih-healthy-transitions
+    title: "Educational Contexts and Healthy Transitions to Adulthood"
+    funder: "National Institutes of Health (R01)"
+    role: "co-PI"
+    collaborators: "Andrew Penner (PI), Quentin Brummet, Christopher Candelaria, Thurston Domina, Paul Hanselman, Emily Penner, Sonya Porter (co-PIs)"
+    start_year: 2018
+    end_year: 2023
+    amount: 3200000
+
+  - id: ies-ncrec
+    title: "The National Center for Research on Education Access and Choice"
+    funder: "Institute of Education Sciences"
+    role: "co-PI and project leader"
+    collaborators: "Doug Harris (PI), Katrina Bulkley, Joshua Cowen, Jane Lincove, Julie Marsh, Amy Ellen Schwartz, Marc Stein, Katharine Strunk, Jon Valant (co-PIs)"
+    start_year: 2018
+    end_year: 2023
+    amount: 607000
+    note: "Center budget $9,998,565"
+
+  - id: walton-alt-leadership
+    title: "Evaluation of Walton Family Foundation Funded Alternative Leadership Programs"
+    funder: "Walton Family Foundation"
+    role: "PI"
+    start_year: 2016
+    end_year: 2020
+    amount: 1436077
+
+  - id: tntp-validation
+    title: "Validation Study of TNTP Core Teaching Rubric"
+    funder: "TNTP"
+    role: "PI"
+    collaborators: "Jon Schweig (co-PI)"
+    start_year: 2015
+    end_year: 2018
+    amount: 225000
+
+  - id: smith-richardson-summer
+    title: "The Impact of Summer Setback on Achievement Gaps"
+    funder: "Smith Richardson Foundation"
+    role: "co-PI"
+    collaborators: "Allison Atteberry (PI)"
+    start_year: 2015
+    end_year: 2017
+    amount: 180000
+
+  - id: walton-nc-charter
+    title: "Examining North Carolina Charter School Effects on Short and Long-Run Student Outcomes"
+    funder: "Walton Family Foundation"
+    role: "PI"
+    collaborators: "Douglas Lauen (co-PI)"
+    start_year: 2015
+    end_year: 2017
+    amount: 290000
+
+  - id: walton-alt-leadership-pilot
+    title: "Impact of WFF-Funded Alternative School Leadership Training Programs"
+    funder: "Walton Family Foundation"
+    role: "PI"
+    collaborators: "Brian Stecher (co-PI)"
+    start_year: 2015
+    end_year: 2016
+    amount: 58139
+
+  - id: russell-sage-neighborhoods
+    title: "Neighborhoods, Schools, and Academic Inequality"
+    funder: "Russell Sage Foundation"
+    role: "co-PI (unfunded)"
+    collaborators: "Joshua Cowen (PI), Deven Carlson (co-PI)"
+    start_year: 2015
+    end_year: 2016
+    amount: 100000
+
+  - id: spencer-equal
+    title: "Evaluating the Quality of Universal Algebra Learning (EQUAL)"
+    funder: "Spencer Foundation"
+    role: "co-PI"
+    collaborators: "Thurston Domina (PI), Marianne Bitler, Andrew Penner (co-PIs)"
+    start_year: 2014
+    end_year: 2017
+    amount: 393532
+
+  - id: spencer-endless-summer
+    title: "An Endless Summer: The Impact of Summer Setback on School Accountability"
+    funder: "Spencer Foundation"
+    role: "PI"
+    collaborators: "Allison Atteberry (co-PI)"
+    start_year: 2014
+    end_year: 2015
+    amount: 50000

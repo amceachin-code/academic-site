@@ -1,0 +1,98 @@
+# service.yaml — Professional service, editorial boards, and review work
+
+editorial_boards:
+  - journal: "Educational Researcher"
+    role: "Co-Editor"
+    start_year: 2019
+    end_year: 2023
+
+  - journal: "Education Finance and Policy"
+    role: "Associate Editor"
+    start_year: 2017
+    end_year: 2020
+
+  - journal: "Education Finance and Policy"
+    role: "Editorial Board"
+    start_year: 2020
+
+  - journal: "Educational Researcher"
+    role: "Editorial Board"
+    start_year: 2017
+
+  - journal: "American Educational Research Journal"
+    role: "Editorial Board"
+    start_year: 2017
+
+  - journal: "Educational Evaluation and Policy Analysis"
+    role: "Editorial Board"
+    start_year: 2016
+
+committees:
+  - organization: "Association for Education Finance and Policy"
+    role: "Board of Directors"
+    start_year: 2020
+
+  - organization: "National Center for Research on Education Access and Choice"
+    role: "Research Partner"
+    start_year: 2018
+
+  - organization: "American Education Research Association"
+    role: "E. F. Lindquist Award Committee, member"
+    start_year: 2025
+    end_year: 2026
+
+  - organization: "American Education Research Association"
+    role: "Division L Section 5, Program Chair"
+    start_year: 2022
+    end_year: 2023
+
+  - organization: "American Education Research Association"
+    role: "Division L Dissertation Award Committee, chair"
+    start_year: 2018
+    end_year: 2019
+
+  - organization: "American Education Research Association"
+    role: "Division L Dissertation Award Committee, member"
+    start_year: 2017
+    end_year: 2018
+
+  - organization: "American Education Research Association"
+    role: "Division L Section 5, Program Chair"
+    start_year: 2015
+    end_year: 2017
+
+  - organization: "American Education Research Association"
+    role: "Politics of Education SIG Program Chair"
+    start_year: 2014
+    end_year: 2015
+
+  - organization: "Association for Education Finance and Policy"
+    role: "Accountability and Testing Program Chair"
+    start_year: 2015
+    end_year: 2016
+
+  - organization: "Institute of Education Sciences"
+    role: "Panel Review member"
+    start_year: 2017
+    end_year: 2020
+
+referee:
+  - "AERA Open"
+  - "American Educational Research Journal"
+  - "American Journal of Education"
+  - "Economics of Education Review"
+  - "Educational Evaluation and Policy Analysis"
+  - "Education Finance and Policy"
+  - "Educational Policy"
+  - "Educational Psychology Review"
+  - "Educational Researcher"
+  - "Journal of Education Policy"
+  - "Journal of Education for Students Placed at Risk"
+  - "Journal of Higher Education"
+  - "Journal of Policy Analysis and Management"
+  - "Journal of Public Economics"
+  - "Journal of Research on Mathematics Education"
+  - "Journal of Urban Economics"
+  - "Learning and Individual Differences"
+  - "Social Science Research"
+  - "Social Problems"

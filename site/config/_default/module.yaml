@@ -1,0 +1,6 @@
+############################
+## HUGO MODULES
+############################
+
+imports:
+  - path: github.com/HugoBlox/kit/modules/blox

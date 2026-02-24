@@ -1,0 +1,40 @@
+# profile.yaml — Personal and contact information
+name:
+  first: Andrew
+  last: McEachin
+  display: Andrew McEachin
+
+title: Senior Research Director, Policy Research
+organization: ETS Research Institute
+
+bio: >
+  I am a Senior Research Director at the ETS Research Institute. My research
+  focuses on educational inequality, school choice, math education policy, and
+  discipline disparities. I use causal inference methods to study how policies
+  and programs affect student outcomes, with particular attention to how effects
+  vary across student populations. My recent work examines the educational
+  consequences of the COVID-19 pandemic, including learning loss, academic
+  recovery interventions, and the effects of remote instruction. My research has
+  been published in the American Economic Review: Insights, American Educational
+  Research Journal, Journal of Policy Analysis and Management, Journal of Human
+  Resources, and other leading journals. I have received over $12 million in
+  research funding from the Institute of Education Sciences, the National
+  Institutes of Health, and major foundations.
+
+research_interests:
+  - Educational Inequality
+  - Discipline Disparities
+  - Math Education Policy
+  - School Choice
+  - COVID-19 Academic Recovery
+
+email: amceachin@ets.org
+website: https://www.andrew-mceachin.com
+
+social:
+  google_scholar: https://scholar.google.com/citations?user=PLACEHOLDER
+  github: https://github.com/amceachin-code
+  twitter: ""
+  orcid: ""
+
+avatar: avatar.jpg

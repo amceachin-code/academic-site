@@ -1,0 +1,1065 @@
+# publications.yaml — All publications with type field for filtering
+# Types: journal, working_paper, report, book_chapter, commentary
+# Note: # prefix on authors indicates alphabetical authorship
+
+theme_order:
+  - key: disrupted_learning
+    name: "Out-of-School or Disrupted Learning"
+  - key: accountability
+    name: "Accountability"
+  - key: exclusionary_practices
+    name: "Exclusionary Practices, Discipline, Tracking & Segregation"
+  - key: school_choice
+    name: "School Choice"
+
+publications:
+  # ============================================================
+  # PEER-REVIEWED JOURNAL ARTICLES
+  # ============================================================
+
+  - id: carbonari-2025-recovery-interventions
+    type: journal
+    theme: disrupted_learning
+    title: "Impacts of Academic Recovery Interventions on Student Achievement in 2022-23"
+    authors:
+      - "Carbonari, M.V."
+      - "DeArmond, M."
+      - "Dewey, D."
+      - "Dizon-Ross, E."
+      - "Goldhaber, D."
+      - "Kane, T.J."
+      - "McDonald, A."
+      - "McEachin, A."
+      - "Morton, E."
+      - "Muroga, A."
+      - "Salazar, A."
+      - "Staiger, D.O."
+    year: 2025
+    journal: "Educational Evaluation and Policy Analysis"
+    status: "Accepted"
+    alphabetical: true
+    featured: false
+
+  - id: yoo-2025-virtual-charter
+    type: journal
+    theme: school_choice
+    title: "Virtual Charter Students Have Worse Labor Market Outcomes as Young Adults"
+    authors:
+      - "Yoo, P."
+      - "Domina, T."
+      - "McEachin, A."
+      - "Clark, L."
+      - "Hertenstein, H."
+      - "Penner, A."
+    year: 2025
+    journal: "Social Science Research"
+    volume: "132"
+    article_number: "103240"
+    doi: "10.1016/j.ssresearch.2025.103240"
+    featured: false
+
+  - id: callen-2025-summer-school
+    type: journal
+    theme: disrupted_learning
+    title: "Summer School as a Learning Loss Recovery Strategy After COVID-19: Evidence from Summer 2022"
+    authors:
+      - "Callen, I."
+      - "Carbonari, M.V."
+      - "DeArmond, M."
+      - "Dewey, D."
+      - "Dizon-Ross, E."
+      - "Goldhaber, D."
+      - "Isaacs, J."
+      - "Kane, T.J."
+      - "Kuhfeld, M."
+      - "McDonald, A."
+      - "McEachin, A."
+      - "Morton, E."
+      - "Muroga, A."
+      - "Staiger, D.O."
+    year: 2025
+    journal: "American Educational Research Journal"
+    volume: "62"
+    issue: "5"
+    pages: "982-1018"
+    alphabetical: true
+    featured: false
+
+  - id: carlson-2025-structuring-choice
+    type: journal
+    theme: exclusionary_practices
+    title: "Structuring Choice: Policy, School Segregation, and the Two-Staged School Choice Process"
+    authors:
+      - "Carlson, D."
+      - "Domina, T."
+      - "Perera, R."
+      - "Radsky, V."
+      - "McEachin, A."
+    year: 2025
+    journal: "American Educational Research Journal"
+    volume: "62"
+    issue: "5"
+    pages: "946-981"
+    featured: false
+
+  - id: dilberti-2025-combined-schools
+    type: journal
+    theme: disrupted_learning
+    title: "Combined Schools as a (Non)Protective Factor During the COVID-19 Pandemic: Implications for Middle School Transitions in the Context of Unplanned School Closures"
+    authors:
+      - "Dilberti, M."
+      - "Schweig, J."
+      - "Mariano, L."
+      - "Kuhfeld, M."
+      - "McEachin, A."
+    year: 2025
+    journal: "Journal of Early Adolescence"
+    featured: false
+
+  - id: carbonari-2024-challenges-implementing
+    type: journal
+    theme: disrupted_learning
+    title: "The Challenges of Implementing Academic COVID Recovery Interventions: Evidence from the Road to Recovery Project"
+    authors:
+      - "Carbonari, M.V."
+      - "Davison, M."
+      - "DeArmond, M."
+      - "Dewey, D."
+      - "Dizon-Ross, E."
+      - "Goldhaber, D."
+      - "Hashim, A."
+      - "Kane, T.J."
+      - "McEachin, A."
+      - "Morton, E."
+      - "Patterson, T."
+      - "Staiger, D.O."
+    year: 2024
+    journal: "AERA Open"
+    volume: "10"
+    alphabetical: true
+    featured: false
+
+  - id: kuhfeld-2024-summer-learning-loss
+    type: journal
+    theme: disrupted_learning
+    title: "Testing an explanation for summer learning loss: Differential examinee effort between spring and fall"
+    authors:
+      - "Kuhfeld, M."
+      - "Soland, J."
+      - "Register, B."
+      - "McEachin, A."
+    year: 2024
+    journal: "Educational Evaluation and Policy Analysis"
+    featured: false
+
+  - id: goldhaber-2023-remote-instruction
+    type: journal
+    theme: disrupted_learning
+    title: "The Educational Consequences of Remote and Hybrid Instruction During the Pandemic"
+    authors:
+      - "Goldhaber, D."
+      - "Kane, T.J."
+      - "McEachin, A."
+      - "Morton, E."
+      - "Patterson, T."
+      - "Staiger, D.O."
+    year: 2023
+    journal: "American Economic Review: Insights"
+    volume: "5"
+    issue: "3"
+    pages: "377-392"
+    alphabetical: true
+    media:
+      - CNN
+      - New York Times
+      - Washington Post
+    featured: true
+    summary: "We analyzed test scores from more than two million students across nearly 10,000 schools in every state to understand how remote learning widened achievement gaps by race and poverty. Remote instruction was the primary driver: math gaps didn't grow in places that stayed in person, though reading gaps widened everywhere. High-poverty districts that went remote now face a sobering reality, as pandemic learning loss may consume nearly all of their federal relief funding."
+    image: "goldhaber-2023.png"
+    links:
+      - label: "PDF"
+        url: "/uploads/publications/goldhaber-2023.pdf"
+      - label: "DOI"
+        url: "https://doi.org/10.1257/aeri.20210422"
+
+  - id: atteberry-2022-lost-transition
+    type: journal
+    theme: exclusionary_practices
+    title: "Lost in transition: A replication of a quasi-experimental approach to estimating middle school structural transition effects on student learning trajectories"
+    authors:
+      - "Atteberry, A."
+      - "Wedow, R."
+      - "Cook, N.J."
+      - "McEachin, A."
+    year: 2022
+    journal: "Educational Policy"
+    volume: "36"
+    issue: "7"
+    pages: "1612-1651"
+    featured: false
+
+  - id: schweig-2022-allocating-resources
+    type: journal
+    theme: disrupted_learning
+    title: "Allocating resources for COVID-19 recovery: a comparison of three indicators of school need"
+    authors:
+      - "Schweig, J."
+      - "McEachin, A."
+      - "Kuhfeld, M."
+      - "Mariano, L.T."
+      - "Diliberti, M.K."
+    year: 2022
+    journal: "Educational Assessment"
+    volume: "27"
+    issue: "2"
+    pages: "152-169"
+    featured: false
+
+  - id: kho-2022-cream-skimming
+    type: journal
+    theme: school_choice
+    title: "A descriptive analysis of cream-skimming and pushout in choice versus traditional public schools"
+    authors:
+      - "Kho, A."
+      - "Zimmer, R."
+      - "McEachin, A."
+    year: 2022
+    journal: "Education Finance and Policy"
+    volume: "17"
+    issue: "1"
+    pages: "160-187"
+    alphabetical: true
+    featured: false
+
+  - id: domina-2021-kids-on-bus
+    type: journal
+    theme: exclusionary_practices
+    title: "The Kids on the Bus: The Academic Consequences of Diversity-Driven School Reassignments"
+    authors:
+      - "Domina, T."
+      - "Carlson, D."
+      - "Carter, J."
+      - "Lenard, M."
+      - "McEachin, A."
+      - "Perera, R."
+    year: 2021
+    journal: "Journal of Policy Analysis and Management"
+    volume: "40"
+    issue: "4"
+    pages: "1197-1229"
+    awards:
+      - "Raymond Vernon Memorial Award"
+    featured: true
+    summary: "When a school district reassigned students to promote racial and socioeconomic diversity, we find that reassigned students experienced small initial test score declines but no lasting negative effects — and the policy substantially reduced school segregation."
+    image: "domina-2021.png"
+    links: []
+
+  - id: barrett-2021-discipline-disparities
+    type: journal
+    theme: exclusionary_practices
+    title: "Disparities in student discipline by race and family income"
+    authors:
+      - "Barrett, N."
+      - "McEachin, A."
+      - "Mills, J."
+      - "Valant, J."
+    year: 2021
+    journal: "Journal of Human Resources"
+    volume: "56"
+    issue: "3"
+    pages: "711-748"
+    alphabetical: true
+    media:
+      - The 74 Million
+      - Chalkbeat
+      - Fordham Institute
+      - NPR
+      - The Advocate
+      - The Economist
+      - The Root
+    featured: true
+    summary: "Black students and students from low-income families are disciplined at much higher rates than their peers, and these disparities persist even after accounting for differences in behavior — pointing to systemic bias in how schools apply discipline."
+    image: "barrett-2021.png"
+    links: []
+
+  - id: atteberry-2021-schools-out
+    type: journal
+    theme: disrupted_learning
+    title: "School's out: The role of summers in understanding achievement disparities"
+    authors:
+      - "Atteberry, A."
+      - "McEachin, A."
+    year: 2021
+    journal: "American Educational Research Journal"
+    volume: "58"
+    issue: "2"
+    pages: "239-282"
+    featured: false
+
+  - id: atteberry-2020-not-where
+    type: journal
+    theme: disrupted_learning
+    title: "Not where you start but how much you grow: An addendum to the Coleman Report"
+    authors:
+      - "Atteberry, A."
+      - "McEachin, A."
+    year: 2020
+    journal: "Educational Researcher"
+    volume: "49"
+    issue: "9"
+    pages: "678-685"
+    featured: false
+
+  - id: mceachin-2020-early-algebra
+    type: journal
+    theme: exclusionary_practices
+    title: "Heterogeneous effects of early algebra across California middle schools"
+    authors:
+      - "McEachin, A."
+      - "Domina, T."
+      - "Penner, A."
+    year: 2020
+    journal: "Journal of Policy Analysis and Management"
+    volume: "39"
+    issue: "3"
+    pages: "772-800"
+    featured: false
+
+  - id: mceachin-2020-social-returns
+    type: journal
+    theme: school_choice
+    title: "Social returns to private choice? Effects of charter schools on behavioral outcomes, arrests, and civic participation"
+    authors:
+      - "McEachin, A."
+      - "Lauen, D.L."
+      - "Fuller, S.C."
+      - "Perera, R."
+    year: 2020
+    journal: "Economics of Education Review"
+    volume: "76"
+    article_number: "101983"
+    media:
+      - The 74 Million
+    featured: false
+
+  - id: carlson-2020-ses-assignment
+    type: journal
+    theme: exclusionary_practices
+    title: "Socioeconomic-based school assignment policy and racial segregation levels: Evidence from the Wake County Public School System"
+    authors:
+      - "Carlson, D."
+      - "Bell, E."
+      - "Lenard, M."
+      - "Cowen, J.M."
+      - "McEachin, A."
+    year: 2020
+    journal: "American Educational Research Journal"
+    volume: "57"
+    issue: "1"
+    pages: "258-304"
+    media:
+      - Education Week
+    featured: false
+
+  - id: domina-2019-beyond-tracking
+    type: journal
+    theme: exclusionary_practices
+    title: "Beyond tracking and detracking: The dimensions of organizational differentiation in schools"
+    authors:
+      - "Domina, T."
+      - "McEachin, A."
+      - "Hanselman, P."
+      - "Agarwal, P."
+      - "Hwang, N."
+      - "Lewis, R."
+    year: 2019
+    journal: "Sociology of Education"
+    volume: "92"
+    issue: "3"
+    pages: "293-322"
+    featured: false
+
+  - id: wrabel-2018-politics-esea
+    type: journal
+    theme: accountability
+    title: "The politics of the Elementary and Secondary Education Act Waivers"
+    authors:
+      - "Wrabel, S.L."
+      - "Saultz, A."
+      - "Polikoff, M.S."
+      - "McEachin, A."
+      - "Duque, M."
+    year: 2018
+    journal: "Educational Policy"
+    volume: "32"
+    issue: "1"
+    pages: "117-140"
+    featured: false
+
+  - id: saultz-2017-teacher-quality
+    type: journal
+    theme: accountability
+    title: "Teacher quality, distribution and equity in ESSA"
+    authors:
+      - "Saultz, A."
+      - "White, R.S."
+      - "McEachin, A."
+      - "Fusarelli, L.D."
+      - "Fusarelli, B.C."
+    year: 2017
+    journal: "Journal of School Leadership"
+    volume: "27"
+    issue: "5"
+    pages: "652-673"
+    featured: false
+
+  - id: mceachin-2017-summer-learning
+    type: journal
+    theme: disrupted_learning
+    title: "The impact of summer learning loss on measures of school performance"
+    authors:
+      - "McEachin, A."
+      - "Atteberry, A."
+    year: 2017
+    journal: "Education Finance and Policy"
+    volume: "12"
+    issue: "4"
+    pages: "468-491"
+    featured: false
+
+  - id: saultz-2017-essa-decline
+    type: journal
+    theme: accountability
+    title: "The Every Student Succeeds Act, the decline of the federal role, and the curbing of Executive Authority"
+    authors:
+      - "Saultz, A."
+      - "Fusarelli, L."
+      - "McEachin, A."
+    year: 2017
+    journal: "Publius"
+    volume: "47"
+    issue: "3"
+    pages: "426-444"
+    featured: false
+
+  - id: adams-2017-ipl-s
+    type: journal
+    theme: accountability
+    title: "The development and validation of the Instructional Practices Log in Science (IPL-S): A measure of K-5 science instruction"
+    authors:
+      - "Adams, E.L."
+      - "Carrier, S.J."
+      - "Minogue, J."
+      - "Porter, S.R."
+      - "McEachin, A."
+      - "Walkowiak, T.A."
+      - "Zulli, R.A."
+    year: 2017
+    journal: "International Journal of Science Education"
+    volume: "39"
+    issue: "3"
+    pages: "335-357"
+    featured: false
+
+  - id: ahn-2017-ohio-online
+    type: journal
+    theme: school_choice
+    title: "Student enrollment patterns and achievement in Ohio's online charter schools"
+    authors:
+      - "Ahn, J."
+      - "McEachin, A."
+    year: 2017
+    journal: "Educational Researcher"
+    volume: "46"
+    issue: "1"
+    pages: "44-57"
+    alphabetical: true
+    media:
+      - EdSurge
+      - Education Week
+      - Politico
+      - The Hechinger Report
+      - The 74 Million
+      - USA Today
+      - Vox
+    featured: false
+
+  - id: mceachin-2016-new-orleans
+    type: journal
+    theme: school_choice
+    title: "The variation in student achievement and behavior within a portfolio management model: Early results from New Orleans"
+    authors:
+      - "McEachin, A."
+      - "Welsh, R."
+      - "Brewer, D.J."
+    year: 2016
+    journal: "Educational Evaluation and Policy Analysis"
+    volume: "38"
+    issue: "4"
+    pages: "669-691"
+    featured: false
+
+  - id: saultz-2016-waivering
+    type: journal
+    theme: accountability
+    title: "Waivering as governance: Federalism during the Obama Administration"
+    authors:
+      - "Saultz, A."
+      - "McEachin, A."
+      - "Fusarelli, L."
+    year: 2016
+    journal: "Educational Researcher"
+    volume: "45"
+    issue: "6"
+    pages: "358-366"
+    featured: false
+
+  - id: domina-2016-detracking
+    type: journal
+    theme: exclusionary_practices
+    title: "Detracking and tracking up: Mathematics course placements in California middle schools, 2003-2013"
+    authors:
+      - "Domina, T."
+      - "Hanselman, P."
+      - "Hwang, N."
+      - "McEachin, A."
+    year: 2016
+    journal: "American Educational Research Journal"
+    volume: "53"
+    issue: "4"
+    pages: "1229-1266"
+    alphabetical: true
+    featured: false
+
+  - id: welsh-2016-school-choice-nola
+    type: journal
+    theme: school_choice
+    title: "School choice, student mobility and school quality: Evidence from post-Katrina New Orleans"
+    authors:
+      - "Welsh, R."
+      - "Duque, M."
+      - "McEachin, A."
+    year: 2016
+    journal: "Education Finance and Policy"
+    volume: "11"
+    issue: "2"
+    pages: "150-176"
+    alphabetical: true
+    media:
+      - Inside Sources
+    featured: false
+
+  - id: domina-2015-aiming-high
+    type: journal
+    theme: exclusionary_practices
+    title: "Aiming high and falling short: California's 8th grade algebra-for-all effort"
+    authors:
+      - "Domina, T."
+      - "McEachin, A."
+      - "Penner, A."
+      - "Penner, E."
+    year: 2015
+    journal: "Educational Evaluation and Policy Analysis"
+    volume: "37"
+    issue: "3"
+    pages: "275-295"
+    alphabetical: true
+    media:
+      - Business Insider
+      - Education Week
+    featured: false
+
+  - id: lankford-2014-who-enters
+    type: journal
+    theme: accountability
+    title: "Who enters teaching? Encouraging evidence that the status of teaching is improving"
+    authors:
+      - "Lankford, H."
+      - "Loeb, S."
+      - "McEachin, A."
+      - "Miller, L.C."
+      - "Wyckoff, J."
+    year: 2014
+    journal: "Educational Researcher"
+    volume: "43"
+    issue: "9"
+    pages: "444-453"
+    alphabetical: true
+    featured: false
+
+  - id: strunk-2014-technical-assistance
+    type: journal
+    theme: accountability
+    title: "More than sanctions: California's use of intensive technical assistance in a high-stakes accountability context to close achievement gaps"
+    authors:
+      - "Strunk, K."
+      - "McEachin, A."
+    year: 2014
+    journal: "Educational Evaluation and Policy Analysis"
+    volume: "36"
+    issue: "3"
+    pages: "281-306"
+    featured: false
+
+  - id: strunk-2014-dait
+    type: journal
+    theme: accountability
+    title: "Does intensive district-level technical assistance improve student achievement? An evaluation of California's District Assistance and Intervention Teams"
+    authors:
+      - "Strunk, K."
+      - "McEachin, A."
+      - "Westover, T."
+    year: 2014
+    journal: "Journal of Policy Analysis and Management"
+    volume: "33"
+    issue: "3"
+    pages: "719-751"
+    featured: false
+
+  - id: polikoff-2014-waive-future
+    type: journal
+    theme: accountability
+    title: "Waive of the future: School accountability in the waiver era"
+    authors:
+      - "Polikoff, M.S."
+      - "McEachin, A."
+      - "Wrabel, S.L."
+      - "Duque, M."
+    year: 2014
+    journal: "Educational Researcher"
+    volume: "43"
+    issue: "1"
+    pages: "45-54"
+    featured: false
+
+  - id: mceachin-2012-we-are-5-percent
+    type: journal
+    theme: accountability
+    title: "We are the 5%: Which schools would be held accountable under a proposed revision of the Elementary and Secondary Education Act?"
+    authors:
+      - "McEachin, A."
+      - "Polikoff, M."
+    year: 2012
+    journal: "Educational Researcher"
+    volume: "41"
+    issue: "7"
+    pages: "243-251"
+    featured: false
+
+  - id: strunk-2011-union-contracts
+    type: journal
+    theme: accountability
+    title: "Do teachers' union contracts restrict districts' abilities to meet accountability goals? The relationship between teachers' union contracts and district performance under the No Child Left Behind Act"
+    authors:
+      - "Strunk, K.O."
+      - "McEachin, A."
+    year: 2011
+    journal: "American Educational Research Journal"
+    volume: "48"
+    issue: "4"
+    pages: "871-903"
+    featured: false
+
+  # ============================================================
+  # WORKING PAPERS
+  # ============================================================
+
+  - id: bolyard-2025-summer-2023
+    type: working_paper
+    theme: disrupted_learning
+    title: "Summer School as an Academic Recovery Strategy After COVID-19: Evidence From Summer 2023"
+    authors:
+      - "Bolyard, A."
+      - "DeArmond, M."
+      - "Dizon-Ross, E."
+      - "Goldhaber, D."
+      - "Isaacs, J."
+      - "Kane, T."
+      - "Keating, M."
+      - "Klinenberg, J."
+      - "McDonald, A."
+      - "McEachin, A."
+      - "Morton, E."
+      - "Muroga, A."
+      - "Salazar, A."
+      - "Staiger, D.O."
+    year: 2025
+    status: "Revisions Requested at Education Finance and Policy"
+    alphabetical: true
+    featured: false
+
+  - id: callen-2024-pandemic-heterogeneity
+    type: working_paper
+    theme: disrupted_learning
+    title: "Pandemic Learning Loss by Student Baseline Achievement: Extent and Sources of Heterogeneity"
+    authors:
+      - "Callen, I."
+      - "Goldhaber, D."
+      - "Kane, T.J."
+      - "McDonald, A."
+      - "McEachin, A."
+      - "Morton, E."
+    year: 2024
+    series: "CALDER Working Paper No. 292-0224"
+    status: "Revisions Requested at Education Finance and Policy"
+    alphabetical: true
+    featured: false
+
+  # ============================================================
+  # REPORTS
+  # ============================================================
+
+  - id: kuhfeld-2025-nae-report
+    type: report
+    theme: disrupted_learning
+    title: "Implementing programs to align, accelerate, and extend student learning"
+    authors:
+      - "Kuhfeld, M."
+      - "Woulfin, S.L."
+      - "McEachin, A."
+    year: 2025
+    publisher: "National Academy of Education"
+    featured: false
+
+  - id: kuhfeld-2023-benchmarks
+    type: report
+    theme: disrupted_learning
+    title: "Typical learning for whom? Guidelines for selecting benchmarks to calculate months of learning"
+    authors:
+      - "Kuhfeld, M."
+      - "Diliberti, M."
+      - "McEachin, A."
+      - "Schweig, J."
+      - "Mariano, L.T."
+    year: 2023
+    publisher: "NWEA"
+    featured: false
+
+  - id: callen-2023-summer-wp
+    type: report
+    theme: disrupted_learning
+    title: "Summer School as a Learning Loss Recovery Strategy After COVID-19: Evidence From Summer 2022"
+    authors:
+      - "Callen, I."
+      - "Carbonari, M.V."
+      - "DeArmond, M."
+      - "Dewey, D."
+      - "Dizon-Ross, E."
+      - "Goldhaber, D."
+      - "Isaacs, J."
+      - "Kane, T.J."
+      - "Kuhfeld, M."
+      - "McDonald, A."
+      - "McEachin, A."
+      - "Morton, E."
+      - "Muroga, A."
+      - "Staiger, D.O."
+    year: 2023
+    series: "CALDER Working Paper No. 291-0823"
+    featured: false
+
+  - id: carbonari-2022-challenges-wp
+    type: report
+    theme: disrupted_learning
+    title: "The Challenges of Implementing Academic COVID Recovery Interventions: Evidence from the Road to Recovery Project"
+    authors:
+      - "Carbonari, M.V."
+      - "Davison, M."
+      - "DeArmond, M."
+      - "Dewey, D."
+      - "Dizon-Ross, E."
+      - "Goldhaber, D."
+      - "Hashim, A."
+      - "Kane, T.J."
+      - "McEachin, A."
+      - "Morton, E."
+      - "Patterson, T."
+      - "Staiger, D.O."
+    year: 2022
+    series: "CALDER Working Paper No. 275-1222"
+    featured: false
+
+  - id: goldhaber-2022-comprehensive
+    type: report
+    theme: disrupted_learning
+    title: "A Comprehensive Picture of Achievement Across the COVID-19 Pandemic Years: Examining Variation in Test Levels and Growth Across Districts, Schools, Grades, and Students"
+    authors:
+      - "Goldhaber, D."
+      - "Kane, T.J."
+      - "McEachin, A."
+      - "Morton, E."
+    year: 2022
+    series: "CALDER Working Paper No. 266-0522"
+    featured: false
+
+  - id: schweig-2022-composition
+    type: report
+    theme: disrupted_learning
+    title: "Changes in School Composition During the COVID-19 Pandemic: Implications for School-Average Interim Test Score Use"
+    authors:
+      - "Schweig, J."
+      - "Kuhfeld, M."
+      - "Diliberti, M."
+      - "McEachin, A."
+      - "Mariano, L.T."
+    year: 2022
+    publisher: "RAND Corporation"
+    featured: false
+
+  - id: lewis-2021-learning-covid
+    type: report
+    theme: disrupted_learning
+    title: "Learning during COVID-19: Reading and math achievement in the 2020-21 school year"
+    authors:
+      - "Lewis, K."
+      - "Kuhfeld, M."
+      - "Ruzek, E."
+      - "McEachin, A."
+    year: 2021
+    publisher: "NWEA"
+    featured: false
+
+  - id: schweig-2021-course-placement
+    type: report
+    theme: disrupted_learning
+    title: "Adapting Course Placement Processes in Response to COVID-19 Disruptions"
+    authors:
+      - "Schweig, J."
+      - "McEachin, A."
+      - "Kuhfeld, M."
+      - "Mariano, L.T."
+      - "Diliberti, M.K."
+    year: 2021
+    publisher: "RAND Corporation"
+    featured: false
+
+  - id: mceachin-2018-tntp-validation
+    type: report
+    theme: accountability
+    title: "Validation Study of the TNTP Core Teaching Rubric"
+    authors:
+      - "McEachin, A."
+      - "Schweig, I."
+      - "Perera, R."
+      - "Opper, I.M."
+    year: 2018
+    publisher: "RAND Corporation"
+    featured: false
+
+  - id: augustine-2016-summer-learning
+    type: report
+    theme: disrupted_learning
+    title: "Learning from summer: Effects of voluntary summer learning programs on low-income urban youth"
+    authors:
+      - "Augustine, C.H."
+      - "McCombs, J.S."
+      - "Pane, J.F."
+      - "Schwartz, H.L."
+      - "Schweig, J."
+      - "McEachin, A."
+      - "Siler-Evans, K."
+    year: 2016
+    publisher: "RAND Corporation"
+    featured: false
+
+  # ============================================================
+  # BOOK CHAPTERS & POLICY PUBLICATIONS
+  # ============================================================
+
+  - id: hamilton-2019-accountability-choice
+    type: book_chapter
+    theme: school_choice
+    title: "Accountability and School Choice"
+    authors:
+      - "Hamilton, L.S."
+      - "McEachin, A."
+    year: 2019
+    book: "Handbook of Research on School Choice"
+    edition: "2nd ed."
+    editors: "Berends, M., Primus, A., & Springer, M.G."
+    publisher: "Routledge"
+    featured: false
+
+  - id: atteberry-2016-summers-chapter
+    type: book_chapter
+    theme: disrupted_learning
+    title: "School's out: Summer learning loss across grade levels and school contexts in the U.S. Today"
+    authors:
+      - "Atteberry, A."
+      - "McEachin, A."
+    year: 2016
+    book: "The Summer Slide: What We Know and Can Do About Summer Learning Loss"
+    editors: "Alexander, K., Pitcock, S., & Boulay, M."
+    publisher: "Teachers College Press"
+    featured: false
+
+  - id: mceachin-2016-effective-summer
+    type: book_chapter
+    theme: disrupted_learning
+    title: "What constitutes an effective summer learning program?"
+    authors:
+      - "McEachin, A."
+      - "McCombs, J."
+      - "Augustine, C."
+    year: 2016
+    book: "The Summer Slide: What We Know and Can Do About Summer Learning Loss"
+    editors: "Alexander, K., Pitcock, S., & Boulay, M."
+    publisher: "Teachers College Press"
+    featured: false
+
+  - id: fusarelli-2016-homeschooling
+    type: book_chapter
+    theme: school_choice
+    title: "A growing trend: The cases of home schooling in North Carolina & Ohio"
+    authors:
+      - "Fusarelli, L."
+      - "Saultz, A."
+      - "McEachin, A."
+    year: 2016
+    book: "Homeschooling in New View"
+    editors: "Cooper, B.S., Speilhagen, F.R., & Ricci, C."
+    publisher: "IAP"
+    featured: false
+
+  - id: mceachin-2016-endless-summer
+    type: book_chapter
+    theme: disrupted_learning
+    title: "An Endless Summer: The role of summer learning loss in school accountability policies"
+    authors:
+      - "McEachin, A."
+      - "Atteberry, A."
+    year: 2016
+    book: "When School Policies Backfire: How Well-Intended Measures Can Harm Our Most Vulnerable Students"
+    editors: "Gottfried, M., & Conchas, G."
+    publisher: "Harvard Education Press"
+    featured: false
+
+  - id: mceachin-2014-agency-theory
+    type: book_chapter
+    theme: accountability
+    title: "Agency Theory"
+    authors:
+      - "McEachin, A."
+    year: 2014
+    book: "Encyclopedia of Education Economics and Finance"
+    editors: "Brewer, D.J., & Picus, L."
+    publisher: "Sage"
+    featured: false
+
+  - id: mceachin-2014-teacher-intelligence
+    type: book_chapter
+    theme: accountability
+    title: "Teacher intelligence"
+    authors:
+      - "McEachin, A."
+    year: 2014
+    book: "Encyclopedia of Education Economics and Finance"
+    editors: "Brewer, D.J., & Picus, L."
+    publisher: "Sage"
+    featured: false
+
+  - id: polikoff-2014-fix-waivers
+    type: commentary
+    theme: accountability
+    title: "Fix the Waivers Before It's Too Late"
+    authors:
+      - "Polikoff, M.S."
+      - "McEachin, A."
+      - "Wrabel, S."
+      - "Duque, M."
+    year: 2014
+    journal: "Education Weekly"
+    volume: "33"
+    issue: "36"
+    featured: false
+
+  - id: polikoff-2014-grading-waivers
+    type: report
+    theme: accountability
+    title: "Grading the No Child Left Behind waivers"
+    authors:
+      - "Polikoff, M.S."
+      - "McEachin, A."
+      - "Wrabel, S."
+      - "Duque, M."
+    year: 2014
+    publisher: "American Enterprise Institute"
+    featured: false
+
+  - id: mceachin-2013-teacher-intelligence-handbook
+    type: book_chapter
+    theme: accountability
+    title: "Teacher intelligence"
+    authors:
+      - "McEachin, A."
+      - "Brewer, D.J."
+    year: 2013
+    book: "The International handbook of student achievement"
+    editors: "Hattie, J.A.C., & Anderman, E.M."
+    pages: "254-257"
+    publisher: "Routledge"
+    featured: false
+
+  - id: polikoff-2013-fixing-api
+    type: report
+    theme: accountability
+    title: "Fixing the Academic Performance Index"
+    authors:
+      - "Polikoff, M.S."
+      - "McEachin, A."
+    year: 2013
+    publisher: "Policy Analysis for California Education (PACE)"
+    featured: false
+
+  - id: mceachin-2012-urban-economics
+    type: book_chapter
+    theme: accountability
+    title: "Economics of urban education"
+    authors:
+      - "McEachin, A."
+      - "Brewer, D.J."
+    year: 2012
+    book: "Urban Education: A Model for Leadership and Policy"
+    editors: "Gallagher, K.S., Goodyear, R., Brewer, D.J., & Rueda, R."
+    pages: "67-82"
+    publisher: "Routledge"
+    featured: false
+
+  - id: bridges-2010-decentralizing
+    type: report
+    theme: accountability
+    title: "Decentralizing resources in Los Angeles high schools: California's Quality Education Investment Act"
+    authors:
+      - "Bridges, M."
+      - "Fuller, B."
+      - "McEachin, A."
+      - "Pelayo, I."
+      - "Finklestein, N."
+    year: 2010
+    publisher: "Policy Analysis for California Education (PACE)"
+    featured: false
+
+  - id: brewer-2009-oklahoma
+    type: report
+    theme: accountability
+    title: "Organizing Effective Educational Accountability: The Case of Oklahoma"
+    authors:
+      - "Brewer, D.J."
+      - "Killeen, K.M."
+      - "Ahn, J."
+      - "McEachin, A."
+    year: 2009
+    publisher: "Oklahoma Business & Education Coalition"
+    featured: false
+
+  - id: brewer-2008-la-reform
+    type: report
+    theme: accountability
+    title: "School Reform in Los Angeles: Signs of Progress?"
+    authors:
+      - "Brewer, D.J."
+      - "Pelayo, I."
+      - "McEachin, A."
+    year: 2008
+    publisher: "Pat Brown Institute, Cal State Los Angeles"
+    featured: false

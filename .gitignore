@@ -1,0 +1,33 @@
+# LaTeX build artifacts (generated .tex is committed for transparency)
+cv/output/*.aux
+cv/output/*.log
+cv/output/*.out
+cv/output/*.fls
+cv/output/*.fdb_latexmk
+cv/output/*.synctex.gz
+
+# Hugo build output
+site/public/
+site/resources/_gen/
+
+# Node modules (installed via npm install)
+site/node_modules/
+site/package-lock.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

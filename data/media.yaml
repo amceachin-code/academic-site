@@ -1,0 +1,142 @@
+# media.yaml — Commentary, op-eds, and media coverage
+
+commentary:
+  - id: mceachin-2023-algebra-pros-cons
+    title: "Research Reveals the Pros and Cons of Algebra in Eighth Grade"
+    authors:
+      - "McEachin, A."
+      - "Domina, T."
+    date: "2023-04-27"
+    outlet: "Teach, Learn, Grow, NWEA"
+    url: ""
+
+  - id: goldhaber-2022-shoot-moon
+    title: "To Help Students Shoot for the Moon, We Must Think Bigger and Bolder"
+    authors:
+      - "Goldhaber, D."
+      - "Kane, T."
+      - "McEachin, A."
+      - "Morton, E."
+    date: "2022-11-16"
+    outlet: "Washington Post"
+    url: ""
+
+  - id: goldhaber-2021-pandemic-earnings
+    title: "Pandemic Learning Loss Could Cost U.S. Students $2 Trillion in Lifetime Earnings. What States & Schools Can Do to Avert This Crisis"
+    authors:
+      - "Goldhaber, D."
+      - "Kane, T."
+      - "McEachin, A."
+    date: "2021-12-13"
+    outlet: "The 74 Million"
+    url: ""
+
+  - id: kuhfeld-2021-summer-learning
+    title: "Summer learning loss: What we know and what we're learning"
+    authors:
+      - "Kuhfeld, M."
+      - "McEachin, A."
+    date: "2021-06-01"
+    outlet: "Teach, Learn, Grow, NWEA"
+    url: ""
+
+  - id: schweig-2020-student-assessment
+    title: "Addressing COVID-19's Disruption of Student Assessment"
+    authors:
+      - "Schweig, J."
+      - "McEachin, A."
+      - "Kuhfeld, M."
+    date: "2020-12-16"
+    outlet: "Inside IES Research: Notes from NCER & NCSER, IES"
+    url: ""
+
+  - id: hamilton-2020-reopen-schools
+    title: "How to Reopen Schools: Q&A with RAND Experts"
+    authors:
+      - "Hamilton, L.S."
+      - "Culbertson, S."
+      - "Nataraj, S."
+      - "Faherty, L.J."
+      - "Kaufman, J.H."
+      - "Opfer, V.D."
+      - "McEachin, A."
+    date: "2020-07-23"
+    outlet: "The RAND Blog, RAND Corporation"
+    url: ""
+
+  - id: barrett-2017-discipline-brookings
+    title: "Discipline disparities and discrimination in schools"
+    authors:
+      - "Barrett, N."
+      - "McEachin, A."
+      - "Mills, J."
+      - "Valant, J."
+    date: "2017-11-20"
+    outlet: "Brown Center Chalkboard, Brookings"
+    url: ""
+
+  - id: mceachin-2017-informed-choice
+    title: "Make an informed school choice: How to help parents pick the best school for their child's education"
+    authors:
+      - "McEachin, A."
+      - "Hamilton, L.S."
+    date: "2017-02-17"
+    outlet: "Knowledge Bank, US News"
+    url: ""
+
+  - id: mceachin-2015-not-everyone
+    title: "Not Everyone Has a Choice: School choice policies could disadvantage low-income students"
+    authors:
+      - "McEachin, A."
+      - "Stecher, B."
+      - "Evans, G."
+    date: "2015-08-31"
+    outlet: "Knowledge Bank, US News"
+    url: ""
+
+# Selected news coverage of research (linked to publications)
+news_coverage:
+  - publication_id: goldhaber-2023-remote-instruction
+    outlets:
+      - name: CNN
+        url: ""
+      - name: New York Times
+        url: ""
+      - name: Washington Post
+        url: ""
+
+  - publication_id: barrett-2021-discipline-disparities
+    outlets:
+      - name: The 74 Million
+        url: ""
+      - name: Chalkbeat
+        url: ""
+      - name: Fordham Institute
+        url: ""
+      - name: NPR
+        url: ""
+      - name: The Advocate
+        url: ""
+      - name: The Economist
+        url: ""
+      - name: The Root
+        url: ""
+
+  - publication_id: ahn-2017-ohio-online
+    outlets:
+      - name: EdSurge
+        url: ""
+      - name: Education Week
+        url: ""
+      - name: Politico
+        url: ""
+      - name: The Hechinger Report
+        url: ""
+      - name: The 74 Million
+        url: ""
+      - name: USA Today
+        url: ""
+      - name: Vox
+        url: ""
+
+podcasts_interviews: []

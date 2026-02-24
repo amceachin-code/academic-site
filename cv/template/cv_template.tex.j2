@@ -1,0 +1,242 @@
+\documentclass[11pt, letterpaper]{article}
+
+% Encoding and fonts
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Page geometry
+\usepackage[margin=1in, headheight=14pt]{geometry}
+
+% Hyperlinks
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
+
+% Lists
+\usepackage{enumitem}
+\setlist[itemize]{nosep, left=0pt}
+
+% Section formatting
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{12pt}{6pt}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+\titlespacing{\subsection}{0pt}{8pt}{4pt}
+
+% No page numbers on first page, numbers on rest
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{<< profile.name.display|latex_escape >> --- Curriculum Vitae}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \rfoot{\thepage}
+}
+
+% Paragraph spacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+% =========================================================================
+\begin{document}
+\thispagestyle{firstpage}
+
+% --- Header ---
+\begin{center}
+  {\LARGE\bfseries << profile.name.display|latex_escape >>} \\[6pt]
+  << profile.title|latex_escape >> \\
+  << profile.organization|latex_escape >> \\[4pt]
+  Email: \href{mailto:<< profile.email >>}{<< profile.email|latex_escape >>}
+  <% if profile.website %>
+  \quad $\vert$ \quad \href{<< profile.website >>}{<< profile.website|latex_escape >>}
+  <% endif %>
+\end{center}
+
+\vspace{6pt}
+
+% --- Research Interests ---
+<% if profile.research_interests %>
+\section{Research Interests}
+<% for interest in profile.research_interests %>
+<< interest|latex_escape >><% if not loop.last %>; <% endif %>
+<% endfor %>
+<% endif %>
+
+% --- Education ---
+<% if education %>
+\section{Education}
+<% for edu in education %>
+\textbf{<< edu.degree|latex_escape >>}, << edu.field|latex_escape >> \hfill << edu.year >> \\
+<< edu.institution|latex_escape >>
+
+<% endfor %>
+<% endif %>
+
+% --- Employment ---
+<% if positions %>
+\section{Employment}
+<% for pos in positions %>
+\textbf{<< pos.title|latex_escape >>} \hfill << pos.start_year >>--<< pos.end_year if pos.end_year else "present" >> \\
+<< pos.organization|latex_escape >>
+
+<% endfor %>
+<% endif %>
+
+% --- Publications: Journal Articles ---
+<% set journal_pubs = filter_pubs_by_type(publications, 'journal') %>
+<% if journal_pubs %>
+\section{Peer-Reviewed Journal Articles}
+\begin{enumerate}[leftmargin=2em]
+<% for pub in journal_pubs|sort(attribute='year', reverse=true) %>
+  \item << format_authors(pub.authors)|latex_escape >> (<< pub.year >>).
+  ``<< pub.title|latex_escape >>.''
+  \textit{<< pub.journal|latex_escape >>}%
+<% if pub.volume %>, << pub.volume|latex_escape >><% endif %>%
+<% if pub.issue %>(<< pub.issue|latex_escape >>)<% endif %>%
+<% if pub.pages %>, << pub.pages|latex_escape >><% endif %>.%
+<% if pub.status %> \textit{<< pub.status|latex_escape >>}.<% endif %>
+<% if pub.awards %>
+<% for award in pub.awards %>
+  \textbf{<< award|latex_escape >>}.
+<% endfor %>
+<% endif %>
+<% if pub.media %>
+  Selected Media: << pub.media|join(', ')|latex_escape >>.
+<% endif %>
+
+<% endfor %>
+\end{enumerate}
+<% endif %>
+
+% --- Working Papers ---
+<% set working_papers = filter_pubs_by_type(publications, 'working_paper') %>
+<% if working_papers %>
+\section{Working Papers}
+\begin{itemize}
+<% for pub in working_papers|sort(attribute='year', reverse=true) %>
+  \item << format_authors(pub.authors)|latex_escape >> (<< pub.year >>).
+  ``<< pub.title|latex_escape >>.''%
+<% if pub.series %> << pub.series|latex_escape >>.<% endif %>%
+<% if pub.status %> \textit{<< pub.status|latex_escape >>}.<% endif %>
+
+<% endfor %>
+\end{itemize}
+<% endif %>
+
+% --- Reports ---
+<% set reports = filter_pubs_by_type(publications, 'report') %>
+<% if reports %>
+\section{Reports}
+\begin{itemize}
+<% for pub in reports|sort(attribute='year', reverse=true) %>
+  \item << format_authors(pub.authors)|latex_escape >> (<< pub.year >>).
+  ``<< pub.title|latex_escape >>.''%
+<% if pub.publisher %> << pub.publisher|latex_escape >>.<% endif %>%
+<% if pub.series %> << pub.series|latex_escape >>.<% endif %>
+
+<% endfor %>
+\end{itemize}
+<% endif %>
+
+% --- Book Chapters ---
+<% set book_chapters = filter_pubs_by_type(publications, 'book_chapter') %>
+<% if book_chapters %>
+\section{Book Chapters \& Other Publications}
+\begin{itemize}
+<% for pub in book_chapters|sort(attribute='year', reverse=true) %>
+  \item << format_authors(pub.authors)|latex_escape >> (<< pub.year >>).
+  ``<< pub.title|latex_escape >>.''%
+<% if pub.editors %> In << pub.editors|latex_escape >> (Eds.),<% endif %>%
+<% if pub.book %> \textit{<< pub.book|latex_escape >>}<% endif %>%
+<% if pub.pages %> (pp. << pub.pages|latex_escape >>)<% endif %>.%
+<% if pub.publisher %> << pub.publisher|latex_escape >>.<% endif %>
+
+<% endfor %>
+\end{itemize}
+<% endif %>
+
+% --- Commentary & Op-Eds ---
+<% set commentary = media.get('commentary', []) %>
+<% if commentary %>
+\section{Commentary \& Op-Eds}
+\begin{itemize}
+<% for item in commentary|sort(attribute='date', reverse=true) %>
+  \item << format_authors(item.authors)|latex_escape >> (<< item.date|latex_escape >>).
+  ``<< item.title|latex_escape >>.'' \textit{<< item.outlet|latex_escape >>}.
+
+<% endfor %>
+\end{itemize}
+<% endif %>
+
+% --- Grants ---
+<% if grants %>
+\section{Research Grants}
+\begin{itemize}
+<% for grant in grants|sort(attribute='start_year', reverse=true) %>
+  \item \textbf{<< grant.title|latex_escape >>} \hfill << grant.start_year >>--<< grant.end_year >> \\
+  << grant.funder|latex_escape >>. Role: << grant.role|latex_escape >>.%
+<% if grant.collaborators %> << grant.collaborators|latex_escape >>.<% endif %>%
+<% if grant.amount %> \$<< format_amount(grant.amount) >>.<% endif %>
+
+<% endfor %>
+\end{itemize}
+<% endif %>
+
+% --- Awards ---
+<% if awards %>
+\section{Honors, Awards \& Fellowships}
+\begin{itemize}
+<% for award in awards|sort(attribute='year', reverse=true) %>
+  \item << award.title|latex_escape >>, << award.organization|latex_escape >>, << award.year >>%
+<% if award.end_year %>--<< award.end_year >><% endif %>
+
+<% endfor %>
+\end{itemize}
+<% endif %>
+
+% --- Editorial Service ---
+<% set editorial = service.get('editorial_boards', []) %>
+<% if editorial %>
+\section{Editorships \& Editorial Boards}
+\begin{itemize}
+<% for board in editorial %>
+  \item \textit{<< board.journal|latex_escape >>}, << board.role|latex_escape >>, << board.start_year >>--<< board.end_year if board.end_year else "present" >>
+
+<% endfor %>
+\end{itemize}
+<% endif %>
+
+% --- Professional Service ---
+<% set committees = service.get('committees', []) %>
+<% if committees %>
+\section{Professional Service}
+\begin{itemize}
+<% for comm in committees %>
+  \item << comm.organization|latex_escape >>, << comm.role|latex_escape >>, << comm.start_year >>--<< comm.end_year if comm.end_year else "present" >>
+
+<% endfor %>
+\end{itemize}
+<% endif %>
+
+% --- Referee Service ---
+<% set referee = service.get('referee', []) %>
+<% if referee %>
+\section{Journal Reviewer}
+<< referee|join('; ')|latex_escape >>
+<% endif %>
+
+% --- Software ---
+<% if software %>
+\section{Software}
+\begin{itemize}
+<% for pkg in software %>
+  \item \textbf{<< pkg.name|latex_escape >>}: << pkg.description|latex_escape >>
+  Languages: << pkg.languages|join(', ')|latex_escape >>.%
+<% if pkg.github %> \url{<< pkg.github >>}<% endif %>
+
+<% endfor %>
+\end{itemize}
+<% endif %>
+
+\end{document}

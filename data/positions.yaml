@@ -1,0 +1,46 @@
+# positions.yaml — Employment history
+positions:
+  - title: Senior Research Director, Policy Research
+    organization: ETS Research Institute
+    start_year: 2024
+    end_year: null  # current
+
+  - title: Vice President, Research & Policy Partnerships
+    organization: Houghton Mifflin Harcourt
+    start_year: 2023
+    end_year: 2024
+
+  - title: Director, Collaborative for Student Growth
+    organization: NWEA
+    start_year: 2021
+    end_year: 2023
+
+  - title: Senior Policy Researcher
+    organization: RAND Corporation
+    start_year: 2020
+    end_year: 2021
+
+  - title: Professor of Policy Analysis
+    organization: Pardee RAND Graduate School
+    start_year: 2018
+    end_year: 2022
+
+  - title: Policy Researcher
+    organization: RAND Corporation
+    start_year: 2016
+    end_year: 2020
+
+  - title: Associate Policy Researcher
+    organization: RAND Corporation
+    start_year: 2015
+    end_year: 2016
+
+  - title: Assistant Professor, School of Education
+    organization: North Carolina State University
+    start_year: 2013
+    end_year: 2015
+
+  - title: Postdoctoral Fellow, Curry School of Education
+    organization: University of Virginia
+    start_year: 2012
+    end_year: 2013

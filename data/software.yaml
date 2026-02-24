@@ -1,0 +1,27 @@
+# software.yaml — Code packages and software
+software:
+  - id: horseshoe
+    name: horseshoe
+    description: >
+      Bayesian linear regression with the horseshoe prior (Carvalho, Polson,
+      and Scott, 2010). Implements the horseshoe shrinkage estimator for
+      high-dimensional regression problems where many coefficients are expected
+      to be near zero.
+    languages:
+      - Stata
+      - R
+    r_package_name: hsreg
+    github: "https://github.com/amceachin-code/horseshoe"
+    reference: "Carvalho, C.M., Polson, N.G., & Scott, J.G. (2010)"
+
+  - id: rdtp
+    name: rdtp
+    description: >
+      Searches over candidate cutoffs on a discrete forcing variable to find
+      the cutoff maximizing R-squared from a linear-spline regression
+      discontinuity design. Based on McEachin, Domina, and Penner (2020, JPAM).
+    languages:
+      - Stata
+      - R
+    github: "https://github.com/amceachin-code/rdtp"
+    reference: "McEachin, A., Domina, T., & Penner, A. (2020). JPAM, 39(3), 772-800."

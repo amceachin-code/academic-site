@@ -1,0 +1,16 @@
+# education.yaml — Academic degrees
+education:
+  - degree: Ph.D.
+    field: Education Policy
+    institution: University of Southern California
+    year: 2012
+
+  - degree: M.A.
+    field: Economics
+    institution: University of Southern California
+    year: 2012
+
+  - degree: A.B.
+    field: History
+    institution: Cornell University
+    year: 2006
