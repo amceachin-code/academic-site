@@ -299,57 +299,6 @@ def format_authors(authors: list, max_display: int = 0) -> str:
     return ", ".join(authors[:-1]) + ", & " + authors[-1] if len(authors) > 1 else authors[0]
 
 
-def format_citation(pub: dict) -> str:
-    """
-    Format a publication entry as a citation string for the website.
-    """
-    parts = []
-
-    # Authors
-    authors = pub.get("authors", [])
-    if authors:
-        parts.append(format_authors(authors))
-
-    # Year
-    year = pub.get("year", "")
-    if year:
-        parts.append(f"({year}).")
-
-    # Title
-    title = pub.get("title", "")
-    if title:
-        parts.append(f"{title}.")
-
-    # Journal / book / publisher
-    journal = pub.get("journal", "")
-    book = pub.get("book", "")
-    publisher = pub.get("publisher", "")
-
-    if journal:
-        vol = pub.get("volume", "")
-        issue = pub.get("issue", "")
-        pages = pub.get("pages", "")
-        journal_str = f"*{journal}*"
-        if vol:
-            journal_str += f", {vol}"
-        if issue:
-            journal_str += f"({issue})"
-        if pages:
-            journal_str += f", {pages}"
-        parts.append(journal_str + ".")
-    elif book:
-        editors = pub.get("editors", "")
-        if editors:
-            parts.append(f"In {editors} (Eds.),")
-        parts.append(f"*{book}*.")
-        if publisher:
-            parts.append(f"{publisher}.")
-    elif publisher:
-        parts.append(f"{publisher}.")
-
-    return " ".join(parts)
-
-
 # ---------------------------------------------------------------------------
 # Publication filtering
 # ---------------------------------------------------------------------------

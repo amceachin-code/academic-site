@@ -86,10 +86,20 @@ def _pub_type_label(pub_type: str) -> str:
 
 
 def _yaml_escape(text: str) -> str:
-    """Escape a string for safe inclusion in YAML frontmatter double quotes."""
+    """Escape a string for safe inclusion in YAML frontmatter double quotes.
+
+    Handles backslashes, double quotes, and control characters that are
+    special inside YAML double-quoted scalars.
+    """
     if not text:
         return ""
-    return text.replace("\\", "\\\\").replace('"', '\\"')
+    return (
+        text.replace("\\", "\\\\")
+        .replace('"', '\\"')
+        .replace("\n", "\\n")
+        .replace("\r", "\\r")
+        .replace("\t", "\\t")
+    )
 
 
 def generate_publication_page(pub: dict) -> str:

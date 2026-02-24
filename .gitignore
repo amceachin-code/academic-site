@@ -21,6 +21,12 @@ __pycache__/
 .venv/
 venv/
 
+# Hugo lock file
+site/.hugo_build.lock
+
+# R
+*.Rhistory
+
 # OS
 .DS_Store
 Thumbs.db

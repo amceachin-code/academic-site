@@ -12,6 +12,8 @@
 :root {
   --color-header-bg: #ffffff !important;
   --color-header-fg: #1b4965 !important;
+  --color-foreground: #444444 !important;
+  --color-text: #444444 !important;
 }
 
 /* Force white on ALL header-related elements; kill borders, shadows, padding */
@@ -114,11 +116,7 @@ body {
   background-color: #ffffff;
 }
 
-/* Override HugoBlox theme text color variables (header vars set above) */
-:root {
-  --color-foreground: #444444 !important;
-  --color-text: #444444 !important;
-}
+/* Text color vars are set in :root block above */
 
 /* Override Tailwind prose text color to match */
 .prose,
