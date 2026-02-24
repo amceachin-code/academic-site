@@ -5,6 +5,25 @@ cascade:
     list: never
 ---
 
+<div class="pub-intro">
+<p>
+My research uses causal inference methods to understand how education policies
+and programs shape student outcomes, with particular attention to how effects
+vary across student populations. My work falls into four interconnected themes.
+</p>
+<p>
+Much of my recent research examines <strong>out-of-school and disrupted learning</strong>,
+including the educational consequences of the COVID-19 pandemic, summer learning
+loss, and the effectiveness of academic recovery interventions. A second line of
+work investigates <strong>accountability</strong> systems—how federal and state policies
+like NCLB, ESEA waivers, and ESSA shape school and teacher quality. I also study
+<strong>exclusionary practices</strong> in education, including discipline disparities,
+curricular tracking, and how school structures contribute to segregation. Finally,
+my work on <strong>school choice</strong> evaluates charter schools, virtual schooling, and
+the competitive effects of choice programs on traditional public schools.
+</p>
+</div>
+
 <details class="pub-theme-section">
 <summary class="pub-theme-header">
   <span class="pub-theme-name">Out-of-School or Disrupted Learning</span>

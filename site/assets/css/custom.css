@@ -42,6 +42,21 @@ header.header {
   background-color: #ffffff !important;
   border-bottom: 1px solid #e2e8f0 !important;
   box-shadow: none !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+}
+
+/* Reduce top spacing on publications page body */
+.page-body:has(.pub-theme-section) {
+  margin-top: 0 !important;
+  padding-top: 0.5rem !important;
+}
+
+/* Tighten the h1 on publications page */
+.page-body:has(.pub-theme-section) h1 {
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 2rem !important;
 }
 
 nav.navbar a,
@@ -124,19 +139,22 @@ a:hover {
    Avatar + icons pinned left; text flows normally on the right
    ======================================== */
 
-/* Mountain sketch backdrop on the homepage bio section */
-.blox-resume-biography {
+/* Mountain sketch backdrop on the homepage bio section and publications page */
+.blox-resume-biography,
+.page-body:has(.pub-theme-section) {
   position: relative;
+}
+
+.blox-resume-biography {
   overflow: hidden;
 }
 
-.blox-resume-biography::before {
+.blox-resume-biography::before,
+.page-body:has(.pub-theme-section)::before {
   content: "";
   position: absolute;
-  bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
   background-image: url("/images/mountains-backdrop.png");
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -146,8 +164,23 @@ a:hover {
   z-index: 0;
 }
 
+/* Bio section: fill the section from bottom */
+.blox-resume-biography::before {
+  bottom: 0;
+  height: 100%;
+}
+
+/* Publications page: fixed to viewport height, anchored at top so it
+   stays visible when collapsible sections expand the container */
+.page-body:has(.pub-theme-section)::before {
+  top: 0;
+  height: 100vh;
+  position: fixed;
+}
+
 /* Ensure all content sits above the backdrop */
-#profile.resume-biography {
+#profile.resume-biography,
+.page-body:has(.pub-theme-section) > div {
   position: relative;
   z-index: 1;
 }
@@ -374,6 +407,7 @@ a.btn:hover,
 
 .page-body > div:has(.pub-card-list) > article {
   max-width: 1100px !important;
+  width: 100% !important;
 }
 
 /* Container for a group of cards under a type heading */
@@ -509,6 +543,24 @@ a.btn:hover,
 /* ========================================
    Collapsible Theme Sections — <details>/<summary>
    ======================================== */
+
+/* Introduction text above theme sections */
+.pub-intro {
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #444444;
+}
+
+.pub-intro p {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.pub-intro strong {
+  color: #1b4965;
+  font-weight: 600;
+}
 
 /* The <details> wrapper for each theme */
 .pub-theme-section {
