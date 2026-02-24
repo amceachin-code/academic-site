@@ -26,8 +26,11 @@ the competitive effects of choice programs on traditional public schools.
 
 <details class="pub-theme-section">
 <summary class="pub-theme-header">
-  <span class="pub-theme-name">Out-of-School or Disrupted Learning</span>
-  <span class="pub-theme-count">(24 publications)</span>
+  <span class="pub-theme-header-top">
+    <span class="pub-theme-name">Out-of-School or Disrupted Learning</span>
+    <span class="pub-theme-count">(24 publications)</span>
+  </span>
+  <span class="pub-theme-description">This line of research examines what happens to student learning outside the traditional school year and during periods of disruption. My work documents summer learning loss patterns, evaluates the effectiveness of summer school programs, and studies the educational consequences of the COVID-19 pandemic, including the impact of remote instruction and academic recovery interventions.</span>
 </summary>
 <div class="pub-theme-content">
 <div class="pub-card-list">
@@ -239,8 +242,11 @@ the competitive effects of choice programs on traditional public schools.
 
 <details class="pub-theme-section">
 <summary class="pub-theme-header">
-  <span class="pub-theme-name">Accountability</span>
-  <span class="pub-theme-count">(22 publications)</span>
+  <span class="pub-theme-header-top">
+    <span class="pub-theme-name">Accountability</span>
+    <span class="pub-theme-count">(22 publications)</span>
+  </span>
+  <span class="pub-theme-description">This research investigates how federal and state accountability policies shape educational quality. My work traces the evolution of accountability from No Child Left Behind through ESEA waivers to the Every Student Succeeds Act, examining how these policies affect teacher quality, school improvement, and the politics of education reform.</span>
 </summary>
 <div class="pub-theme-content">
 <div class="pub-card-list">
@@ -427,8 +433,11 @@ the competitive effects of choice programs on traditional public schools.
 
 <details class="pub-theme-section">
 <summary class="pub-theme-header">
-  <span class="pub-theme-name">Exclusionary Practices, Discipline, Tracking &amp; Segregation</span>
-  <span class="pub-theme-count">(9 publications)</span>
+  <span class="pub-theme-header-top">
+    <span class="pub-theme-name">Exclusionary Practices, Discipline, Tracking &amp; Segregation</span>
+    <span class="pub-theme-count">(9 publications)</span>
+  </span>
+  <span class="pub-theme-description">This body of work examines how school structures and practices sort students in ways that reinforce inequality. My research studies curricular tracking and detracking reforms, discipline disparities across student groups, course placement decisions, and how school choice and assignment policies shape racial and socioeconomic segregation.</span>
 </summary>
 <div class="pub-theme-content">
 <div class="pub-card-list">
@@ -523,8 +532,11 @@ the competitive effects of choice programs on traditional public schools.
 
 <details class="pub-theme-section">
 <summary class="pub-theme-header">
-  <span class="pub-theme-name">School Choice</span>
-  <span class="pub-theme-count">(8 publications)</span>
+  <span class="pub-theme-header-top">
+    <span class="pub-theme-name">School Choice</span>
+    <span class="pub-theme-count">(8 publications)</span>
+  </span>
+  <span class="pub-theme-description">This research evaluates the effects of school choice programs on students and school systems. My work examines charter school performance, virtual schooling outcomes, cream-skimming in choice markets, and the competitive effects of choice policies on traditional public schools.</span>
 </summary>
 <div class="pub-theme-content">
 <div class="pub-card-list">

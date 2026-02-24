@@ -570,17 +570,24 @@ a.btn:hover,
   width: 100%;
 }
 
-/* The <summary> clickable header */
+/* The <summary> clickable header — vertical layout for title row + description */
 .pub-theme-header {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 0.4rem;
   padding: 1rem 1.25rem;
   cursor: pointer;
   background: #f8f9fa;
   border-radius: 8px;
   list-style: none;
   transition: background-color 0.15s ease;
+}
+
+/* Top row: chevron + theme name + count */
+.pub-theme-header-top {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .pub-theme-section[open] > .pub-theme-header {
@@ -598,7 +605,7 @@ a.btn:hover,
 }
 
 /* Chevron indicator — right-pointing triangle, rotates 90deg on open */
-.pub-theme-header::before {
+.pub-theme-header-top::before {
   content: "";
   display: inline-block;
   width: 0;
@@ -610,7 +617,7 @@ a.btn:hover,
   flex-shrink: 0;
 }
 
-.pub-theme-section[open] > .pub-theme-header::before {
+.pub-theme-section[open] > .pub-theme-header > .pub-theme-header-top::before {
   transform: rotate(90deg);
 }
 
@@ -631,6 +638,17 @@ a.btn:hover,
 /* Content area inside the collapsible */
 .pub-theme-content {
   padding: 1rem 1.25rem;
+}
+
+/* Theme description — visible when collapsed, matches page body text */
+.pub-theme-description {
+  display: block;
+  color: #444444 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+  padding-left: 1rem;
 }
 
 /* Type badge — small muted pill on each card */

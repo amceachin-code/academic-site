@@ -406,14 +406,20 @@ def generate_publications_index(pubs: list, theme_order: list):
         theme_pubs.sort(key=lambda p: p.get("year", 0), reverse=True)
         count = len(theme_pubs)
 
+        theme_desc = theme.get("description", "").strip()
+
         lines.append(f'<details class="pub-theme-section">')
         lines.append(f'<summary class="pub-theme-header">')
-        lines.append(f'  <span class="pub-theme-name">{_html_escape(theme_name)}</span>')
+        lines.append(f'  <span class="pub-theme-header-top">')
+        lines.append(f'    <span class="pub-theme-name">{_html_escape(theme_name)}</span>')
         lines.append(
-            f'  <span class="pub-theme-count">'
+            f'    <span class="pub-theme-count">'
             f'({count} publication{"s" if count != 1 else ""})'
             f'</span>'
         )
+        lines.append(f'  </span>')
+        if theme_desc:
+            lines.append(f'  <span class="pub-theme-description">{_html_escape(theme_desc)}</span>')
         lines.append(f'</summary>')
         lines.append(f'<div class="pub-theme-content">')
         lines.append(f'<div class="pub-card-list">')

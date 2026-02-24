@@ -5,12 +5,35 @@
 theme_order:
   - key: disrupted_learning
     name: "Out-of-School or Disrupted Learning"
+    description: >
+      This line of research examines what happens to student learning outside the
+      traditional school year and during periods of disruption. My work documents
+      summer learning loss patterns, evaluates the effectiveness of summer school
+      programs, and studies the educational consequences of the COVID-19 pandemic,
+      including the impact of remote instruction and academic recovery interventions.
   - key: accountability
     name: "Accountability"
+    description: >
+      This research investigates how federal and state accountability policies shape
+      educational quality. My work traces the evolution of accountability from No Child
+      Left Behind through ESEA waivers to the Every Student Succeeds Act, examining
+      how these policies affect teacher quality, school improvement, and the politics
+      of education reform.
   - key: exclusionary_practices
     name: "Exclusionary Practices, Discipline, Tracking & Segregation"
+    description: >
+      This body of work examines how school structures and practices sort students
+      in ways that reinforce inequality. My research studies curricular tracking and
+      detracking reforms, discipline disparities across student groups, course
+      placement decisions, and how school choice and assignment policies shape
+      racial and socioeconomic segregation.
   - key: school_choice
     name: "School Choice"
+    description: >
+      This research evaluates the effects of school choice programs on students and
+      school systems. My work examines charter school performance, virtual schooling
+      outcomes, cream-skimming in choice markets, and the competitive effects of
+      choice policies on traditional public schools.
 
 publications:
   # ============================================================
