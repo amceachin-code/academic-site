@@ -141,6 +141,24 @@ Running log of project progress, decisions, and to-do items for the academic-sit
 
 ---
 
+## Phase 4c: Publications Page Polish (Completed 2026-02-24)
+
+**What was done:**
+- Added research agenda introduction paragraph above collapsible theme sections
+- Added mountain sketch backdrop to publications page using `position: fixed` so it persists when sections expand
+- Reduced whitespace between nav header and publications content (zeroed page-header padding, removed page-body top margin, tightened h1)
+- Fixed article container width (`width: 100%`) so collapsed and expanded sections match
+- Added 2-3 sentence theme descriptions inside `<summary>` elements, always visible even when collapsed
+- Cleaned up 131 macOS Finder duplicate files (`.generated 2`, `index 2.md`, etc.)
+- Added `description` field to each theme in `theme_order` in `publications.yaml`
+
+**Files modified:**
+- `data/publications.yaml` — Added `description` field to each theme in `theme_order`
+- `scripts/sync_hugo.py` — Added intro text generation, theme descriptions inside `<summary>`, vertical header layout
+- `site/assets/css/custom.css` — Mountain backdrop (fixed positioning), page spacing overrides, `.pub-theme-description` styles, `.pub-theme-header-top` row layout, `.pub-intro` styles
+
+---
+
 ## Files Created
 
 | File | Status |

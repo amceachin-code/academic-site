@@ -316,6 +316,8 @@ The Publications page organizes all 63 publications into 4 collapsible research 
 3. **Exclusionary Practices, Discipline, Tracking & Segregation** (9 publications)
 4. **School Choice** (8 publications)
 
+The page opens with a brief research agenda introduction, followed by the collapsible sections. Each section header shows the theme name, publication count, and a 2-3 sentence description that remains visible even when collapsed. A mountain sketch backdrop stays fixed in the viewport as the user scrolls and expands sections.
+
 Each section starts collapsed; clicking expands to reveal cards sorted by year descending. Each card shows:
 
 - **Type badge** (e.g., "Journal Article", "Report") as a small pill
