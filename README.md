@@ -3,6 +3,7 @@
 A single set of YAML data files powers both a [Hugo](https://gohugo.io/) website (hosted on GitHub Pages) and a LaTeX CV (auto-compiled to PDF). One update to the YAML, one command regenerates everything.
 
 **Live site:** [www.andrew-mceachin.com](https://www.andrew-mceachin.com)
+**GitHub repo:** [github.com/amceachin-code/academic-site](https://github.com/amceachin-code/academic-site) (public)
 
 ---
 
@@ -19,6 +20,7 @@ A single set of YAML data files powers both a [Hugo](https://gohugo.io/) website
 - [Publication Card Layout](#publication-card-layout)
 - [Deployment](#deployment)
 - [Design Notes](#design-notes)
+- [License](#license)
 
 ---
 
@@ -45,7 +47,7 @@ make clean
 
 ## Dependencies
 
-### Python 3.10+
+### Python 3.12
 
 - `PyYAML==6.0.2` -- YAML parsing for data files
 - `Jinja2==3.1.5` -- Template rendering for LaTeX CV
@@ -91,7 +93,7 @@ Install (Ubuntu): `sudo apt-get install texlive-latex-base texlive-latex-extra t
 | `make validate` | Run `build_all.py --validate` to check YAML data for errors (required fields, types, unique IDs). No files are generated. |
 | `make build` | Full pipeline: validate YAML, generate Hugo content, compile CV PDF, then `hugo --minify` to produce the static site in `site/public/` |
 | `make preview` | Run `make build` then launch `hugo server` at `localhost:1313` for local development |
-| `make clean` | Remove LaTeX build artifacts (`.aux`, `.log`, `.out`, `.fls`, `.fdb_latexmk`, `.synctex.gz`) from `cv/output/` |
+| `make clean` | Remove LaTeX build artifacts (`.aux`, `.log`, `.out`, `.fls`, `.fdb_latexmk`, `.synctex.gz`) and generated `.tex` from `cv/output/` |
 
 ---
 
@@ -111,7 +113,7 @@ academic-site/
 │   ├── grants.yaml                    # Grants and funding
 │   ├── awards.yaml                    # Honors and awards
 │   ├── service.yaml                   # Editorial boards, referee work, committees
-│   └── software.yaml                  # R packages (horseshoe, rdtp)
+│   └── software.yaml                  # Stata/R packages (horseshoe, rdtp)
 │
 ├── scripts/                           # Python build pipeline
 │   ├── utils.py                       # YAML loading, validation, latex_escape(),
@@ -138,14 +140,13 @@ academic-site/
 │   ├── config/_default/               # Hugo configuration
 │   │   ├── hugo.yaml                  # Main config (title, baseURL, build opts)
 │   │   ├── params.yaml                # Theme params (appearance, SEO, header)
-│   │   ├── menus.yaml                 # Navigation: Home, Publications, Commentary
-│   │   │                              #   & Media, CV, Code
+│   │   ├── menus.yaml                 # Navigation: Home, Publications,
+│   │   │                              #   Commentary & Media, Code
 │   │   └── module.yaml                # HugoBlox module import
 │   ├── content/                       # Pages (mix of hand-edited + generated)
 │   │   ├── _index.md                  # Homepage (biography block, Download CV btn)
 │   │   ├── publications/              # Generated: 1 dir per pub + index page
 │   │   ├── media/                     # Generated: Commentary & Media listing
-│   │   ├── cv/                        # Hand-edited: CV download page
 │   │   └── code/                      # Generated: Software packages listing
 │   ├── assets/
 │   │   └── css/custom.css             # Full custom theme: white bg, dark teal
@@ -157,6 +158,7 @@ academic-site/
 │   ├── static/
 │   │   ├── CNAME                      # Custom domain: www.andrew-mceachin.com
 │   │   ├── uploads/McEachin_CV.pdf    # CV PDF for download
+│   │   ├── uploads/publications/      # PDF files for individual papers
 │   │   ├── images/mountains-backdrop.png  # Decorative bio section background
 │   │   └── images/publications/       # Article images for publication cards
 │   ├── go.mod / go.sum                # Go module deps (HugoBlox theme)
@@ -168,6 +170,7 @@ academic-site/
 │                                      #   + Node -> build -> deploy to GH Pages
 │
 ├── Makefile                           # build, preview, clean, validate, install
+├── LICENSE                            # GPL-3.0
 ├── CLAUDE.md                          # Project-specific instructions for Claude
 ├── PROCESS-LOG.md                     # Running development log and to-do list
 ├── PROGRESS.md                        # Task-level progress journal
@@ -193,7 +196,7 @@ academic-site/
 | `grants.yaml` | Grants and funding |
 | `awards.yaml` | Honors and awards |
 | `service.yaml` | Editorial boards, committee positions, journals reviewed for |
-| `software.yaml` | 2 R packages: `horseshoe` (Bayesian horseshoe prior) and `rdtp` (regression discontinuity) |
+| `software.yaml` | 2 packages (Stata + R): `horseshoe` (Bayesian horseshoe prior) and `rdtp` (regression discontinuity) |
 
 ### Build Scripts (`scripts/`)
 
@@ -221,7 +224,7 @@ academic-site/
 
 | File | Purpose |
 |---|---|
-| `.github/workflows/deploy.yml` | GitHub Actions workflow: sets up Python 3.12, installs pip deps, installs TeX Live, sets up Hugo Extended 0.156.0, installs Node 20 + npm deps, runs `build_all.py`, runs `hugo --minify`, uploads to GitHub Pages |
+| `.github/workflows/deploy.yml` | GitHub Actions workflow: sets up Python 3.12, installs pip deps, installs TeX Live, sets up Hugo Extended 0.156.0, installs Node 20 + npm deps, runs `build_all.py` (YAML to Hugo content + CV PDF), runs `hugo --minify`, then deploys to GitHub Pages |
 | `site/static/CNAME` | Custom domain configuration: `www.andrew-mceachin.com` |
 
 ---
@@ -263,7 +266,7 @@ The `build_all.py` orchestrator imports both `sync_hugo` and `build_cv` as Pytho
 
 ### Adding a new section/page
 
-Hand-create the page under `site/content/`. Only generated content (publications, media, code) goes through the Python pipeline. The homepage (`site/content/_index.md`) and CV page (`site/content/cv/_index.md`) are hand-edited.
+Hand-create the page under `site/content/`. Only generated content (publications, media, code) goes through the Python pipeline. The homepage (`site/content/_index.md`) is hand-edited.
 
 ---
 
@@ -311,10 +314,10 @@ Hand-create the page under `site/content/`. Only generated content (publications
 
 The Publications page organizes all 63 publications into 4 collapsible research themes using native HTML `<details>/<summary>` elements (no JavaScript required). Themes are sorted by publication count, largest first:
 
-1. **Out-of-School or Disrupted Learning** (24 publications)
-2. **Accountability** (22 publications)
-3. **Exclusionary Practices, Discipline, Tracking & Segregation** (9 publications)
-4. **School Choice** (8 publications)
+1. **Out-of-School or Disrupted Learning** -- research on summer learning loss, summer school programs, and COVID-19 educational impacts
+2. **Accountability** -- federal and state accountability policy effects on teacher quality, school improvement, and education reform
+3. **Exclusionary Practices, Discipline, Tracking & Segregation** -- how school structures and practices sort students and reinforce inequality
+4. **School Choice** -- charter school performance, virtual schooling, cream-skimming, and competitive effects on traditional public schools
 
 The page opens with a brief research agenda introduction, followed by the collapsible sections. Each section header shows the theme name, publication count, and a 2-3 sentence description that remains visible even when collapsed. A mountain sketch backdrop stays fixed in the viewport as the user scrolls and expands sections.
 
@@ -327,9 +330,9 @@ Each section starts collapsed; clicking expands to reveal cards sorted by year d
 - **Citation** string formatted inline, with status badges for working papers and award highlights
 - **Action-button links** for DOI, PDF, and other external resources (populated from the optional `links` field; DOI buttons are auto-generated from the `doi` field if present)
 
-### Article images on publication cards
+### Alternating image layout
 
-Publication cards support an optional `image` field in `publications.yaml` that displays an article image (e.g., a figure, cover page, or screenshot) alongside the card content. Image files are stored in `site/static/images/publications/`. Only publications that include an `image` field show the image column; publications without it render a text-only card with no image placeholder.
+Publication cards with images use an alternating layout: odd-numbered cards show the image on the right, even-numbered cards show it on the left. This creates visual variety as the user scrolls through a theme section.
 
 ### Data fields
 
@@ -370,9 +373,17 @@ The card layout is implemented across three files:
 
 ## Deployment
 
-The site auto-deploys to GitHub Pages on every push to `main` via the GitHub Actions workflow at `.github/workflows/deploy.yml`.
+The site is hosted on **GitHub Pages** with a custom domain at `www.andrew-mceachin.com`. It auto-deploys on every push to `main` via the GitHub Actions workflow at `.github/workflows/deploy.yml`.
 
-The CI pipeline runs: Python 3.12 setup, pip install, TeX Live install, Hugo Extended 0.156.0 setup, Node 20 + npm install, `build_all.py` (YAML to Hugo content + CV PDF), `hugo --minify`, then deploy to GitHub Pages.
+The CI pipeline runs:
+
+1. Python 3.12 setup + pip install
+2. TeX Live install (latex-base, latex-extra, fonts-recommended, fonts-extra)
+3. Hugo Extended 0.156.0 setup
+4. Node 20 + npm install
+5. `build_all.py` (YAML to Hugo content + CV PDF)
+6. `hugo --minify` with production baseURL
+7. Upload artifact + deploy to GitHub Pages
 
 **Manual deployment steps (if needed):**
 
@@ -382,7 +393,7 @@ cd site && hugo --minify       # Build static site (already part of make build)
 # Push to main branch -- GitHub Actions handles the rest
 ```
 
-**GitHub repo:** `https://github.com/amceachin-code/academic-site.git` (private)
+**Custom domain:** `www.andrew-mceachin.com` (configured via `site/static/CNAME`)
 
 ---
 
@@ -398,7 +409,7 @@ The LaTeX template uses `<< >>` (variable), `<% %>` (block), and `<# #>` (commen
 
 ### `.generated` marker files
 
-The `sync_hugo.py` script places a `.generated` file inside each auto-created publication directory. On rebuild, only directories containing this marker are deleted and recreated. Hand-created content directories (like `cv/`) are never touched.
+The `sync_hugo.py` script places a `.generated` file inside each auto-created publication directory. On rebuild, only directories containing this marker are deleted and recreated. Hand-created content directories are never touched.
 
 ### Generated Hugo content is committed
 
@@ -407,6 +418,20 @@ The generated markdown files under `site/content/` are committed to git. This is
 - Makes content changes visible in `git diff`
 - Simplifies CI (Hugo build does not depend on Python for content)
 
+### Collapsible sections use native HTML
+
+The collapsible theme sections on the Publications page use `<details>` and `<summary>` elements. No JavaScript is required -- the browser handles expand/collapse natively.
+
+### Mountain backdrop
+
+A mountain sketch image (`site/static/images/mountains-backdrop.png`) appears as a fixed background on all pages, providing a consistent visual anchor as the user scrolls.
+
 ### Custom theme
 
 The site uses a clean academic aesthetic: white background, dark teal (`#1b4965`) accents, Inter font stack, side-by-side biography layout with a mountain sketch backdrop, and alternating gray/white section backgrounds.
+
+---
+
+## License
+
+This project is licensed under the [GNU General Public License v3.0](LICENSE).

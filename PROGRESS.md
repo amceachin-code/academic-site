@@ -1,6 +1,33 @@
 # Progress Log
 
-## Current Task: Publications Page Polish
+## Project Status: COMPLETE — Site is live and deployed at https://www.andrew-mceachin.com
+
+---
+
+## Phase 5: Final Polish, Deployment & Go-Live (2026-02-24)
+
+### Completed — Site-Wide Visual Consistency
+- [x] Applied mountain sketch backdrop to ALL pages (previously publications-only)
+- [x] Widened all content pages (not just publications) with left-alignment and matching font size (1.05rem)
+- [x] Right-aligned navigation menu items
+- [x] Removed CV page from nav menu (redundant — Download CV button exists on profile section)
+
+### Completed — Bug Fixes
+- [x] Fixed news coverage section on Commentary & Media page — was displaying publication IDs instead of human-readable titles. Built a title lookup from publications data to resolve references correctly.
+- [x] Fixed invisible bold text in prose sections — Tailwind dark mode was overriding `<strong>` tag color. Added `.prose strong { color: #1b4965 !important }` to custom CSS.
+- [x] Fixed Hugo dev server rendering corruption — stopped old server process, performed clean rebuild
+
+### Completed — Deployment & Domain Configuration
+- [x] Made GitHub repository public
+- [x] Enabled GitHub Pages with GitHub Actions as build source
+- [x] Configured custom domain: `www.andrew-mceachin.com`
+- [x] DNS configured via Squarespace: CNAME record + A records pointing to GitHub Pages IPs
+- [x] HTTPS enforcement enabled on GitHub Pages
+- [x] Site is LIVE at https://www.andrew-mceachin.com
+
+---
+
+## Phase 4b: Publications Page Polish (completed prior to Phase 5)
 
 ### Completed — Theme Reorganization
 All 63 publications grouped into 4 collapsible research themes using native `<details>/<summary>`. Themes sorted by publication count (largest first).
@@ -14,7 +41,7 @@ All 63 publications grouped into 4 collapsible research themes using native `<de
 - [x] Cleaned up 131 macOS Finder duplicate files
 - [x] All changes committed and pushed
 
-### Files Modified
+### Files Modified (Phase 4b)
 - `data/publications.yaml` — `theme_order` with `description` field, `theme` on all 63 entries
 - `scripts/utils.py` — Theme validation + `filter_pubs_by_theme()` helper
 - `scripts/sync_hugo.py` — Collapsible themes, intro text, theme descriptions in summary, type badges

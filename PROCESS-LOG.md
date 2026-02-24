@@ -21,8 +21,8 @@ Running log of project progress, decisions, and to-do items for the academic-sit
 - [ ] Test CV PDF compilation with special characters (`&` in titles, accented names)
 - [ ] Add avatar photo and hero image
 - [ ] Fill in Google Scholar URL, any missing URLs in media.yaml
-- [ ] Phase 7: Custom domain DNS configuration
-- [ ] Verify GitHub Actions workflow succeeds
+- [x] Phase 7: Custom domain DNS configuration — www.andrew-mceachin.com live with HTTPS
+- [x] Verify GitHub Actions workflow succeeds — site deployed via GitHub Pages
 - [ ] Run `/academic-branding` audit on final site
 
 ---
@@ -108,7 +108,7 @@ Running log of project progress, decisions, and to-do items for the academic-sit
 - `Makefile` — targets: `validate`, `build`, `preview`, `clean`, `install`
 - `.gitignore` — Ignores LaTeX artifacts, node_modules, __pycache__, Hugo public/, editor files
 - `site/static/CNAME` — `www.andrew-mceachin.com`
-- GitHub repo: `https://github.com/amceachin-code/academic-site.git` (private)
+- GitHub repo: `https://github.com/amceachin-code/academic-site.git` (public — changed 2026-02-24 for GitHub Pages)
 
 ---
 
@@ -159,6 +159,44 @@ Running log of project progress, decisions, and to-do items for the academic-sit
 
 ---
 
+## Session — 2026-02-24 (continued): Site-wide polish and deployment
+
+**What was done:**
+- Applied mountain backdrop to all pages (changed CSS from targeting `.page-body:has(.pub-theme-section)` to all `.page-body` elements)
+- Removed CV page and nav menu item (Download CV button already on profile makes standalone page redundant)
+- Right-aligned navigation menu (CSS: `nav.navbar justify-content: space-between`, `.navbar-nav margin-left: auto`)
+- Widened all content pages to 1100px max-width with left alignment and 1.05rem font (was publications-only, now applies to Commentary & Media and Code pages too)
+- Fixed Commentary & Media page: news coverage was showing publication IDs instead of titles — passed `pubs` list to `generate_media_page()` and built title lookup dict
+- Fixed invisible bold text: Tailwind `dark:prose-invert` was making `<strong>` tags invisible against backdrop — added `.prose strong { color: #1b4965 !important }`
+- Fixed Hugo dev server rendering corruption (deferred content hashes, dark mountain bands) — stopped old server, clean rebuild on new port
+- Made repo public (was private, GitHub Pages requires public on free plan)
+- Enabled GitHub Pages with GitHub Actions source via `gh api`
+- Configured custom domain `www.andrew-mceachin.com` — CNAME and A records in Squarespace DNS pointing to GitHub Pages IPs
+- Enabled HTTPS enforcement
+- Site is now **LIVE** at https://www.andrew-mceachin.com
+
+**Files modified:**
+- `scripts/sync_hugo.py` — Media page title lookup (passed pubs to `generate_media_page()`, built ID-to-title dict)
+- `site/assets/css/custom.css` — Mountain backdrop on all pages, nav right-alignment, content page widening, bold text color fix
+- `site/config/_default/menus.yaml` — Removed CV nav item
+- `site/content/cv/_index.md` — Deleted
+- `site/content/media/_index.md` — Regenerated with correct publication titles in news coverage section
+- All `site/content/publications/*/.generated` — Regenerated timestamps
+
+**Bugs fixed:**
+- News coverage on Media page showed raw publication IDs (e.g., `mceachin2015`) instead of human-readable titles. Root cause: `generate_media_page()` had no access to the publications data. Fix: passed the loaded pubs list and built a `{id: title}` lookup dict.
+- Bold text (`<strong>`) invisible on all pages. Root cause: Tailwind's `dark:prose-invert` was setting text to white, which was invisible against the light mountain backdrop. Fix: explicit `.prose strong { color: #1b4965 !important }`.
+- Hugo dev server showing deferred content hashes and dark mountain bands. Root cause: stale server process on port 1313. Fix: killed old process, ran clean `hugo server` on fresh port.
+
+**Deployment milestones:**
+- Repository visibility changed from private to public (required for GitHub Pages on free tier)
+- GitHub Pages enabled with GitHub Actions as build/deployment source
+- Custom domain `www.andrew-mceachin.com` configured with DNS records at Squarespace
+- HTTPS enforced via GitHub Pages settings
+- Site verified live and accessible
+
+---
+
 ## Files Created
 
 | File | Status |
@@ -185,7 +223,7 @@ Running log of project progress, decisions, and to-do items for the academic-sit
 | `site/config/_default/module.yaml` | Created |
 | `site/content/_index.md` | Created |
 | `site/content/authors/admin/_index.md` | Created |
-| `site/content/cv/_index.md` | Created |
+| `site/content/cv/_index.md` | Deleted (2026-02-24 — redundant with profile Download CV button) |
 | `site/assets/css/custom.css` | Created |
 | `site/static/CNAME` | Created |
 | `.github/workflows/deploy.yml` | Created |
