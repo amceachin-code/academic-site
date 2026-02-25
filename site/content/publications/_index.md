@@ -68,12 +68,21 @@ choice markets improve outcomes or simply reshuffle them.
 </div>
 </div>
 
+<div class="pub-card-wrapper">
 <div class="pub-card">
   <span class="pub-card-type-badge">Journal Article</span>
-  <h3 class="pub-card-title">Combined Schools as a (Non)Protective Factor During the COVID-19 Pandemic: Implications for Middle School Transitions in the Context of Unplanned School Closures</h3>
+  <h3 class="pub-card-title">Combined Schools as a (Non) Protective Factor During the COVID-19 Pandemic: Exploring Middle School Transitions Under Typical versus Atypical School Conditions</h3>
+  <p class="pub-card-summary">Combined K-8 schools have long been seen as a smoother path through middle school, sparing students the jarring transition to a new building and culture. And the data backed this up, until the pandemic hit. Looking at 20,000 students, we found that K-8 schools' academic edge largely evaporated during COVID, especially for students learning remotely. The takeaway: the stability these schools provide is real and valuable, but it depends on actually being in the building. When that's gone, so is much of the advantage.</p>
   <div class="pub-card-citation">
-    Dilberti, M., Schweig, J., Mariano, L., Kuhfeld, M., &amp; McEachin, A. (2025). Combined Schools as a (Non)Protective Factor During the COVID-19 Pandemic: Implications for Middle School Transitions in the Context of Unplanned School Closures. <em>Journal of Early Adolescence</em>.
+    Diliberti, M.K., Schweig, J.D., Mariano, L.T., Kuhfeld, M., &amp; McEachin, A. (2025). Combined Schools as a (Non) Protective Factor During the COVID-19 Pandemic: Exploring Middle School Transitions Under Typical versus Atypical School Conditions. <em>Journal of Early Adolescence</em>, 46(2), 278-305.
   </div>
+  <div class="pub-card-links">
+    <a href="/uploads/publications/diliberti-2025.pdf" class="pub-card-link" target="_blank" rel="noopener">PDF</a> <a href="https://doi.org/10.1177/02724316251317596" class="pub-card-link" target="_blank" rel="noopener">DOI</a>
+  </div>
+</div>
+<div class="pub-card-image">
+  <img src="/images/publications/diliberti-2025.jpg" alt="Combined Schools as a (Non) Protective Factor During the COVID-19 Pandemic: Exploring Middle School Transitions Under Typical versus Atypical School Conditions" />
+</div>
 </div>
 
 <div class="pub-card">
@@ -116,7 +125,7 @@ choice markets improve outcomes or simply reshuffle them.
   </div>
 </div>
 
-<div class="pub-card-wrapper">
+<div class="pub-card-wrapper pub-card-wrapper--reverse">
 <div class="pub-card">
   <span class="pub-card-type-badge">Journal Article</span>
   <h3 class="pub-card-title">The Educational Consequences of Remote and Hybrid Instruction During the Pandemic</h3>
