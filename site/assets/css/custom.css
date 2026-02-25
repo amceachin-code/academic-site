@@ -155,16 +155,10 @@ a:hover {
    ======================================== */
 
 /* Mountain sketch backdrop on all pages */
-.blox-resume-biography,
 .page-body {
   position: relative;
 }
 
-.blox-resume-biography {
-  overflow: hidden;
-}
-
-.blox-resume-biography::before,
 .page-body::before {
   content: "";
   position: fixed;
@@ -172,21 +166,13 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("/images/mountains-backdrop.png");
+  background-image: url("/images/mountains-backdrop.jpg");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 2200px auto;
   opacity: 0.12;
   pointer-events: none;
   z-index: 0;
-}
-
-/* Bio section: absolute within its container, but still below nav */
-.blox-resume-biography::before {
-  position: absolute;
-  top: 50px;
-  bottom: 0;
-  height: auto;
 }
 
 /* Ensure all content sits above the backdrop */
@@ -205,6 +191,15 @@ a:hover {
   min-height: 300px;
   /* Reserve left column space: 240px avatar + 5rem gap */
   padding-left: calc(240px + 5rem + 2rem) !important;
+  background: transparent !important;
+}
+
+.blox-resume-biography,
+.blox-resume-biography .home-section-bg,
+.hbb-section.blox-resume-biography,
+section#about {
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 /* Avatar pinned to the top-left */

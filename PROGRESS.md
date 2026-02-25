@@ -102,3 +102,10 @@ All 63 publications grouped into 4 collapsible research themes using native `<de
 ### Completed — CV Citation Consistency Fix
 - [x] Fixed CV template (`cv_template.tex.j2`) to show `(Accepted)` instead of `(2025)` for publications with `status: "Accepted"`, matching the website's existing behavior in `sync_hugo.py`
 - [x] When status is "Accepted", the redundant status annotation after the journal name is also omitted
+
+### Completed — Performance & Visual Fixes
+- [x] Compressed mountain backdrop from 6.7 MB PNG to 748 KB JPEG (9x smaller), updated CSS reference
+- [x] Removed HugoBlox "Powered by" footer via custom `site/layouts/_partials/site_footer.html` override
+- [x] Fixed duplicate mountain backdrop (bio section had its own `::before` pseudo-element on top of the fixed page-body one)
+- [x] Made biography section fully transparent so mountain backdrop shows through (required targeting `.blox-resume-biography`, `.home-section-bg`, `.hbb-section`, and `section#about`)
+- [x] Cleaned up macOS Finder duplicate files (`.generated 2`, `index 2.md`, etc.)
