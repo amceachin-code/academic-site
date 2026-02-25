@@ -48,3 +48,27 @@ All 63 publications grouped into 4 collapsible research themes using native `<de
 - `site/assets/css/custom.css` — Theme sections, mountain backdrop (fixed), spacing, descriptions, responsive
 - `README.md` — Updated to reflect themed layout
 - `PROCESS-LOG.md` — Added Phase 4b entry
+
+---
+
+## Session 2026-02-24 (final): Code Review, Hardening & Deploy Optimization
+
+### Completed — Code Review & Engineering Fixes
+- [x] Ran `/datascience-reviewer` code review on the full project
+- [x] Removed dead `format_citation()` function from `scripts/utils.py`
+- [x] Hardened `_yaml_escape` in `scripts/sync_hugo.py` for control characters (`\n`, `\r`, `\t`)
+- [x] Consolidated duplicate CSS `:root` blocks in `site/assets/css/custom.css`
+- [x] Added `site/.hugo_build.lock` and `*.Rhistory` to `.gitignore`
+
+### Completed — Test Suite
+- [x] Added 27 tests in `tests/test_citations.py` covering `format_authors`, `_format_citation_html`, `_html_escape`, `_yaml_escape`, and `latex_escape`
+
+### Completed — Branding Assets
+- [x] Added mountain backdrop as favicon (`site/assets/media/icon.png`)
+- [x] Added mountain backdrop as social sharing image (`site/assets/media/sharing.png`)
+
+### Completed — Deploy Workflow Simplification
+- [x] Simplified GitHub Actions deploy workflow: removed TeX Live installation step
+- [x] CI now runs only `sync_hugo.py` + Hugo build; pre-built CV PDF is committed to repo
+- [x] Deploy time reduced from ~10 min to ~2 min
+- [x] Cancelled stuck GitHub Actions deploy that was blocking the queue for 40+ minutes

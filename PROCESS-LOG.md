@@ -197,6 +197,31 @@ Running log of project progress, decisions, and to-do items for the academic-sit
 
 ---
 
+## Session — 2026-02-24 (final): Code review, testing, and deploy optimization
+
+**Changes made:**
+- Ran `/datascience-reviewer` skill on `sync_hugo.py`, `utils.py`, `custom.css`, `publications.yaml` — verdict: Satisfied with minor fixes
+- Removed dead `format_citation()` function from `utils.py` (was duplicated by `_format_citation_html` in `sync_hugo.py`)
+- Hardened `_yaml_escape()` to handle `\n`, `\r`, `\t` control characters
+- Consolidated duplicate `:root` blocks in `custom.css` (lines 12-15 and 118-121 merged)
+- Added `site/.hugo_build.lock` and `*.Rhistory` to `.gitignore`
+- Created `tests/test_citations.py` with 27 tests covering `format_authors`, `_format_citation_html`, `_html_escape`, `_yaml_escape`, `latex_escape` — all passing
+- Added mountain backdrop as favicon (`site/assets/media/icon.png`) and Open Graph sharing image (`site/assets/media/sharing.png`)
+- Simplified `.github/workflows/deploy.yml`: removed TeX Live installation entirely, CI runs `sync_hugo.py` instead of `build_all.py`, uses pre-built CV PDF. Deploy time ~2 min vs ~10 min.
+- Cancelled stuck GitHub Actions deploy blocking the queue
+
+**Files modified:**
+- `.gitignore` — added `hugo_build.lock`, `Rhistory`
+- `scripts/utils.py` — removed dead `format_citation()`
+- `scripts/sync_hugo.py` — hardened `_yaml_escape`
+- `site/assets/css/custom.css` — consolidated `:root` blocks
+- `.github/workflows/deploy.yml` — removed TeX Live, simplified build step
+- `site/assets/media/icon.png` — new (favicon)
+- `site/assets/media/sharing.png` — new (OG image)
+- `tests/test_citations.py` — new (27 tests)
+
+---
+
 ## Files Created
 
 | File | Status |
@@ -232,3 +257,6 @@ Running log of project progress, decisions, and to-do items for the academic-sit
 | `README.md` | Created |
 | `CLAUDE.md` | Created |
 | `PROCESS-LOG.md` | Created |
+| `tests/test_citations.py` | Created (2026-02-24 — 27 unit tests) |
+| `site/assets/media/icon.png` | Created (2026-02-24 — favicon) |
+| `site/assets/media/sharing.png` | Created (2026-02-24 — OG sharing image) |

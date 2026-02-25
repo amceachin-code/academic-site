@@ -19,6 +19,7 @@ A single set of YAML data files powers both a [Hugo](https://gohugo.io/) website
 - [Adding a New Publication](#adding-a-new-publication)
 - [Publication Card Layout](#publication-card-layout)
 - [Deployment](#deployment)
+- [Testing](#testing)
 - [Design Notes](#design-notes)
 - [License](#license)
 
@@ -74,14 +75,20 @@ Required for TailwindCSS, which the HugoBlox theme uses for styling.
 
 Install: `cd site && npm install`
 
-### TeX Live
+### TeX Live (local builds only)
 
-Required for compiling the LaTeX CV to PDF. The build script calls `pdflatex` directly.
+Required **locally** for compiling the LaTeX CV to PDF via `make build`. The CI deploy workflow does **not** install TeX Live -- it uses the pre-built PDF committed to the repo.
 
 - Packages needed: `texlive-latex-base`, `texlive-latex-extra`, `texlive-fonts-recommended`, `texlive-fonts-extra`
 
 Install (macOS): `brew install --cask mactex` or install [BasicTeX](https://www.tug.org/mactex/morepackages.html) with additional packages via `tlmgr`
 Install (Ubuntu): `sudo apt-get install texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra`
+
+### pytest (development only)
+
+Required for running the test suite.
+
+Install: `pip install pytest`
 
 ---
 
@@ -149,12 +156,15 @@ academic-site/
 │   │   ├── media/                     # Generated: Commentary & Media listing
 │   │   └── code/                      # Generated: Software packages listing
 │   ├── assets/
-│   │   └── css/custom.css             # Full custom theme: white bg, dark teal
-│   │                                  #   (#1b4965) accents, side-by-side bio
-│   │                                  #   layout, mountain backdrop, pub-card
-│   │                                  #   styles, responsive
+│   │   ├── css/custom.css             # Full custom theme: white bg, dark teal
+│   │   │                              #   (#1b4965) accents, side-by-side bio
+│   │   │                              #   layout, mountain backdrop, pub-card
+│   │   │                              #   styles, responsive
+│   │   └── media/
+│   │       ├── icon.png               # Favicon (browser tab icon)
+│   │       ├── sharing.png            # Social sharing image (mountain backdrop)
+│   │       └── authors/               # Avatar images (admin.jpg)
 │   ├── data/authors/admin.yaml        # Author metadata for HugoBlox
-│   ├── assets/media/authors/          # Avatar images (admin.jpg)
 │   ├── static/
 │   │   ├── CNAME                      # Custom domain: www.andrew-mceachin.com
 │   │   ├── uploads/McEachin_CV.pdf    # CV PDF for download
@@ -165,9 +175,13 @@ academic-site/
 │   ├── package.json                   # Node deps (Tailwind CSS v4, typography)
 │   └── hugo.yaml                      # Root Hugo config (imports _default/)
 │
+├── tests/
+│   └── test_citations.py              # 27 pytest tests: citation formatting,
+│                                      #   HTML/YAML/LaTeX escaping
+│
 ├── .github/workflows/
-│   └── deploy.yml                     # GitHub Actions: Python + TeX Live + Hugo
-│                                      #   + Node -> build -> deploy to GH Pages
+│   └── deploy.yml                     # GitHub Actions: Python + Hugo + Node
+│                                      #   -> sync content -> deploy to GH Pages
 │
 ├── Makefile                           # build, preview, clean, validate, install
 ├── LICENSE                            # GPL-3.0
@@ -202,7 +216,7 @@ academic-site/
 
 | File | Purpose |
 |---|---|
-| `utils.py` | Path constants (`PROJECT_ROOT`, `DATA_DIR`, etc.), YAML loading with explicit file list, `validate_data()` for schema checking (including theme validation, optional `summary`, `links`, and `image` fields), `latex_escape()` filter, citation string formatting, publication filtering helpers (`filter_pubs_by_type`, `filter_pubs_by_theme`) |
+| `utils.py` | Path constants (`PROJECT_ROOT`, `DATA_DIR`, etc.), YAML loading with explicit file list, `validate_data()` for schema checking (including theme validation, optional `summary`, `links`, and `image` fields), `latex_escape()` filter, `format_authors()` helper, publication filtering helpers (`filter_pubs_by_type`, `filter_pubs_by_theme`) |
 | `sync_hugo.py` | Generates Hugo content from YAML: one directory per publication (with `.generated` marker for safe cleanup), publications index page with collapsible theme sections using `<details>/<summary>` HTML and type badges on each card, media listing page, code/software page |
 | `build_cv.py` | Renders the Jinja2 LaTeX template with angle-bracket delimiters (`<< >>`, `<% %>`, `<# #>`), compiles with `pdflatex` (2 passes for cross-references), verifies PDF output exists and is non-empty |
 | `build_all.py` | Orchestrator that imports `sync_hugo.py` and `build_cv.py` as modules, loads YAML data once, passes it to both. Supports `--validate` flag for dry-run validation only |
@@ -224,8 +238,14 @@ academic-site/
 
 | File | Purpose |
 |---|---|
-| `.github/workflows/deploy.yml` | GitHub Actions workflow: sets up Python 3.12, installs pip deps, installs TeX Live, sets up Hugo Extended 0.156.0, installs Node 20 + npm deps, runs `build_all.py` (YAML to Hugo content + CV PDF), runs `hugo --minify`, then deploys to GitHub Pages |
+| `.github/workflows/deploy.yml` | GitHub Actions workflow: sets up Python 3.12, installs pip deps, sets up Hugo Extended 0.156.0, installs Node 20 + npm deps, runs `sync_hugo.py` (YAML to Hugo content), runs `hugo --minify`, then deploys to GitHub Pages. No TeX Live -- uses the pre-built CV PDF committed to the repo. |
 | `site/static/CNAME` | Custom domain configuration: `www.andrew-mceachin.com` |
+
+### Testing
+
+| File | Purpose |
+|---|---|
+| `tests/test_citations.py` | 27 pytest tests covering `format_authors()`, `_format_citation_html()`, `_html_escape()`, `_yaml_escape()`, and `latex_escape()` |
 
 ---
 
@@ -373,27 +393,49 @@ The card layout is implemented across three files:
 
 ## Deployment
 
-The site is hosted on **GitHub Pages** with a custom domain at `www.andrew-mceachin.com`. It auto-deploys on every push to `main` via the GitHub Actions workflow at `.github/workflows/deploy.yml`.
+The site is hosted on **GitHub Pages** with a custom domain at `www.andrew-mceachin.com`. It auto-deploys on every push to `main` via the GitHub Actions workflow at `.github/workflows/deploy.yml`. Deploy time is approximately 2 minutes.
 
 The CI pipeline runs:
 
 1. Python 3.12 setup + pip install
-2. TeX Live install (latex-base, latex-extra, fonts-recommended, fonts-extra)
-3. Hugo Extended 0.156.0 setup
-4. Node 20 + npm install
-5. `build_all.py` (YAML to Hugo content + CV PDF)
-6. `hugo --minify` with production baseURL
-7. Upload artifact + deploy to GitHub Pages
+2. Hugo Extended 0.156.0 setup
+3. Node 20 + npm install
+4. `sync_hugo.py` (YAML to Hugo content only -- no CV PDF compilation)
+5. `hugo --minify` with production baseURL
+6. Upload artifact + deploy to GitHub Pages
+
+The pipeline does **not** install TeX Live or compile the CV PDF. Instead, the pre-built `cv/output/McEachin_CV.pdf` (and its copy at `site/static/uploads/McEachin_CV.pdf`) are committed to the repo and served as-is. This eliminates the slow TeX Live install step from CI.
+
+**Important:** When YAML data changes affect the CV (publications, positions, education, etc.), you must run `make build` locally to regenerate the CV PDF and commit the updated PDF before pushing.
 
 **Manual deployment steps (if needed):**
 
 ```bash
-make build                     # Generate everything
-cd site && hugo --minify       # Build static site (already part of make build)
+make build                     # Regenerate Hugo content + CV PDF + static site
 # Push to main branch -- GitHub Actions handles the rest
 ```
 
 **Custom domain:** `www.andrew-mceachin.com` (configured via `site/static/CNAME`)
+
+---
+
+## Testing
+
+Run the test suite with:
+
+```bash
+python -m pytest tests/
+```
+
+The test file `tests/test_citations.py` contains 27 tests organized into 5 classes:
+
+| Class | Tests | Coverage |
+|---|---|---|
+| `TestFormatAuthors` | 6 | Author list formatting: single, two, many authors, empty list, truncation with "et al." |
+| `TestFormatCitationHtml` | 6 | Full citation strings: journal articles, accepted papers, book chapters, reports, article numbers, minimal fields |
+| `TestHtmlEscape` | 5 | HTML entity escaping: ampersands, angle brackets, quotes, empty strings, `None` |
+| `TestYamlEscape` | 5 | YAML string escaping: quotes, backslashes, newlines, tabs, control characters |
+| `TestLatexEscape` | 5 | LaTeX special character escaping: `&`, `%`, `#`, `None`, Unicode passthrough |
 
 ---
 
@@ -425,6 +467,10 @@ The collapsible theme sections on the Publications page use `<details>` and `<su
 ### Mountain backdrop
 
 A mountain sketch image (`site/static/images/mountains-backdrop.png`) appears as a fixed background on all pages, providing a consistent visual anchor as the user scrolls.
+
+### Favicon and social sharing image
+
+The site includes a custom favicon (`site/assets/media/icon.png`) and an Open Graph / social sharing image (`site/assets/media/sharing.png`) featuring a mountain backdrop. These are picked up automatically by HugoBlox from the `assets/media/` directory.
 
 ### Custom theme
 
