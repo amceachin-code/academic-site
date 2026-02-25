@@ -89,13 +89,13 @@
 \section{Peer-Reviewed Journal Articles}
 \begin{enumerate}[leftmargin=2em]
 <% for pub in journal_pubs|sort(attribute='year', reverse=true) %>
-  \item << format_authors(pub.authors)|latex_escape >> (<< pub.year >>).
+  \item << format_authors(pub.authors)|latex_escape >> (<% if pub.status and pub.status.lower() == 'accepted' %><< pub.status|latex_escape >><% else %><< pub.year >><% endif %>).
   ``<< pub.title|latex_escape >>.''
   \textit{<< pub.journal|latex_escape >>}%
 <% if pub.volume %>, << pub.volume|latex_escape >><% endif %>%
 <% if pub.issue %>(<< pub.issue|latex_escape >>)<% endif %>%
 <% if pub.pages %>, << pub.pages|latex_escape >><% endif %>.%
-<% if pub.status %> \textit{<< pub.status|latex_escape >>}.<% endif %>
+<% if pub.status and pub.status.lower() != 'accepted' %> \textit{<< pub.status|latex_escape >>}.<% endif %>
 <% if pub.awards %>
 <% for award in pub.awards %>
   \textbf{<< award|latex_escape >>}.
