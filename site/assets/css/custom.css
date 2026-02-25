@@ -37,6 +37,8 @@ nav[class*="navbar"] {
 #site-header.header,
 header.header {
   padding-block: 0.5rem !important;
+  position: relative;
+  z-index: 10;
 }
 
 /* Right-align nav menu items */
@@ -166,25 +168,25 @@ a:hover {
 .page-body::before {
   content: "";
   position: fixed;
-  top: 0;
+  top: 50px;
   left: 0;
   right: 0;
-  height: 100vh;
+  bottom: 0;
   background-image: url("/images/mountains-backdrop.png");
   background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 100% auto;
+  background-position: center top;
+  background-size: 2200px auto;
   opacity: 0.12;
   pointer-events: none;
   z-index: 0;
 }
 
-/* Bio section: absolute within its container */
+/* Bio section: absolute within its container, but still below nav */
 .blox-resume-biography::before {
   position: absolute;
+  top: 50px;
   bottom: 0;
-  top: auto;
-  height: 100%;
+  height: auto;
 }
 
 /* Ensure all content sits above the backdrop */
