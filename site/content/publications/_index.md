@@ -85,28 +85,55 @@ choice markets improve outcomes or simply reshuffle them.
 </div>
 </div>
 
+<div class="pub-card-wrapper pub-card-wrapper--reverse">
 <div class="pub-card">
   <span class="pub-card-type-badge">Working Paper</span>
   <h3 class="pub-card-title">Summer School as an Academic Recovery Strategy After COVID-19: Evidence From Summer 2023</h3>
+  <p class="pub-card-summary">Summer school is back for round two, and the results are cautiously encouraging. Across eight large districts serving 400,000 students, 2023 summer programs again produced modest but real gains in math, while reading remained stubbornly flat. One bright spot: students who attended for a second consecutive summer did just as well, or better, than first-timers. That's good news for districts betting on summer school as a long-term recovery strategy. It won't close the gap overnight, but it keeps working for kids who keep showing up.</p>
   <div class="pub-card-citation">
-    Bolyard, A., DeArmond, M., Dizon-Ross, E., Goldhaber, D., Isaacs, J., Kane, T., Keating, M., Klinenberg, J., McDonald, A., McEachin, A., Morton, E., Muroga, A., Salazar, A., &amp; Staiger, D.O. (2025). Summer School as an Academic Recovery Strategy After COVID-19: Evidence From Summer 2023. <span class="pub-card-status">Revisions Requested at Education Finance and Policy</span>
+    Bolyard, A., DeArmond, M., Dizon-Ross, E., Goldhaber, D., Isaacs, J., Kane, T., Keating, M., Klinenberg, J., McDonald, A., McEachin, A., Morton, E., Muroga, A., Salazar, A., &amp; Staiger, D.O. (2025). Summer School as an Academic Recovery Strategy After COVID-19: Evidence From Summer 2023.
+  </div>
+  <div class="pub-card-links">
+    <a href="/uploads/publications/bolyard-2025.pdf" class="pub-card-link" target="_blank" rel="noopener">PDF</a>
   </div>
 </div>
+<div class="pub-card-image">
+  <img src="/images/publications/bolyard-2025.jpg" alt="Summer School as an Academic Recovery Strategy After COVID-19: Evidence From Summer 2023" />
+</div>
+</div>
 
+<div class="pub-card-wrapper">
 <div class="pub-card">
   <span class="pub-card-type-badge">Report</span>
   <h3 class="pub-card-title">Implementing programs to align, accelerate, and extend student learning</h3>
+  <p class="pub-card-summary">Districts spent billions of ESSER dollars on three recovery strategies backed by strong pre-pandemic evidence: ELA curriculum, high-dosage tutoring, and summer programs. But running these programs during an ongoing crisis, at a scale no one had attempted, exposed familiar problems: too few staff, too little coordination, and contexts that didn't match the original research. These strategies can improve student learning. The hard part is building the conditions for them to actually work.</p>
   <div class="pub-card-citation">
     Kuhfeld, M., Woulfin, S.L., &amp; McEachin, A. (2025). Implementing programs to align, accelerate, and extend student learning. National Academy of Education.
   </div>
+  <div class="pub-card-links">
+    <a href="/uploads/publications/kuhfeld-2025-nae.pdf" class="pub-card-link" target="_blank" rel="noopener">PDF</a>
+  </div>
+</div>
+<div class="pub-card-image">
+  <img src="/images/publications/kuhfeld-2025-nae.jpg" alt="Implementing programs to align, accelerate, and extend student learning" />
+</div>
 </div>
 
+<div class="pub-card-wrapper pub-card-wrapper--reverse">
 <div class="pub-card">
   <span class="pub-card-type-badge">Journal Article</span>
-  <h3 class="pub-card-title">The Challenges of Implementing Academic COVID Recovery Interventions: Evidence from the Road to Recovery Project</h3>
+  <h3 class="pub-card-title">The Impact and Implementation of Academic Interventions During COVID-19: Evidence from the Road to Recovery Project</h3>
+  <p class="pub-card-summary">Four large districts rolled out tutoring, small-group instruction, and extended learning time during 2021-22 to help students recover from pandemic losses. The programs reached fewer students than planned and produced little measurable effect on math or reading scores. District leaders traced the shortfall to staffing gaps, scheduling conflicts, and programs that couldn't operate at the intensity the research says they need.</p>
   <div class="pub-card-citation">
-    Carbonari, M.V., Davison, M., DeArmond, M., Dewey, D., Dizon-Ross, E., Goldhaber, D., Hashim, A., Kane, T.J., McEachin, A., Morton, E., Patterson, T., &amp; Staiger, D.O. (2024). The Challenges of Implementing Academic COVID Recovery Interventions: Evidence from the Road to Recovery Project. <em>AERA Open</em>, 10.
+    Carbonari, M.V., Davison, M., DeArmond, M., Dewey, D., Dizon-Ross, E., Goldhaber, D., Hashim, A., Kane, T.J., McEachin, A., Morton, E., Patterson, T., &amp; Staiger, D.O. (2024). The Impact and Implementation of Academic Interventions During COVID-19: Evidence from the Road to Recovery Project. <em>AERA Open</em>, 10(1), 1-18.
   </div>
+  <div class="pub-card-links">
+    <a href="/uploads/publications/carbonari-2024.pdf" class="pub-card-link" target="_blank" rel="noopener">PDF</a> <a href="https://doi.org/10.1177/23328584241281286" class="pub-card-link" target="_blank" rel="noopener">DOI</a>
+  </div>
+</div>
+<div class="pub-card-image">
+  <img src="/images/publications/carbonari-2024.jpg" alt="The Impact and Implementation of Academic Interventions During COVID-19: Evidence from the Road to Recovery Project" />
+</div>
 </div>
 
 <div class="pub-card">
@@ -125,7 +152,7 @@ choice markets improve outcomes or simply reshuffle them.
   </div>
 </div>
 
-<div class="pub-card-wrapper pub-card-wrapper--reverse">
+<div class="pub-card-wrapper">
 <div class="pub-card">
   <span class="pub-card-type-badge">Journal Article</span>
   <h3 class="pub-card-title">The Educational Consequences of Remote and Hybrid Instruction During the Pandemic</h3>
