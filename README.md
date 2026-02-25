@@ -226,7 +226,7 @@ academic-site/
 
 | File | Purpose |
 |---|---|
-| `cv_template.tex.j2` | Full LaTeX CV template using angle-bracket Jinja2 delimiters to avoid `{}` escaping conflicts. Sections: Research Interests, Education, Employment, Journal Articles (numbered), Working Papers, Reports, Book Chapters, Commentary, Grants, Awards, Editorial Service, Professional Service, Journal Reviewer, Software. All text fields use the `\|latex_escape` filter. |
+| `cv_template.tex.j2` | Full LaTeX CV template using angle-bracket Jinja2 delimiters to avoid `{}` escaping conflicts. Sections: Research Interests, Education, Employment, Journal Articles (numbered), Working Papers, Reports, Book Chapters, Commentary, Grants, Awards, Editorial Service, Professional Service, Journal Reviewer, Software. All text fields use the `\|latex_escape` filter. Journal articles with `status: "Accepted"` show `(Accepted)` instead of the year, matching the website. |
 
 ### Site Theme (`site/assets/css/`)
 

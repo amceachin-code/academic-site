@@ -75,3 +75,30 @@ All 63 publications grouped into 4 collapsible research themes using native `<de
 
 ### Completed — Mountain Backdrop Positioning
 - [x] Fixed mountain backdrop positioning: fixed 2200px width (no rescaling), anchored below navbar with z-index layering, peaks always visible via top-anchoring
+
+---
+
+## Session 2026-02-24: Publication Updates & CV Citation Fix
+
+### Completed — Diliberti et al. (2025)
+- [x] Fixed id typo (`dilberti` → `diliberti`)
+- [x] Updated title to published version
+- [x] Added full author initials (M.K., J.D., L.T.)
+- [x] Added volume/issue/pages, DOI, summary, figure image, and PDF link
+- [x] Replaced incorrect image with correct event study coefficient plot
+
+### Completed — Bolyard et al. (2025)
+- [x] Removed "Revisions Requested at Education Finance and Policy" status
+- [x] Added summary, figure image, and PDF link
+
+### Completed — Kuhfeld et al. (2025) NAE Report
+- [x] Added summary (revised with writing-style skill principles), figure image, and PDF link
+
+### Completed — Carbonari et al. (2024)
+- [x] Updated title to published version ("The Impact and Implementation of Academic Interventions During COVID-19")
+- [x] Added DOI, issue/pages, summary, figure image, and PDF link
+- [x] Replaced initial image with correct forest plot
+
+### Completed — CV Citation Consistency Fix
+- [x] Fixed CV template (`cv_template.tex.j2`) to show `(Accepted)` instead of `(2025)` for publications with `status: "Accepted"`, matching the website's existing behavior in `sync_hugo.py`
+- [x] When status is "Accepted", the redundant status annotation after the journal name is also omitted
