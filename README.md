@@ -466,7 +466,7 @@ The collapsible theme sections on the Publications page use `<details>` and `<su
 
 ### Mountain backdrop
 
-A mountain sketch image (`site/static/images/mountains-backdrop.png`) appears as a fixed background on all pages, providing a consistent visual anchor as the user scrolls.
+A mountain sketch image (`site/static/images/mountains-backdrop.png`) appears as a fixed background on all pages. The backdrop uses a fixed 2200px width (does not rescale on window resize) and is positioned below the navbar at `top: 50px` with z-index layering to ensure it never bleeds into the navigation. The image is anchored to the top so the mountain peaks are always fully visible. The navbar has `z-index: 10` to sit above the backdrop, providing a consistent visual anchor as the user scrolls.
 
 ### Favicon and social sharing image
 

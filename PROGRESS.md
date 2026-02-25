@@ -72,3 +72,6 @@ All 63 publications grouped into 4 collapsible research themes using native `<de
 - [x] CI now runs only `sync_hugo.py` + Hugo build; pre-built CV PDF is committed to repo
 - [x] Deploy time reduced from ~10 min to ~2 min
 - [x] Cancelled stuck GitHub Actions deploy that was blocking the queue for 40+ minutes
+
+### Completed — Mountain Backdrop Positioning
+- [x] Fixed mountain backdrop positioning: fixed 2200px width (no rescaling), anchored below navbar with z-index layering, peaks always visible via top-anchoring

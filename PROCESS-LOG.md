@@ -209,6 +209,7 @@ Running log of project progress, decisions, and to-do items for the academic-sit
 - Added mountain backdrop as favicon (`site/assets/media/icon.png`) and Open Graph sharing image (`site/assets/media/sharing.png`)
 - Simplified `.github/workflows/deploy.yml`: removed TeX Live installation entirely, CI runs `sync_hugo.py` instead of `build_all.py`, uses pre-built CV PDF. Deploy time ~2 min vs ~10 min.
 - Cancelled stuck GitHub Actions deploy blocking the queue
+- Fixed mountain backdrop CSS: set fixed 2200px width (no rescaling on resize), positioned below navbar (top: 50px) with z-index: 10 on nav to prevent bleed-through, anchored to top so peaks are never cropped
 
 **Files modified:**
 - `.gitignore` — added `hugo_build.lock`, `Rhistory`
