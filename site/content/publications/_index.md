@@ -136,20 +136,38 @@ choice markets improve outcomes or simply reshuffle them.
 </div>
 </div>
 
+<div class="pub-card-wrapper">
 <div class="pub-card">
   <span class="pub-card-type-badge">Journal Article</span>
   <h3 class="pub-card-title">Testing an explanation for summer learning loss: Differential examinee effort between spring and fall</h3>
+  <p class="pub-card-summary">Every fall, teachers brace for the &quot;summer slide&quot; as students return having forgotten much of what they learned. But some researchers have pushed back, arguing that the dip might be a measurement illusion: maybe kids just don't try as hard on fall tests as spring tests. We put that critique to the test, and while we can't say definitively that summer learning loss is real, we also found no evidence that low effort on fall tests is what's driving the pattern. The summer slide remains a genuine puzzle, but this particular explanation doesn't hold up.</p>
   <div class="pub-card-citation">
-    Kuhfeld, M., Soland, J., Register, B., &amp; McEachin, A. (2024). Testing an explanation for summer learning loss: Differential examinee effort between spring and fall. <em>Educational Evaluation and Policy Analysis</em>.
+    Kuhfeld, M., Soland, J., Register, B., &amp; McEachin, A. (2024). Testing an explanation for summer learning loss: Differential examinee effort between spring and fall. <em>Educational Evaluation and Policy Analysis</em>, 46(3), 581-590.
+  </div>
+  <div class="pub-card-links">
+    <a href="/uploads/publications/kuhfeld-2024.pdf" class="pub-card-link" target="_blank" rel="noopener">PDF</a> <a href="https://doi.org/10.3102/01623737231165027" class="pub-card-link" target="_blank" rel="noopener">DOI</a>
   </div>
 </div>
+<div class="pub-card-image">
+  <img src="/images/publications/kuhfeld-2024.png" alt="Testing an explanation for summer learning loss: Differential examinee effort between spring and fall" />
+</div>
+</div>
 
+<div class="pub-card-wrapper pub-card-wrapper--reverse">
 <div class="pub-card">
   <span class="pub-card-type-badge">Working Paper</span>
   <h3 class="pub-card-title">Pandemic Learning Loss by Student Baseline Achievement: Extent and Sources of Heterogeneity</h3>
+  <p class="pub-card-summary">The pandemic hit hardest for students who were already behind, and the gap between lower- and higher-achieving students widened significantly. But the more striking finding is what drove that widening: the school a student attended explains about three-quarters of the achievement gap growth in math. Pandemic learning loss wasn't just about individual circumstances. School and district decisions mattered enormously, which means targeted, school-level recovery strategies aren't just helpful, they're essential.</p>
   <div class="pub-card-citation">
-    Callen, I., Goldhaber, D., Kane, T.J., McDonald, A., McEachin, A., &amp; Morton, E. (2024). Pandemic Learning Loss by Student Baseline Achievement: Extent and Sources of Heterogeneity. <span class="pub-card-status">Revisions Requested at Education Finance and Policy</span>
+    Callen, I., Goldhaber, D., Kane, T.J., McDonald, A., McEachin, A., &amp; Morton, E. (2024). Pandemic Learning Loss by Student Baseline Achievement: Extent and Sources of Heterogeneity.
   </div>
+  <div class="pub-card-links">
+    <a href="/uploads/publications/callen-2024.pdf" class="pub-card-link" target="_blank" rel="noopener">PDF</a>
+  </div>
+</div>
+<div class="pub-card-image">
+  <img src="/images/publications/callen-2024.png" alt="Pandemic Learning Loss by Student Baseline Achievement: Extent and Sources of Heterogeneity" />
+</div>
 </div>
 
 <div class="pub-card-wrapper">
@@ -169,12 +187,21 @@ choice markets improve outcomes or simply reshuffle them.
 </div>
 </div>
 
+<div class="pub-card-wrapper pub-card-wrapper--reverse">
 <div class="pub-card">
   <span class="pub-card-type-badge">Report</span>
   <h3 class="pub-card-title">Typical learning for whom? Guidelines for selecting benchmarks to calculate months of learning</h3>
+  <p class="pub-card-summary">Headlines love to report pandemic learning loss in &quot;months of learning,&quot; but that number is far more slippery than it sounds. The same test-score gap can translate into wildly different months depending on which benchmark you pick, which assessment you use, and which students you're comparing. We walk through the key choices researchers face when calculating this metric and show how each one can swing the results. The takeaway: months of learning can be a useful shorthand, but only if researchers are transparent about the assumptions baked into the denominator.</p>
   <div class="pub-card-citation">
     Kuhfeld, M., Diliberti, M., McEachin, A., Schweig, J., &amp; Mariano, L.T. (2023). Typical learning for whom? Guidelines for selecting benchmarks to calculate months of learning. NWEA.
   </div>
+  <div class="pub-card-links">
+    <a href="/uploads/publications/kuhfeld-2023.pdf" class="pub-card-link" target="_blank" rel="noopener">PDF</a>
+  </div>
+</div>
+<div class="pub-card-image">
+  <img src="/images/publications/kuhfeld-2023.png" alt="Typical learning for whom? Guidelines for selecting benchmarks to calculate months of learning" />
+</div>
 </div>
 
 <div class="pub-card">

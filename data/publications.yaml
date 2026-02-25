@@ -200,7 +200,18 @@ publications:
       - "McEachin, A."
     year: 2024
     journal: "Educational Evaluation and Policy Analysis"
+    volume: "46"
+    issue: "3"
+    pages: "581-590"
+    doi: "10.3102/01623737231165027"
     featured: false
+    summary: "Every fall, teachers brace for the \"summer slide\" as students return having forgotten much of what they learned. But some researchers have pushed back, arguing that the dip might be a measurement illusion: maybe kids just don't try as hard on fall tests as spring tests. We put that critique to the test, and while we can't say definitively that summer learning loss is real, we also found no evidence that low effort on fall tests is what's driving the pattern. The summer slide remains a genuine puzzle, but this particular explanation doesn't hold up."
+    image: "kuhfeld-2024.png"
+    links:
+      - label: "PDF"
+        url: "/uploads/publications/kuhfeld-2024.pdf"
+      - label: "DOI"
+        url: "https://doi.org/10.3102/01623737231165027"
 
   - id: goldhaber-2023-remote-instruction
     type: journal
@@ -755,9 +766,13 @@ publications:
       - "Morton, E."
     year: 2024
     series: "CALDER Working Paper No. 292-0224"
-    status: "Revisions Requested at Education Finance and Policy"
     alphabetical: true
     featured: false
+    summary: "The pandemic hit hardest for students who were already behind, and the gap between lower- and higher-achieving students widened significantly. But the more striking finding is what drove that widening: the school a student attended explains about three-quarters of the achievement gap growth in math. Pandemic learning loss wasn't just about individual circumstances. School and district decisions mattered enormously, which means targeted, school-level recovery strategies aren't just helpful, they're essential."
+    image: "callen-2024.png"
+    links:
+      - label: "PDF"
+        url: "/uploads/publications/callen-2024.pdf"
 
   # ============================================================
   # REPORTS
@@ -793,6 +808,11 @@ publications:
     year: 2023
     publisher: "NWEA"
     featured: false
+    summary: "Headlines love to report pandemic learning loss in \"months of learning,\" but that number is far more slippery than it sounds. The same test-score gap can translate into wildly different months depending on which benchmark you pick, which assessment you use, and which students you're comparing. We walk through the key choices researchers face when calculating this metric and show how each one can swing the results. The takeaway: months of learning can be a useful shorthand, but only if researchers are transparent about the assumptions baked into the denominator."
+    image: "kuhfeld-2023.png"
+    links:
+      - label: "PDF"
+        url: "/uploads/publications/kuhfeld-2023.pdf"
 
   - id: callen-2023-summer-wp
     type: report
