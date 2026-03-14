@@ -1,46 +1,47 @@
-# positions.yaml — Employment history
-positions:
-  - title: Senior Research Director, Policy Research
-    organization: ETS Research Institute
+# positions.yaml — Employment history (employer-grouped)
+employers:
+  - name: "ETS, Research Institute"
     start_year: 2024
     end_year: null  # current
+    roles:
+      - title: "Senior Research Director, Policy Research"
 
-  - title: Vice President, Research & Policy Partnerships
-    organization: Houghton Mifflin Harcourt
-    start_year: 2023
-    end_year: 2024
-
-  - title: Director, Collaborative for Student Growth
-    organization: NWEA
+  - name: "NWEA (acquired by Houghton Mifflin Harcourt in 2023)"
     start_year: 2021
-    end_year: 2023
+    end_year: 2024
+    roles:
+      - title: "Vice President, Research & Policy Partnerships"
+        start_year: 2023
+        end_year: 2024
+      - title: "Director, Collaborative for Student Growth"
+        start_year: 2021
+        end_year: 2023
 
-  - title: Senior Policy Researcher
-    organization: RAND Corporation
-    start_year: 2020
-    end_year: 2021
-
-  - title: Professor of Policy Analysis
-    organization: Pardee RAND Graduate School
-    start_year: 2018
-    end_year: 2022
-
-  - title: Policy Researcher
-    organization: RAND Corporation
-    start_year: 2016
-    end_year: 2020
-
-  - title: Associate Policy Researcher
-    organization: RAND Corporation
+  - name: "RAND Corporation"
     start_year: 2015
-    end_year: 2016
+    end_year: 2021
+    roles:
+      - title: "Senior Policy Researcher"
+        start_year: 2020
+        end_year: 2021
+      - title: "Professor of Policy Analysis, Pardee RAND Graduate School"
+        start_year: 2018
+        end_year: 2022
+      - title: "Policy Researcher"
+        start_year: 2016
+        end_year: 2020
+      - title: "Associate Policy Researcher"
+        start_year: 2015
+        end_year: 2016
 
-  - title: Assistant Professor, School of Education
-    organization: North Carolina State University
+  - name: "North Carolina State University"
     start_year: 2013
     end_year: 2015
+    roles:
+      - title: "Assistant Professor, School of Education"
 
-  - title: Postdoctoral Fellow, Curry School of Education
-    organization: University of Virginia
+  - name: "University of Virginia"
     start_year: 2012
     end_year: 2013
+    roles:
+      - title: "Institute of Education Sciences Postdoctoral Fellow, School of Education"

@@ -21,6 +21,7 @@ A single set of YAML data files powers both a [Hugo](https://gohugo.io/) website
 - [Deployment](#deployment)
 - [Testing](#testing)
 - [Design Notes](#design-notes)
+- [Current Work](#current-work)
 - [License](#license)
 
 ---
@@ -77,7 +78,7 @@ Install: `cd site && npm install`
 
 ### TeX Live (local builds only)
 
-Required **locally** for compiling the LaTeX CV to PDF via `make build`. The CI deploy workflow does **not** install TeX Live -- it uses the pre-built PDF committed to the repo.
+Required **locally** for compiling the LaTeX CV to PDF via `make build`. The CI deploy workflow does **not** install TeX Live; it uses the pre-built PDF committed to the repo.
 
 - Packages needed: `texlive-latex-base`, `texlive-latex-extra`, `texlive-fonts-recommended`, `texlive-fonts-extra`
 
@@ -111,7 +112,8 @@ academic-site/
 ├── data/                              # YAML single source of truth (10 files)
 │   ├── profile.yaml                   # Name, title, bio, contact, social links
 │   ├── education.yaml                 # Degrees (Ph.D., M.A., A.B.)
-│   ├── positions.yaml                 # Employment history
+│   ├── positions.yaml                 # Employment history (currently being
+│   │                                  #   restructured to employer-grouped format)
 │   ├── publications.yaml              # All pubs: 63 entries (journal articles,
 │   │                                  #   working papers, reports, book chapters)
 │   │                                  #   Optional per-pub: summary, links, image
@@ -203,7 +205,7 @@ academic-site/
 |---|---|
 | `profile.yaml` | Name, title, bio paragraph, contact info, social links (Google Scholar, GitHub, email) |
 | `education.yaml` | 3 degrees: Ph.D. Education Policy (USC), M.A. Economics (USC), A.B. History (Cornell) |
-| `positions.yaml` | Employment history from UVA postdoc (2012) through ETS Senior Research Director (2024--present) |
+| `positions.yaml` | Employment history from UVA postdoc (2012) through ETS Senior Research Director (2024-present). Currently a flat list of 9 positions; being restructured to an employer-grouped format where multiple roles at the same organization are nested under a single employer entry (see [Current Work](#current-work)). |
 | `publications.yaml` | 63 entries across journal articles, working papers, reports, and book chapters. Organized by 4 research themes via `theme_order` list + per-entry `theme` field. Optional per-entry fields: `summary` (string), `links` (list of `{label, url}` dicts), and `image` (filename for article image) |
 | `presentations.yaml` | Placeholder (empty list) for future conference talks and invited seminars |
 | `media.yaml` | Commentary/op-ed pieces and news coverage references |
@@ -238,7 +240,7 @@ academic-site/
 
 | File | Purpose |
 |---|---|
-| `.github/workflows/deploy.yml` | GitHub Actions workflow: sets up Python 3.12, installs pip deps, sets up Hugo Extended 0.156.0, installs Node 20 + npm deps, runs `sync_hugo.py` (YAML to Hugo content), runs `hugo --minify`, then deploys to GitHub Pages. No TeX Live -- uses the pre-built CV PDF committed to the repo. |
+| `.github/workflows/deploy.yml` | GitHub Actions workflow: sets up Python 3.12, installs pip deps, sets up Hugo Extended 0.156.0, installs Node 20 + npm deps, runs `sync_hugo.py` (YAML to Hugo content), runs `hugo --minify`, then deploys to GitHub Pages. No TeX Live; uses the pre-built CV PDF committed to the repo. |
 | `site/static/CNAME` | Custom domain configuration: `www.andrew-mceachin.com` |
 
 ### Testing
@@ -400,7 +402,7 @@ The CI pipeline runs:
 1. Python 3.12 setup + pip install
 2. Hugo Extended 0.156.0 setup
 3. Node 20 + npm install
-4. `sync_hugo.py` (YAML to Hugo content only -- no CV PDF compilation)
+4. `sync_hugo.py` (YAML to Hugo content only; no CV PDF compilation)
 5. `hugo --minify` with production baseURL
 6. Upload artifact + deploy to GitHub Pages
 
@@ -443,7 +445,7 @@ The test file `tests/test_citations.py` contains 27 tests organized into 5 class
 
 ### YAML is the single source of truth
 
-All content originates in `data/*.yaml`. The Python scripts generate Hugo markdown and LaTeX from these files. Never hand-edit generated files in `site/content/publications/` -- edit the YAML and rebuild.
+All content originates in `data/*.yaml`. The Python scripts generate Hugo markdown and LaTeX from these files. Never hand-edit generated files in `site/content/publications/`; edit the YAML and rebuild.
 
 ### Angle-bracket Jinja2 delimiters
 
@@ -462,7 +464,7 @@ The generated markdown files under `site/content/` are committed to git. This is
 
 ### Collapsible sections use native HTML
 
-The collapsible theme sections on the Publications page use `<details>` and `<summary>` elements. No JavaScript is required -- the browser handles expand/collapse natively.
+The collapsible theme sections on the Publications page use `<details>` and `<summary>` elements. No JavaScript is required; the browser handles expand/collapse natively.
 
 ### Mountain backdrop
 
@@ -475,6 +477,34 @@ The site includes a custom favicon (`site/assets/media/icon.png`) and an Open Gr
 ### Custom theme
 
 The site uses a clean academic aesthetic: white background, dark teal (`#1b4965`) accents, Inter font stack, side-by-side biography layout with a mountain sketch backdrop, and alternating gray/white section backgrounds.
+
+---
+
+## Current Work
+
+**Task: Restructuring `positions.yaml` from flat list to employer-grouped format.**
+
+The CV's Employment section is being restructured so that multiple roles held at the same employer are grouped under a single employer heading, rather than listed as separate flat entries. For example, RAND Corporation (where Andrew held four roles from 2015-2022) will appear as one employer block with sub-entries for each title and date range, instead of four independent entries.
+
+This change affects:
+- `data/positions.yaml` -- new YAML schema with employer-level grouping and nested roles
+- `cv/template/cv_template.tex.j2` -- updated template to iterate over employers, then roles
+- `scripts/utils.py` -- updated validation for the new positions schema
+- `scripts/build_cv.py` -- updated data passing to match the new structure
+
+The desired output format (already manually prototyped in `cv/output/McEachin_CV.tex`) groups employers like this:
+
+```
+NWEA (acquired by Houghton Mifflin Harcourt in 2023)    2021--2024
+  Vice President, Research & Policy Partnerships         2023--2024
+  Director, Collaborative for Student Growth             2021--2023
+
+RAND Corporation                                         2015--2021
+  Senior Policy Researcher                               2020--2021
+  Professor of Policy Analysis, Pardee RAND Graduate School  2018--2022
+  Policy Researcher                                      2016--2020
+  Associate Policy Researcher                            2015--2016
+```
 
 ---
 

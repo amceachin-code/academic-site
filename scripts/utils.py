@@ -197,11 +197,23 @@ def validate_data(data: dict) -> list:
     if not isinstance(edu, list):
         errors.append("education.yaml: 'education' should be a list")
 
-    # --- positions ---
+    # --- positions (employer-grouped) ---
     pos_data = data.get("positions", {})
-    pos = pos_data.get("positions", [])
-    if not isinstance(pos, list):
-        errors.append("positions.yaml: 'positions' should be a list")
+    employers = pos_data.get("employers", [])
+    if not isinstance(employers, list):
+        errors.append("positions.yaml: 'employers' should be a list")
+    else:
+        for i, emp in enumerate(employers):
+            prefix = f"positions.yaml: employers[{i}]"
+            if not emp.get("name") or not isinstance(emp.get("name"), str):
+                errors.append(f"{prefix}: missing or non-string 'name'")
+            roles = emp.get("roles", [])
+            if not isinstance(roles, list) or len(roles) == 0:
+                errors.append(f"{prefix}: 'roles' must be a non-empty list")
+            else:
+                for j, role in enumerate(roles):
+                    if not role.get("title") or not isinstance(role.get("title"), str):
+                        errors.append(f"{prefix}: roles[{j}] missing or non-string 'title'")
 
     # --- grants ---
     grants_data = data.get("grants", {})

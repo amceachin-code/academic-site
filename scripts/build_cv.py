@@ -83,7 +83,7 @@ def render_cv(data: dict) -> str:
     context = {
         "profile": data.get("profile", {}),
         "education": data.get("education", {}).get("education", []),
-        "positions": data.get("positions", {}).get("positions", []),
+        "employers": data.get("positions", {}).get("employers", []),
         "publications": data.get("publications", {}).get("publications", []),
         "grants": data.get("grants", {}).get("grants", []),
         "awards": data.get("awards", {}).get("awards", []),

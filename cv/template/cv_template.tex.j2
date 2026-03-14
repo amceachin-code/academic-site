@@ -74,11 +74,18 @@
 <% endif %>
 
 % --- Employment ---
-<% if positions %>
+<% if employers %>
 \section{Employment}
-<% for pos in positions %>
-\textbf{<< pos.title|latex_escape >>} \hfill << pos.start_year >>--<< pos.end_year if pos.end_year else "present" >> \\
-<< pos.organization|latex_escape >>
+<% for emp in employers %>
+\textbf{<< emp.name|latex_escape >> \hfill << emp.start_year >>--<< emp.end_year if emp.end_year else "present" >> \\}
+<% if emp.roles|length == 1 %>
+<< emp.roles[0].title|latex_escape >>
+<% else %>
+<% for role in emp.roles %>
+<< role.title|latex_escape >><% if role.start_year %> \hfill << role.start_year >>--<< role.end_year >><% endif %><% if not loop.last %> \\<% endif %>
+
+<% endfor %>
+<% endif %>
 
 <% endfor %>
 <% endif %>
