@@ -795,6 +795,23 @@ publications:
       - label: "PDF"
         url: "/uploads/publications/kuhfeld-2025-nae.pdf"
 
+  - id: morton-2025-summer-scalable
+    type: report
+    theme: disrupted_learning
+    title: "School's in for summer: A scalable and effective post-pandemic academic intervention"
+    authors:
+      - "Morton, E."
+      - "Goldhaber, D."
+      - "Kane, T.J."
+      - "McEachin, A."
+    year: 2025
+    publisher: "NWEA"
+    featured: false
+    summary: "Summer school consistently boosted math achievement across ten large districts in 2022 and 2023, producing gains equivalent to about 2 to 3 weeks of learning. Reading scores showed no improvement. The effects are modest per student, but summer school reached roughly 13% of eligible students each year, making it one of the few pandemic recovery strategies that delivered measurable district-wide gains. By comparison, high-dosage tutoring programs struggled to produce significant impacts at comparable scale. The findings position summer school as a reliable, scalable complement to more targeted interventions like tutoring."
+    links:
+      - label: "PDF"
+        url: "/uploads/publications/morton-2025.pdf"
+
   - id: kuhfeld-2023-benchmarks
     type: report
     theme: disrupted_learning

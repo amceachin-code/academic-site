@@ -21,7 +21,7 @@ A single set of YAML data files powers both a [Hugo](https://gohugo.io/) website
 - [Deployment](#deployment)
 - [Testing](#testing)
 - [Design Notes](#design-notes)
-- [Current Work](#current-work)
+- [Planned Work](#planned-work)
 - [License](#license)
 
 ---
@@ -112,8 +112,8 @@ academic-site/
 ├── data/                              # YAML single source of truth (10 files)
 │   ├── profile.yaml                   # Name, title, bio, contact, social links
 │   ├── education.yaml                 # Degrees (Ph.D., M.A., A.B.)
-│   ├── positions.yaml                 # Employment history (currently being
-│   │                                  #   restructured to employer-grouped format)
+│   ├── positions.yaml                 # Employment history (employer-grouped format
+│   │                                  #   with nested roles per organization)
 │   ├── publications.yaml              # All pubs: 63 entries (journal articles,
 │   │                                  #   working papers, reports, book chapters)
 │   │                                  #   Optional per-pub: summary, links, image
@@ -124,7 +124,7 @@ academic-site/
 │   ├── service.yaml                   # Editorial boards, referee work, committees
 │   └── software.yaml                  # Stata/R packages (horseshoe, rdtp)
 │
-├── scripts/                           # Python build pipeline
+├── scripts/                           # Python build pipeline + utilities
 │   ├── utils.py                       # YAML loading, validation, latex_escape(),
 │   │                                  #   path constants, citation formatting
 │   ├── sync_hugo.py                   # YAML -> Hugo content (publications as HTML
@@ -134,7 +134,7 @@ academic-site/
 │   │                                  #   -> LaTeX -> pdflatex (2 passes) -> PDF
 │   ├── build_all.py                   # Orchestrator; imports sync_hugo + build_cv
 │   │                                  #   as functions. Supports --validate flag
-│   └── requirements.txt               # Pinned: PyYAML==6.0.2, Jinja2==3.1.5
+│   └── requirements.txt               # Pinned deps: PyYAML, Jinja2
 │
 ├── cv/                                # LaTeX CV pipeline
 │   ├── template/
@@ -171,7 +171,7 @@ academic-site/
 │   │   ├── CNAME                      # Custom domain: www.andrew-mceachin.com
 │   │   ├── uploads/McEachin_CV.pdf    # CV PDF for download
 │   │   ├── uploads/publications/      # PDF files for individual papers
-│   │   ├── images/mountains-backdrop.png  # Decorative bio section background
+│   │   ├── images/mountains-backdrop.jpg  # Decorative bio section background
 │   │   └── images/publications/       # Article images for publication cards
 │   ├── go.mod / go.sum                # Go module deps (HugoBlox theme)
 │   ├── package.json                   # Node deps (Tailwind CSS v4, typography)
@@ -205,7 +205,7 @@ academic-site/
 |---|---|
 | `profile.yaml` | Name, title, bio paragraph, contact info, social links (Google Scholar, GitHub, email) |
 | `education.yaml` | 3 degrees: Ph.D. Education Policy (USC), M.A. Economics (USC), A.B. History (Cornell) |
-| `positions.yaml` | Employment history from UVA postdoc (2012) through ETS Senior Research Director (2024-present). Currently a flat list of 9 positions; being restructured to an employer-grouped format where multiple roles at the same organization are nested under a single employer entry (see [Current Work](#current-work)). |
+| `positions.yaml` | Employment history in employer-grouped format. Multiple roles at the same organization (e.g., four positions at RAND Corporation) are nested under a single employer entry with date ranges for both the employer and each individual role. |
 | `publications.yaml` | 63 entries across journal articles, working papers, reports, and book chapters. Organized by 4 research themes via `theme_order` list + per-entry `theme` field. Optional per-entry fields: `summary` (string), `links` (list of `{label, url}` dicts), and `image` (filename for article image) |
 | `presentations.yaml` | Placeholder (empty list) for future conference talks and invited seminars |
 | `media.yaml` | Commentary/op-ed pieces and news coverage references |
@@ -480,31 +480,19 @@ The site uses a clean academic aesthetic: white background, dark teal (`#1b4965`
 
 ---
 
-## Current Work
+## Related Projects
 
-**Task: Restructuring `positions.yaml` from flat list to employer-grouped format.**
+**Ed in America article tracking system.** A separate project at `/Users/andrewmceachin/Desktop/projects/ed-in-america/` contains standalone Python utilities for managing research articles. That project is independent of this Hugo website pipeline. Key components:
 
-The CV's Employment section is being restructured so that multiple roles held at the same employer are grouped under a single employer heading, rather than listed as separate flat entries. For example, RAND Corporation (where Andrew held four roles from 2015-2022) will appear as one employer block with sub-entries for each title and date range, instead of four independent entries.
-
-This change affects:
-- `data/positions.yaml` -- new YAML schema with employer-level grouping and nested roles
-- `cv/template/cv_template.tex.j2` -- updated template to iterate over employers, then roles
-- `scripts/utils.py` -- updated validation for the new positions schema
-- `scripts/build_cv.py` -- updated data passing to match the new structure
-
-The desired output format (already manually prototyped in `cv/output/McEachin_CV.tex`) groups employers like this:
-
-```
-NWEA (acquired by Houghton Mifflin Harcourt in 2023)    2021--2024
-  Vice President, Research & Policy Partnerships         2023--2024
-  Director, Collaborative for Student Growth             2021--2023
-
-RAND Corporation                                         2015--2021
-  Senior Policy Researcher                               2020--2021
-  Professor of Policy Analysis, Pardee RAND Graduate School  2018--2022
-  Policy Researcher                                      2016--2020
-  Associate Policy Researcher                            2015--2016
-```
+- **Article tracking workbook** (`articles/articles.xlsx`): Two-sheet Excel workbook generated by `scripts/init_articles_workbook.py`.
+  - **Articles sheet**: 13 columns for tracking research articles: ID, Authors, Title, Year, Age Level, Data Source(s), Outcome, Primary Focus, Secondary Foci, Location, Summary Link, Source Link, Notes. Includes frozen header row, auto-filter on category columns, dropdown validation on Location, and cell comments on coded columns explaining valid values. Primary Focus accepts a single focus code; Secondary Foci accepts comma-separated codes.
+  - **Codes reference sheet**: 4 side-by-side lookup tables defining all valid category codes:
+    - Age Level (5 codes): EC, K12, HE, WF, LC
+    - Outcomes (13 codes): TEST, ATT, GRAD, WAGE, EMP, SKIL, HLTH, CRS, BEH, DEG, CERT, CIV, OTHR
+    - Location (3 codes): US, INTL, COMP
+    - Focus (12 codes): TCHQ, ACHR, ATTD, EQTY, PAND, ECLD, PSEC, PLCY, CURS, FUND, HLTH, LABR
+- **PDF splitter** (`scripts/split_pdf.py`): Breaks multi-article PDFs into individual files.
+- **Duplicate checker** (`scripts/check_duplicate.py`): Checks for duplicate articles in the workbook.
 
 ---
 

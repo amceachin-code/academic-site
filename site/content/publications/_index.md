@@ -27,7 +27,7 @@ choice markets improve outcomes or simply reshuffle them.
 <summary class="pub-theme-header">
   <span class="pub-theme-header-top">
     <span class="pub-theme-name">Out-of-School or Disrupted Learning</span>
-    <span class="pub-theme-count">(24 publications)</span>
+    <span class="pub-theme-count">(25 publications)</span>
   </span>
   <span class="pub-theme-description">This line of research examines what happens to student learning outside the traditional school year and during periods of disruption. My work documents summer learning loss patterns, evaluates the effectiveness of summer school programs, and studies the educational consequences of the COVID-19 pandemic, including the impact of remote instruction and academic recovery interventions.</span>
 </summary>
@@ -117,6 +117,18 @@ choice markets improve outcomes or simply reshuffle them.
 <div class="pub-card-image">
   <img src="/images/publications/kuhfeld-2025-nae.jpg" alt="Implementing programs to align, accelerate, and extend student learning" />
 </div>
+</div>
+
+<div class="pub-card">
+  <span class="pub-card-type-badge">Report</span>
+  <h3 class="pub-card-title">School's in for summer: A scalable and effective post-pandemic academic intervention</h3>
+  <p class="pub-card-summary">Summer school consistently boosted math achievement across ten large districts in 2022 and 2023, producing gains equivalent to about 2 to 3 weeks of learning. Reading scores showed no improvement. The effects are modest per student, but summer school reached roughly 13% of eligible students each year, making it one of the few pandemic recovery strategies that delivered measurable district-wide gains. By comparison, high-dosage tutoring programs struggled to produce significant impacts at comparable scale. The findings position summer school as a reliable, scalable complement to more targeted interventions like tutoring.</p>
+  <div class="pub-card-citation">
+    Morton, E., Goldhaber, D., Kane, T.J., &amp; McEachin, A. (2025). School's in for summer: A scalable and effective post-pandemic academic intervention. NWEA.
+  </div>
+  <div class="pub-card-links">
+    <a href="/uploads/publications/morton-2025.pdf" class="pub-card-link" target="_blank" rel="noopener">PDF</a>
+  </div>
 </div>
 
 <div class="pub-card-wrapper pub-card-wrapper--reverse">
