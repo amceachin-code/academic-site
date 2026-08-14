@@ -12,7 +12,7 @@ software:
       - R
     r_package_name: hsreg
     github: "https://github.com/amceachin-code/horseshoe"
-    reference: "Carvalho, C.M., Polson, N.G., & Scott, J.G. (2010)"
+    reference: "Carvalho, C.M., Polson, N.G., & Scott, J.G. (2010). The horseshoe estimator for sparse signals. Biometrika, 97(2), 465-480."
 
   - id: rdtp
     name: rdtp

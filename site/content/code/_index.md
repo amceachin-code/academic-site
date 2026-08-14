@@ -12,7 +12,7 @@ Bayesian linear regression with the horseshoe prior (Carvalho, Polson, and Scott
 
 **GitHub:** [https://github.com/amceachin-code/horseshoe](https://github.com/amceachin-code/horseshoe)
 
-**Reference:** Carvalho, C.M., Polson, N.G., & Scott, J.G. (2010)
+**Reference:** Carvalho, C.M., Polson, N.G., & Scott, J.G. (2010). The horseshoe estimator for sparse signals. Biometrika, 97(2), 465-480.
 
 ### rdtp
 
