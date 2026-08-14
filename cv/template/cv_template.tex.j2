@@ -236,6 +236,9 @@
 % --- Software ---
 <% if software %>
 \section{Software}
+<% if profile.social and profile.social.github %>
+All code is available on GitHub: \url{<< profile.social.github >>}
+<% endif %>
 \begin{itemize}
 <% for pkg in software %>
   \item \textbf{<< pkg.name|latex_escape >>}: << pkg.description|latex_escape >>

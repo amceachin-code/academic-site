@@ -27,7 +27,7 @@ choice markets improve outcomes or simply reshuffle them.
 <summary class="pub-theme-header">
   <span class="pub-theme-header-top">
     <span class="pub-theme-name">Out-of-School or Disrupted Learning</span>
-    <span class="pub-theme-count">(25 publications)</span>
+    <span class="pub-theme-count">(26 publications)</span>
   </span>
   <span class="pub-theme-description">This line of research examines what happens to student learning outside the traditional school year and during periods of disruption. My work documents summer learning loss patterns, evaluates the effectiveness of summer school programs, and studies the educational consequences of the COVID-19 pandemic, including the impact of remote instruction and academic recovery interventions.</span>
 </summary>
@@ -35,6 +35,23 @@ choice markets improve outcomes or simply reshuffle them.
 <div class="pub-card-list">
 
 <div class="pub-card-wrapper">
+<div class="pub-card">
+  <span class="pub-card-type-badge">Working Paper</span>
+  <h3 class="pub-card-title">A Broader View of Recovery: Exploring Non-Test Student Outcomes in the Wake of the COVID-19 Pandemic</h3>
+  <p class="pub-card-summary">Test scores are only part of the story. Using eight years of data from Guilford County Schools, we track what happened to attendance, discipline, and course grades before and after the pandemic. All of it got worse, and pre-existing gaps by race and school poverty widened. But here's the encouraging part: students who participated in recovery interventions showed better attendance and discipline the following year. Summer school reliably improved attendance, and tutoring helped on discipline. These programs may have moved test scores less than hoped, but they were doing real work on student engagement and well-being that nobody was measuring.</p>
+  <div class="pub-card-citation">
+    Callen, I., Dizon-Ross, E., Goldhaber, D., Kane, T.J., McEachin, A., &amp; Morton, E. (2026). A Broader View of Recovery: Exploring Non-Test Student Outcomes in the Wake of the COVID-19 Pandemic.
+  </div>
+  <div class="pub-card-links">
+    <a href="/uploads/publications/callen-2026.pdf" class="pub-card-link" target="_blank" rel="noopener">PDF</a>
+  </div>
+</div>
+<div class="pub-card-image">
+  <img src="/images/publications/callen-2026.png" alt="A Broader View of Recovery: Exploring Non-Test Student Outcomes in the Wake of the COVID-19 Pandemic" />
+</div>
+</div>
+
+<div class="pub-card-wrapper pub-card-wrapper--reverse">
 <div class="pub-card">
   <span class="pub-card-type-badge">Journal Article</span>
   <h3 class="pub-card-title">Impacts of Academic Recovery Interventions on Student Achievement in 2022-23</h3>
@@ -51,7 +68,7 @@ choice markets improve outcomes or simply reshuffle them.
 </div>
 </div>
 
-<div class="pub-card-wrapper pub-card-wrapper--reverse">
+<div class="pub-card-wrapper">
 <div class="pub-card">
   <span class="pub-card-type-badge">Journal Article</span>
   <h3 class="pub-card-title">Summer School as a Learning Loss Recovery Strategy After COVID-19: Evidence from Summer 2022</h3>
@@ -68,7 +85,7 @@ choice markets improve outcomes or simply reshuffle them.
 </div>
 </div>
 
-<div class="pub-card-wrapper">
+<div class="pub-card-wrapper pub-card-wrapper--reverse">
 <div class="pub-card">
   <span class="pub-card-type-badge">Journal Article</span>
   <h3 class="pub-card-title">Combined Schools as a (Non) Protective Factor During the COVID-19 Pandemic: Exploring Middle School Transitions Under Typical versus Atypical School Conditions</h3>
@@ -85,7 +102,7 @@ choice markets improve outcomes or simply reshuffle them.
 </div>
 </div>
 
-<div class="pub-card-wrapper pub-card-wrapper--reverse">
+<div class="pub-card-wrapper">
 <div class="pub-card">
   <span class="pub-card-type-badge">Working Paper</span>
   <h3 class="pub-card-title">Summer School as an Academic Recovery Strategy After COVID-19: Evidence From Summer 2023</h3>
@@ -102,7 +119,7 @@ choice markets improve outcomes or simply reshuffle them.
 </div>
 </div>
 
-<div class="pub-card-wrapper">
+<div class="pub-card-wrapper pub-card-wrapper--reverse">
 <div class="pub-card">
   <span class="pub-card-type-badge">Report</span>
   <h3 class="pub-card-title">Implementing programs to align, accelerate, and extend student learning</h3>
@@ -131,7 +148,7 @@ choice markets improve outcomes or simply reshuffle them.
   </div>
 </div>
 
-<div class="pub-card-wrapper pub-card-wrapper--reverse">
+<div class="pub-card-wrapper">
 <div class="pub-card">
   <span class="pub-card-type-badge">Journal Article</span>
   <h3 class="pub-card-title">The Impact and Implementation of Academic Interventions During COVID-19: Evidence from the Road to Recovery Project</h3>
@@ -148,7 +165,7 @@ choice markets improve outcomes or simply reshuffle them.
 </div>
 </div>
 
-<div class="pub-card-wrapper">
+<div class="pub-card-wrapper pub-card-wrapper--reverse">
 <div class="pub-card">
   <span class="pub-card-type-badge">Journal Article</span>
   <h3 class="pub-card-title">Testing an explanation for summer learning loss: Differential examinee effort between spring and fall</h3>
@@ -165,7 +182,7 @@ choice markets improve outcomes or simply reshuffle them.
 </div>
 </div>
 
-<div class="pub-card-wrapper pub-card-wrapper--reverse">
+<div class="pub-card-wrapper">
 <div class="pub-card">
   <span class="pub-card-type-badge">Working Paper</span>
   <h3 class="pub-card-title">Pandemic Learning Loss by Student Baseline Achievement: Extent and Sources of Heterogeneity</h3>
@@ -182,7 +199,7 @@ choice markets improve outcomes or simply reshuffle them.
 </div>
 </div>
 
-<div class="pub-card-wrapper">
+<div class="pub-card-wrapper pub-card-wrapper--reverse">
 <div class="pub-card">
   <span class="pub-card-type-badge">Journal Article</span>
   <h3 class="pub-card-title">The Educational Consequences of Remote and Hybrid Instruction During the Pandemic</h3>
@@ -199,7 +216,7 @@ choice markets improve outcomes or simply reshuffle them.
 </div>
 </div>
 
-<div class="pub-card-wrapper pub-card-wrapper--reverse">
+<div class="pub-card-wrapper">
 <div class="pub-card">
   <span class="pub-card-type-badge">Report</span>
   <h3 class="pub-card-title">Typical learning for whom? Guidelines for selecting benchmarks to calculate months of learning</h3>
