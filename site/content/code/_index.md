@@ -22,4 +22,4 @@ Searches over candidate cutoffs on a discrete forcing variable to find the cutof
 
 **GitHub:** [https://github.com/amceachin-code/rdtp](https://github.com/amceachin-code/rdtp)
 
-**Reference:** McEachin, A., Domina, T., & Penner, A. (2020). JPAM, 39(3), 772-800.
+**Reference:** McEachin, A., Domina, T., & Penner, A. (2020). Heterogeneous effects of early algebra across California middle schools. Journal of Policy Analysis and Management, 39(3), 772-800.
