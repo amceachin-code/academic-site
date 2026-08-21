@@ -153,6 +153,10 @@ def generate_publication_page(pub: dict) -> str:
         venue = f"In *{book}*"
         if editors:
             venue = f"In {editors} (Eds.), *{book}*"
+        # Page range renders as "(pp. 23-52)" to match the CV template's
+        # book-chapter convention; the journal branch above uses a bare range.
+        if pages:
+            venue += f" (pp. {pages})"
         if publisher:
             venue += f". {publisher}"
         lines.append(f'publication: "{_yaml_escape(venue)}"')
@@ -282,9 +286,17 @@ def _format_citation_html(pub: dict) -> str:
         parts.append(journal_str + ".")
     elif book:
         editors = pub.get("editors", "")
+        # `pages` is read fresh here: the binding above is scoped to the
+        # journal branch, which does not run for book chapters.
+        book_pages = pub.get("pages", "")
         if editors:
             parts.append(f"In {_html_escape(editors)} (Eds.),")
-        parts.append(f"<em>{_html_escape(book)}</em>.")
+        if book_pages:
+            # Trailing period moves onto the page range, matching APA style.
+            parts.append(f"<em>{_html_escape(book)}</em>")
+            parts.append(f"(pp. {_html_escape(book_pages)}).")
+        else:
+            parts.append(f"<em>{_html_escape(book)}</em>.")
         if publisher:
             parts.append(f"{_html_escape(publisher)}.")
     elif publisher:

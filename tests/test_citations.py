@@ -93,6 +93,38 @@ class TestFormatCitationHtml:
         assert "<em>Encyclopedia of Education Economics and Finance</em>" in result
         assert "Sage." in result
 
+    def test_book_chapter_with_pages(self):
+        """A book chapter with a page range renders it as (pp. X-Y) after the
+        book title, following APA style. Regression test: the book branch
+        previously ignored `pages` because that variable was bound only inside
+        the journal branch."""
+        pub = {
+            "authors": ["Johnson, M.S.", "Choi, I.", "McEachin, A."],
+            "year": 2026,
+            "title": "Ethical Considerations in AI-Based Educational Assessment",
+            "book": "The Role of AI in Assessment",
+            "editors": "Xiong, X., & Shermis, M.D.",
+            "publisher": "Routledge",
+            "pages": "23-52",
+        }
+        result = _format_citation_html(pub)
+        assert "<em>The Role of AI in Assessment</em> (pp. 23-52)." in result
+        assert "Routledge." in result
+
+    def test_book_chapter_without_pages_keeps_period(self):
+        """Without a page range, the period stays attached to the book title so
+        the citation does not lose its punctuation."""
+        pub = {
+            "authors": ["McEachin, A."],
+            "year": 2014,
+            "title": "Agency Theory",
+            "book": "Encyclopedia of Education Economics and Finance",
+            "publisher": "Sage",
+        }
+        result = _format_citation_html(pub)
+        assert "<em>Encyclopedia of Education Economics and Finance</em>." in result
+        assert "pp." not in result
+
     def test_report_with_publisher(self):
         pub = {
             "authors": ["Kuhfeld, M.", "McEachin, A."],

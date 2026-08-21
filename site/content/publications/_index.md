@@ -353,12 +353,23 @@ choice markets improve outcomes or simply reshuffle them.
 <summary class="pub-theme-header">
   <span class="pub-theme-header-top">
     <span class="pub-theme-name">Accountability</span>
-    <span class="pub-theme-count">(22 publications)</span>
+    <span class="pub-theme-count">(23 publications)</span>
   </span>
   <span class="pub-theme-description">This research investigates how federal and state accountability policies shape educational quality. My work traces the evolution of accountability from No Child Left Behind through ESEA waivers to the Every Student Succeeds Act, examining how these policies affect teacher quality, school improvement, and the politics of education reform.</span>
 </summary>
 <div class="pub-theme-content">
 <div class="pub-card-list">
+
+<div class="pub-card">
+  <span class="pub-card-type-badge">Book Chapter</span>
+  <h3 class="pub-card-title">Ethical Considerations and Challenges in AI-Based Educational Assessment</h3>
+  <div class="pub-card-citation">
+    Johnson, M.S., Choi, I., &amp; McEachin, A. (2027). Ethical Considerations and Challenges in AI-Based Educational Assessment. In Xiong, X., Shermis, M.D., &amp; Xiong, J. (Eds.), <em>The Role of AI in Assessment: Revolutionizing Education</em> (pp. 23-52). Routledge.
+  </div>
+  <div class="pub-card-links">
+    <a href="https://doi.org/10.4324/9781003621522-2" class="pub-card-link" target="_blank" rel="noopener">DOI</a>
+  </div>
+</div>
 
 <div class="pub-card">
   <span class="pub-card-type-badge">Journal Article</span>
@@ -476,7 +487,7 @@ choice markets improve outcomes or simply reshuffle them.
   <span class="pub-card-type-badge">Book Chapter</span>
   <h3 class="pub-card-title">Teacher intelligence</h3>
   <div class="pub-card-citation">
-    McEachin, A., &amp; Brewer, D.J. (2013). Teacher intelligence. In Hattie, J.A.C., &amp; Anderman, E.M. (Eds.), <em>The International handbook of student achievement</em>. Routledge.
+    McEachin, A., &amp; Brewer, D.J. (2013). Teacher intelligence. In Hattie, J.A.C., &amp; Anderman, E.M. (Eds.), <em>The International handbook of student achievement</em> (pp. 254-257). Routledge.
   </div>
 </div>
 
@@ -500,7 +511,7 @@ choice markets improve outcomes or simply reshuffle them.
   <span class="pub-card-type-badge">Book Chapter</span>
   <h3 class="pub-card-title">Economics of urban education</h3>
   <div class="pub-card-citation">
-    McEachin, A., &amp; Brewer, D.J. (2012). Economics of urban education. In Gallagher, K.S., Goodyear, R., Brewer, D.J., &amp; Rueda, R. (Eds.), <em>Urban Education: A Model for Leadership and Policy</em>. Routledge.
+    McEachin, A., &amp; Brewer, D.J. (2012). Economics of urban education. In Gallagher, K.S., Goodyear, R., Brewer, D.J., &amp; Rueda, R. (Eds.), <em>Urban Education: A Model for Leadership and Policy</em> (pp. 67-82). Routledge.
   </div>
 </div>
 

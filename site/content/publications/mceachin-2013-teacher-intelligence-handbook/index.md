@@ -5,5 +5,5 @@ authors:
   - "McEachin, A."
   - "Brewer, D.J."
 publication_type: "Book Chapter"
-publication: "In Hattie, J.A.C., & Anderman, E.M. (Eds.), *The International handbook of student achievement*. Routledge"
+publication: "In Hattie, J.A.C., & Anderman, E.M. (Eds.), *The International handbook of student achievement* (pp. 254-257). Routledge"
 ---

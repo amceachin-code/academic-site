@@ -983,6 +983,22 @@ publications:
   # BOOK CHAPTERS & POLICY PUBLICATIONS
   # ============================================================
 
+  - id: johnson-2027-ethical-ai-assessment
+    type: book_chapter
+    theme: accountability
+    title: "Ethical Considerations and Challenges in AI-Based Educational Assessment"
+    authors:
+      - "Johnson, M.S."
+      - "Choi, I."
+      - "McEachin, A."
+    year: 2027
+    book: "The Role of AI in Assessment: Revolutionizing Education"
+    editors: "Xiong, X., Shermis, M.D., & Xiong, J."
+    publisher: "Routledge"
+    pages: "23-52"
+    doi: "10.4324/9781003621522-2"
+    featured: false
+
   - id: hamilton-2019-accountability-choice
     type: book_chapter
     theme: school_choice
