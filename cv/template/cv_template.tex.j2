@@ -1,3 +1,23 @@
+<# ===========================================================================
+  WHITESPACE NOTE (see build_cv.py for the Jinja2 environment)
+
+  This template renders with trim_blocks=True and lstrip_blocks=True, which
+  together remove almost all incidental whitespace around block tags:
+
+    - lstrip_blocks strips whitespace between a line start and a `<% %>` tag,
+      so a leading space INSIDE a conditional is deleted.
+    - trim_blocks removes the newline directly AFTER a block tag, so a line
+      ending in `<% endif %>` contributes no space of its own.
+
+  A trailing `%` additionally suppresses the newline LaTeX would render as a
+  word space. Combining these silently glues citation segments together, e.g.
+  "(Eds.),The Role of AI" or ").Routledge."
+
+  Rule: to separate two conditional segments, put a literal space BEFORE the
+  closing `<% endif %>` (inside the block body, where nothing strips it).
+  Reserve trailing `%` for places that must stay glued, such as the journal
+  volume/issue/pages chain that renders as ", 62(5), 982-1018".
+=========================================================================== #>
 \documentclass[11pt, letterpaper]{article}
 
 % Encoding and fonts
@@ -101,8 +121,8 @@
   \textit{<< pub.journal|latex_escape >>}%
 <% if pub.volume %>, << pub.volume|latex_escape >><% endif %>%
 <% if pub.issue %>(<< pub.issue|latex_escape >>)<% endif %>%
-<% if pub.pages %>, << pub.pages|latex_escape >><% endif %>.%
-<% if pub.status and pub.status.lower() != 'accepted' %> \textit{<< pub.status|latex_escape >>}.<% endif %>
+<% if pub.pages %>, << pub.pages|latex_escape >><% endif %>.
+<% if pub.status and pub.status.lower() != 'accepted' %>\textit{<< pub.status|latex_escape >>}.<% endif %>
 <% if pub.awards %>
 <% for award in pub.awards %>
   \textbf{<< award|latex_escape >>}.
@@ -123,9 +143,9 @@
 \begin{itemize}
 <% for pub in working_papers|sort(attribute='year', reverse=true) %>
   \item << format_authors(pub.authors)|latex_escape >> (<< pub.year >>).
-  ``<< pub.title|latex_escape >>.''%
-<% if pub.series %> << pub.series|latex_escape >>.<% endif %>%
-<% if pub.status %> \textit{<< pub.status|latex_escape >>}.<% endif %>
+  ``<< pub.title|latex_escape >>.''
+<% if pub.series %><< pub.series|latex_escape >>. <% endif %>
+<% if pub.status %>\textit{<< pub.status|latex_escape >>}.<% endif %>
 
 <% endfor %>
 \end{itemize}
@@ -138,9 +158,9 @@
 \begin{itemize}
 <% for pub in reports|sort(attribute='year', reverse=true) %>
   \item << format_authors(pub.authors)|latex_escape >> (<< pub.year >>).
-  ``<< pub.title|latex_escape >>.''%
-<% if pub.publisher %> << pub.publisher|latex_escape >>.<% endif %>%
-<% if pub.series %> << pub.series|latex_escape >>.<% endif %>
+  ``<< pub.title|latex_escape >>.''
+<% if pub.publisher %><< pub.publisher|latex_escape >>. <% endif %>
+<% if pub.series %><< pub.series|latex_escape >>. <% endif %>
 
 <% endfor %>
 \end{itemize}
@@ -153,11 +173,10 @@
 \begin{itemize}
 <% for pub in book_chapters|sort(attribute='year', reverse=true) %>
   \item << format_authors(pub.authors)|latex_escape >> (<< pub.year >>).
-  ``<< pub.title|latex_escape >>.''%
-<% if pub.editors %> In << pub.editors|latex_escape >> (Eds.),<% endif %>%
-<% if pub.book %> \textit{<< pub.book|latex_escape >>}<% endif %>%
-<% if pub.pages %> (pp. << pub.pages|latex_escape >>)<% endif %>.%
-<% if pub.publisher %> << pub.publisher|latex_escape >>.<% endif %>
+  ``<< pub.title|latex_escape >>.''
+<% if pub.editors %>In << pub.editors|latex_escape >> (Eds.), <% endif %>
+<% if pub.book %>\textit{<< pub.book|latex_escape >>}<% if pub.pages %> (pp. << pub.pages|latex_escape >>)<% endif %>. <% endif %>
+<% if pub.publisher %><< pub.publisher|latex_escape >>. <% endif %>
 
 <% endfor %>
 \end{itemize}
@@ -182,9 +201,9 @@
 \begin{itemize}
 <% for grant in grants|sort(attribute='start_year', reverse=true) %>
   \item \textbf{<< grant.title|latex_escape >>} \hfill << grant.start_year >>--<< grant.end_year >> \\
-  << grant.funder|latex_escape >>. Role: << grant.role|latex_escape >>.%
-<% if grant.collaborators %> << grant.collaborators|latex_escape >>.<% endif %>%
-<% if grant.amount %> \$<< format_amount(grant.amount) >>.<% endif %>
+  << grant.funder|latex_escape >>. Role: << grant.role|latex_escape >>.
+<% if grant.collaborators %><< grant.collaborators|latex_escape >>. <% endif %>
+<% if grant.amount %>\$<< format_amount(grant.amount) >>.<% endif %>
 
 <% endfor %>
 \end{itemize}
@@ -242,8 +261,8 @@ All code is available on GitHub: \url{<< profile.social.github >>}
 \begin{itemize}
 <% for pkg in software %>
   \item \textbf{<< pkg.name|latex_escape >>}: << pkg.description|latex_escape >>
-  Languages: << pkg.languages|join(', ')|latex_escape >>.%
-<% if pkg.github %> \url{<< pkg.github >>}<% endif %>
+  Languages: << pkg.languages|join(', ')|latex_escape >>.
+<% if pkg.github %>\url{<< pkg.github >>}<% endif %>
 
 <% endfor %>
 \end{itemize}
