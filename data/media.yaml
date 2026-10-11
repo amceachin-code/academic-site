@@ -139,4 +139,14 @@ news_coverage:
       - name: Vox
         url: ""
 
-podcasts_interviews: []
+podcasts_interviews:
+  # Listed newest first; sync_hugo.py renders this list in file order.
+  - title: "Nearly 25% of Students Who Qualify for 8th-Grade Algebra Don't Take It"
+    outlet: "The 74 Million"
+    date: "2026-10-09"
+    url: "https://www.the74million.org/article/more-than-25-of-students-who-qualify-for-8th-grade-algebra-dont-take-it/"
+
+  - title: "Alpha School wants AI to teach a billion kids. Should it?"
+    outlet: "Scientific American"
+    date: "2026-08-28"
+    url: "https://www.scientificamerican.com/article/alpha-schools-ai-teaching-model-is-expanding-does-it-work/"

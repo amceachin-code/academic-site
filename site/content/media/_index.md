@@ -29,3 +29,9 @@ title: "Commentary & Media"
 - **Disparities in student discipline by race and family income**: The 74 Million, Chalkbeat, Fordham Institute, NPR, The Advocate, The Economist, The Root
 
 - **Student enrollment patterns and achievement in Ohio's online charter schools**: EdSurge, Education Week, Politico, The Hechinger Report, The 74 Million, USA Today, Vox
+
+## Podcasts & Interviews
+
+- [Nearly 25% of Students Who Qualify for 8th-Grade Algebra Don't Take It](https://www.the74million.org/article/more-than-25-of-students-who-qualify-for-8th-grade-algebra-dont-take-it/) — *The 74 Million* (2026-10-09)
+
+- [Alpha School wants AI to teach a billion kids. Should it?](https://www.scientificamerican.com/article/alpha-schools-ai-teaching-model-is-expanding-does-it-work/) — *Scientific American* (2026-08-28)
