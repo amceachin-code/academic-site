@@ -36,6 +36,23 @@ choice markets improve outcomes or simply reshuffle them.
 
 <div class="pub-card-wrapper">
 <div class="pub-card">
+  <span class="pub-card-type-badge">Journal Article</span>
+  <h3 class="pub-card-title">Summer School as an Academic Recovery Strategy After COVID-19: Evidence From Summer 2023</h3>
+  <p class="pub-card-summary">Summer school is back for round two, and the results are cautiously encouraging. Across eight large districts serving 400,000 students, 2023 summer programs again produced modest but real gains in math, while reading remained stubbornly flat. One bright spot: students who attended for a second consecutive summer did just as well, or better, than first-timers. That's good news for districts betting on summer school as a long-term recovery strategy. It won't close the gap overnight, but it keeps working for kids who keep showing up.</p>
+  <div class="pub-card-citation">
+    Bolyard, A., DeArmond, M., Dizon-Ross, E., Goldhaber, D., Isaacs, J., Kane, T., Keating, M., Klinenberg, J., McDonald, A., McEachin, A., Morton, E., Muroga, A., Salazar, A., &amp; Staiger, D.O. (Accepted). Summer School as an Academic Recovery Strategy After COVID-19: Evidence From Summer 2023. <em>Education Finance and Policy</em>.
+  </div>
+  <div class="pub-card-links">
+    <a href="/uploads/publications/bolyard-2025.pdf" class="pub-card-link" target="_blank" rel="noopener">PDF</a>
+  </div>
+</div>
+<div class="pub-card-image">
+  <img src="/images/publications/bolyard-2025.jpg" alt="Summer School as an Academic Recovery Strategy After COVID-19: Evidence From Summer 2023" />
+</div>
+</div>
+
+<div class="pub-card-wrapper pub-card-wrapper--reverse">
+<div class="pub-card">
   <span class="pub-card-type-badge">Working Paper</span>
   <h3 class="pub-card-title">A Broader View of Recovery: Exploring Non-Test Student Outcomes in the Wake of the COVID-19 Pandemic</h3>
   <p class="pub-card-summary">Test scores are only part of the story. Using eight years of data from Guilford County Schools, we track what happened to attendance, discipline, and course grades before and after the pandemic. All of it got worse, and pre-existing gaps by race and school poverty widened. But here's the encouraging part: students who participated in recovery interventions showed better attendance and discipline the following year. Summer school reliably improved attendance, and tutoring helped on discipline. These programs may have moved test scores less than hoped, but they were doing real work on student engagement and well-being that nobody was measuring.</p>
@@ -51,7 +68,7 @@ choice markets improve outcomes or simply reshuffle them.
 </div>
 </div>
 
-<div class="pub-card-wrapper pub-card-wrapper--reverse">
+<div class="pub-card-wrapper">
 <div class="pub-card">
   <span class="pub-card-type-badge">Journal Article</span>
   <h3 class="pub-card-title">Impacts of Academic Recovery Interventions on Student Achievement in 2022-23</h3>
@@ -68,7 +85,7 @@ choice markets improve outcomes or simply reshuffle them.
 </div>
 </div>
 
-<div class="pub-card-wrapper">
+<div class="pub-card-wrapper pub-card-wrapper--reverse">
 <div class="pub-card">
   <span class="pub-card-type-badge">Journal Article</span>
   <h3 class="pub-card-title">Summer School as a Learning Loss Recovery Strategy After COVID-19: Evidence from Summer 2022</h3>
@@ -85,7 +102,7 @@ choice markets improve outcomes or simply reshuffle them.
 </div>
 </div>
 
-<div class="pub-card-wrapper pub-card-wrapper--reverse">
+<div class="pub-card-wrapper">
 <div class="pub-card">
   <span class="pub-card-type-badge">Journal Article</span>
   <h3 class="pub-card-title">Combined Schools as a (Non) Protective Factor During the COVID-19 Pandemic: Exploring Middle School Transitions Under Typical versus Atypical School Conditions</h3>
@@ -99,23 +116,6 @@ choice markets improve outcomes or simply reshuffle them.
 </div>
 <div class="pub-card-image">
   <img src="/images/publications/diliberti-2025.jpg" alt="Combined Schools as a (Non) Protective Factor During the COVID-19 Pandemic: Exploring Middle School Transitions Under Typical versus Atypical School Conditions" />
-</div>
-</div>
-
-<div class="pub-card-wrapper">
-<div class="pub-card">
-  <span class="pub-card-type-badge">Working Paper</span>
-  <h3 class="pub-card-title">Summer School as an Academic Recovery Strategy After COVID-19: Evidence From Summer 2023</h3>
-  <p class="pub-card-summary">Summer school is back for round two, and the results are cautiously encouraging. Across eight large districts serving 400,000 students, 2023 summer programs again produced modest but real gains in math, while reading remained stubbornly flat. One bright spot: students who attended for a second consecutive summer did just as well, or better, than first-timers. That's good news for districts betting on summer school as a long-term recovery strategy. It won't close the gap overnight, but it keeps working for kids who keep showing up.</p>
-  <div class="pub-card-citation">
-    Bolyard, A., DeArmond, M., Dizon-Ross, E., Goldhaber, D., Isaacs, J., Kane, T., Keating, M., Klinenberg, J., McDonald, A., McEachin, A., Morton, E., Muroga, A., Salazar, A., &amp; Staiger, D.O. (2025). Summer School as an Academic Recovery Strategy After COVID-19: Evidence From Summer 2023.
-  </div>
-  <div class="pub-card-links">
-    <a href="/uploads/publications/bolyard-2025.pdf" class="pub-card-link" target="_blank" rel="noopener">PDF</a>
-  </div>
-</div>
-<div class="pub-card-image">
-  <img src="/images/publications/bolyard-2025.jpg" alt="Summer School as an Academic Recovery Strategy After COVID-19: Evidence From Summer 2023" />
 </div>
 </div>
 
