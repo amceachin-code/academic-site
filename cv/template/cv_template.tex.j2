@@ -69,12 +69,13 @@
   << profile.organization|latex_escape >> \\[4pt]
   % Contact line is set in \small so email, website, and GitHub fit on one
   % line; trailing `%` stops line breaks from adding stray spaces before `|`.
+  % URLs display without `https://`; the link targets keep the full URL.
   {\small \href{mailto:<< profile.email >>}{<< profile.email|latex_escape >>}%
   <% if profile.website %>
-  \enspace$\vert$\enspace\href{<< profile.website >>}{<< profile.website|latex_escape >>}%
+  \enspace$\vert$\enspace\href{<< profile.website >>}{<< profile.website|replace('https://', '')|latex_escape >>}%
   <% endif %>
   <% if profile.social and profile.social.github %>
-  \enspace$\vert$\enspace\href{<< profile.social.github >>}{<< profile.social.github|latex_escape >>}%
+  \enspace$\vert$\enspace\href{<< profile.social.github >>}{<< profile.social.github|replace('https://', '')|latex_escape >>}%
   <% endif %>
   }
 \end{center}
