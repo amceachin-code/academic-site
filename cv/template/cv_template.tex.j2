@@ -67,10 +67,16 @@
   {\LARGE\bfseries << profile.name.display|latex_escape >>} \\[6pt]
   << profile.title|latex_escape >> \\
   << profile.organization|latex_escape >> \\[4pt]
-  Email: \href{mailto:<< profile.email >>}{<< profile.email|latex_escape >>}
+  % Contact line is set in \small so email, website, and GitHub fit on one
+  % line; trailing `%` stops line breaks from adding stray spaces before `|`.
+  {\small \href{mailto:<< profile.email >>}{<< profile.email|latex_escape >>}%
   <% if profile.website %>
-  \quad $\vert$ \quad \href{<< profile.website >>}{<< profile.website|latex_escape >>}
+  \enspace$\vert$\enspace\href{<< profile.website >>}{<< profile.website|latex_escape >>}%
   <% endif %>
+  <% if profile.social and profile.social.github %>
+  \enspace$\vert$\enspace\href{<< profile.social.github >>}{<< profile.social.github|latex_escape >>}%
+  <% endif %>
+  }
 \end{center}
 
 \vspace{6pt}

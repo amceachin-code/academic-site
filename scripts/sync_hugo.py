@@ -637,11 +637,15 @@ def copy_cv_pdf():
 # Main entry point
 # ---------------------------------------------------------------------------
 
-def main(data: dict = None):
+def main(data: dict = None, copy_pdf: bool = True):
     """
     Main entry point. Accepts pre-loaded data dict, or loads from YAML.
     When data is pre-provided (from build_all.py), validation is skipped
     since the orchestrator already validated.
+
+    copy_pdf: copy the existing CV PDF into the site. build_all.py passes
+    False and copies after build_cv runs instead; copying here would ship
+    the previous build's PDF, since the new one does not exist yet.
     """
     if data is None:
         data = load_all_data()
@@ -668,8 +672,9 @@ def main(data: dict = None):
     # Code/Software
     generate_code_page(data.get("software", {}))
 
-    # Copy CV PDF if it exists
-    copy_cv_pdf()
+    # Copy CV PDF if it exists (standalone runs only; see docstring)
+    if copy_pdf:
+        copy_cv_pdf()
 
     print("Done syncing Hugo content.")
 

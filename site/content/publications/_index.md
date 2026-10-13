@@ -53,6 +53,23 @@ choice markets improve outcomes or simply reshuffle them.
 
 <div class="pub-card-wrapper pub-card-wrapper--reverse">
 <div class="pub-card">
+  <span class="pub-card-type-badge">Journal Article</span>
+  <h3 class="pub-card-title">Impacts of Academic Recovery Interventions on Student Achievement in 2022 to 2023</h3>
+  <p class="pub-card-summary">COVID catch-up programs promised a lot but delivered less than hoped. Across eight school districts in 2022-23, most programs reached fewer students than planned and produced few measurable gains. The exception: intensive interventions like subject-specific tutoring, small-group reading, and placement with highly effective teachers actually moved the needle. The lesson is clear but humbling: intensive support works, it's just really hard to pull off at scale.</p>
+  <div class="pub-card-citation">
+    Carbonari, M.V., DeArmond, M., Dewey, D., Dizon-Ross, E., Goldhaber, D., Kane, T.J., McDonald, A., McEachin, A., Morton, E., Muroga, A., Salazar, A., &amp; Staiger, D.O. (2026). Impacts of Academic Recovery Interventions on Student Achievement in 2022 to 2023. <em>Educational Evaluation and Policy Analysis</em>, 48(3), 1045-1072.
+  </div>
+  <div class="pub-card-links">
+    <a href="/uploads/publications/carbonari-2025.pdf" class="pub-card-link" target="_blank" rel="noopener">PDF</a> <a href="https://doi.org/10.3102/01623737251400377" class="pub-card-link" target="_blank" rel="noopener">DOI</a>
+  </div>
+</div>
+<div class="pub-card-image">
+  <img src="/images/publications/carbonari-2025.jpg" alt="Impacts of Academic Recovery Interventions on Student Achievement in 2022 to 2023" />
+</div>
+</div>
+
+<div class="pub-card-wrapper">
+<div class="pub-card">
   <span class="pub-card-type-badge">Working Paper</span>
   <h3 class="pub-card-title">A Broader View of Recovery: Exploring Non-Test Student Outcomes in the Wake of the COVID-19 Pandemic</h3>
   <p class="pub-card-summary">Test scores are only part of the story. Using eight years of data from Guilford County Schools, we track what happened to attendance, discipline, and course grades before and after the pandemic. All of it got worse, and pre-existing gaps by race and school poverty widened. But here's the encouraging part: students who participated in recovery interventions showed better attendance and discipline the following year. Summer school reliably improved attendance, and tutoring helped on discipline. These programs may have moved test scores less than hoped, but they were doing real work on student engagement and well-being that nobody was measuring.</p>
@@ -65,23 +82,6 @@ choice markets improve outcomes or simply reshuffle them.
 </div>
 <div class="pub-card-image">
   <img src="/images/publications/callen-2026.png" alt="A Broader View of Recovery: Exploring Non-Test Student Outcomes in the Wake of the COVID-19 Pandemic" />
-</div>
-</div>
-
-<div class="pub-card-wrapper">
-<div class="pub-card">
-  <span class="pub-card-type-badge">Journal Article</span>
-  <h3 class="pub-card-title">Impacts of Academic Recovery Interventions on Student Achievement in 2022-23</h3>
-  <p class="pub-card-summary">COVID catch-up programs promised a lot but delivered less than hoped. Across eight school districts in 2022-23, most programs reached fewer students than planned and produced few measurable gains. The exception: intensive interventions like subject-specific tutoring, small-group reading, and placement with highly effective teachers actually moved the needle. The lesson is clear but humbling: intensive support works, it's just really hard to pull off at scale.</p>
-  <div class="pub-card-citation">
-    Carbonari, M.V., DeArmond, M., Dewey, D., Dizon-Ross, E., Goldhaber, D., Kane, T.J., McDonald, A., McEachin, A., Morton, E., Muroga, A., Salazar, A., &amp; Staiger, D.O. (Accepted). Impacts of Academic Recovery Interventions on Student Achievement in 2022-23. <em>Educational Evaluation and Policy Analysis</em>.
-  </div>
-  <div class="pub-card-links">
-    <a href="/uploads/publications/carbonari-2025.pdf" class="pub-card-link" target="_blank" rel="noopener">PDF</a>
-  </div>
-</div>
-<div class="pub-card-image">
-  <img src="/images/publications/carbonari-2025.jpg" alt="Impacts of Academic Recovery Interventions on Student Achievement in 2022-23" />
 </div>
 </div>
 

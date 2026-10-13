@@ -47,12 +47,16 @@ def main():
         return
 
     # Import and run sync_hugo
-    from sync_hugo import main as sync_hugo_main
-    sync_hugo_main(data=data)
+    from sync_hugo import main as sync_hugo_main, copy_cv_pdf
+    sync_hugo_main(data=data, copy_pdf=False)
 
     # Import and run build_cv
     from build_cv import main as build_cv_main
     build_cv_main(data=data)
+
+    # Copy the CV into the site only after build_cv has produced the new PDF,
+    # so the downloadable CV is never one build behind.
+    copy_cv_pdf()
 
     print("\nAll builds completed successfully.")
 
