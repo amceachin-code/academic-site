@@ -118,22 +118,26 @@ academic-site/
 │   │                                  #   working papers, reports, book chapters)
 │   │                                  #   Optional per-pub: summary, links, image
 │   ├── presentations.yaml             # Conference talks, invited seminars (stub)
-│   ├── media.yaml                     # Commentary, op-eds, media coverage
+│   ├── media.yaml                     # Commentary (authored, on CV), news
+│   │                                  #   coverage, podcasts & interviews
 │   ├── grants.yaml                    # Grants and funding
 │   ├── awards.yaml                    # Honors and awards
 │   ├── service.yaml                   # Editorial boards, referee work, committees
-│   └── software.yaml                  # Stata/R packages (horseshoe, rdtp)
+│   └── software.yaml                  # Stata/R packages (horseshoe, rdtp) and
+│                                      #   Claude Code skills (claude_skills)
 │
 ├── scripts/                           # Python build pipeline + utilities
 │   ├── utils.py                       # YAML loading, validation, latex_escape(),
-│   │                                  #   path constants, citation formatting
+│   │                                  #   md_italic_to_latex(), path constants,
+│   │                                  #   citation formatting
 │   ├── sync_hugo.py                   # YAML -> Hugo content (publications as HTML
 │   │                                  #   card layout, media, code pages). Uses
 │   │                                  #   .generated markers for safe cleanup
 │   ├── build_cv.py                    # YAML -> Jinja2 (angle-bracket delimiters)
 │   │                                  #   -> LaTeX -> pdflatex (2 passes) -> PDF
 │   ├── build_all.py                   # Orchestrator; imports sync_hugo + build_cv
-│   │                                  #   as functions. Supports --validate flag
+│   │                                  #   as functions. Supports --validate flag.
+│   │                                  #   Copies CV PDF to site after build_cv
 │   └── requirements.txt               # Pinned deps: PyYAML, Jinja2
 │
 ├── cv/                                # LaTeX CV pipeline
@@ -156,7 +160,8 @@ academic-site/
 │   │   ├── _index.md                  # Homepage (biography block, Download CV btn)
 │   │   ├── publications/              # Generated: 1 dir per pub + index page
 │   │   ├── media/                     # Generated: Commentary & Media listing
-│   │   └── code/                      # Generated: Software packages listing
+│   │   └── code/                      # Generated: Software packages and
+│   │                                  #   Claude Code skills listing
 │   ├── assets/
 │   │   ├── css/custom.css             # Full custom theme: white bg, dark teal
 │   │   │                              #   (#1b4965) accents, side-by-side bio
@@ -178,8 +183,13 @@ academic-site/
 │   └── hugo.yaml                      # Root Hugo config (imports _default/)
 │
 ├── tests/
-│   └── test_citations.py              # 27 pytest tests: citation formatting,
-│                                      #   HTML/YAML/LaTeX escaping
+│   ├── test_citations.py              # 34 pytest tests: citation formatting,
+│   │                                  #   HTML/YAML/LaTeX escaping, markdown
+│   │                                  #   italics to LaTeX
+│   ├── test_build_order.py            # 1 pytest test: CV PDF copied to site only
+│   │                                  #   after the CV is rebuilt
+│   └── test_code_page.py              # 3 pytest tests: Claude Code Skills
+│                                      #   section of the Code page
 │
 ├── .github/workflows/
 │   └── deploy.yml                     # GitHub Actions: Python + Hugo + Node
@@ -208,27 +218,27 @@ academic-site/
 | `positions.yaml` | Employment history in employer-grouped format. Multiple roles at the same organization (e.g., four positions at RAND Corporation) are nested under a single employer entry with date ranges for both the employer and each individual role. |
 | `publications.yaml` | 63 entries across journal articles, working papers, reports, and book chapters. Organized by 4 research themes via `theme_order` list + per-entry `theme` field. Optional per-entry fields: `summary` (string), `links` (list of `{label, url}` dicts), and `image` (filename for article image) |
 | `presentations.yaml` | Placeholder (empty list) for future conference talks and invited seminars |
-| `media.yaml` | Commentary/op-ed pieces and news coverage references |
+| `media.yaml` | Three lists: `commentary` (op-eds and pieces McEachin authored; also rendered on the CV), `news_coverage` (outlets covering his publications), and `podcasts_interviews` (podcasts, interviews, and articles that quote him; rendered on the website's "Podcasts & Interviews" section only, not the CV). Articles that quote him belong in `podcasts_interviews`, not `commentary`. |
 | `grants.yaml` | Grants and funding |
 | `awards.yaml` | Honors and awards |
 | `service.yaml` | Editorial boards, committee positions, journals reviewed for |
-| `software.yaml` | 2 packages (Stata + R): `horseshoe` (Bayesian horseshoe prior) and `rdtp` (regression discontinuity) |
+| `software.yaml` | Two lists. `software`: 2 packages (Stata + R), `horseshoe` (Bayesian horseshoe prior) and `rdtp` (regression discontinuity). `claude_skills`: 3 Claude Code skills from the public repo [amceachin-code/claude_skills](https://github.com/amceachin-code/claude_skills) (`writing-style`, `datascience-reviewer`, `methods-reviewer`), each with `id`, `name`, `description`, and `github` (link to the skill's folder). Skills render on both the Code page and the CV. Descriptions may use markdown `*emphasis*` for italics (e.g., the book title in `writing-style`). |
 
 ### Build Scripts (`scripts/`)
 
 | File | Purpose |
 |---|---|
-| `utils.py` | Path constants (`PROJECT_ROOT`, `DATA_DIR`, etc.), YAML loading with explicit file list, `validate_data()` for schema checking (including theme validation, optional `summary`, `links`, and `image` fields), `latex_escape()` filter, `format_authors()` helper, publication filtering helpers (`filter_pubs_by_type`, `filter_pubs_by_theme`) |
-| `sync_hugo.py` | Generates Hugo content from YAML: one directory per publication (with `.generated` marker for safe cleanup), publications index page with collapsible theme sections using `<details>/<summary>` HTML and type badges on each card, media listing page, code/software page |
-| `build_cv.py` | Renders the Jinja2 LaTeX template with angle-bracket delimiters (`<< >>`, `<% %>`, `<# #>`), compiles with `pdflatex` (2 passes for cross-references), verifies PDF output exists and is non-empty |
-| `build_all.py` | Orchestrator that imports `sync_hugo.py` and `build_cv.py` as modules, loads YAML data once, passes it to both. Supports `--validate` flag for dry-run validation only |
+| `utils.py` | Path constants (`PROJECT_ROOT`, `DATA_DIR`, etc.), YAML loading with explicit file list, `validate_data()` for schema checking (including theme validation, optional `summary`, `links`, and `image` fields, and `claude_skills` being a list), `latex_escape()` filter, `md_italic_to_latex()` (converts markdown `*emphasis*` to `\textit{...}` for the CV), `format_authors()` helper, publication filtering helpers (`filter_pubs_by_type`, `filter_pubs_by_theme`) |
+| `sync_hugo.py` | Generates Hugo content from YAML: one directory per publication (with `.generated` marker for safe cleanup), publications index page with collapsible theme sections using `<details>/<summary>` HTML and type badges on each card, media listing page, code/software page. `_format_claude_skills()` adds a "Claude Code Skills" section after Software Packages on the Code page (heading, description, `**Usage:** /name`, GitHub link per skill), omitted when the list is empty. `copy_cv_pdf()` copies `cv/output/McEachin_CV.pdf` to `site/static/uploads/`; `main(copy_pdf=True)` does this by default when run standalone (as in CI) |
+| `build_cv.py` | Renders the Jinja2 LaTeX template with angle-bracket delimiters (`<< >>`, `<% %>`, `<# #>`), compiles with `pdflatex` (2 passes for cross-references), verifies PDF output exists and is non-empty. Registers two Jinja filters, `latex_escape` and `md_italic` (wraps `md_italic_to_latex()`), and passes `claude_skills` from `software.yaml` into the template context |
+| `build_all.py` | Orchestrator that imports `sync_hugo.py` and `build_cv.py` as modules, loads YAML data once, passes it to both. Runs `sync_hugo.main(copy_pdf=False)`, then `build_cv`, then `sync_hugo.copy_cv_pdf()`, so the site's downloadable CV always matches the freshly compiled PDF. Supports `--validate` flag for dry-run validation only |
 | `requirements.txt` | Pinned dependencies: `PyYAML==6.0.2`, `Jinja2==3.1.5` |
 
 ### CV Template (`cv/template/`)
 
 | File | Purpose |
 |---|---|
-| `cv_template.tex.j2` | Full LaTeX CV template using angle-bracket Jinja2 delimiters to avoid `{}` escaping conflicts. Sections: Research Interests, Education, Employment, Journal Articles (numbered), Working Papers, Reports, Book Chapters, Commentary, Grants, Awards, Editorial Service, Professional Service, Journal Reviewer, Software. All text fields use the `\|latex_escape` filter. Journal articles with `status: "Accepted"` show `(Accepted)` instead of the year, matching the website. |
+| `cv_template.tex.j2` | Full LaTeX CV template using angle-bracket Jinja2 delimiters to avoid `{}` escaping conflicts. Sections: Research Interests, Education, Employment, Journal Articles (numbered), Working Papers, Reports, Book Chapters, Commentary, Grants, Awards, Editorial Service, Professional Service, Journal Reviewer, Software. All text fields use the `\|latex_escape` filter. Journal articles with `status: "Accepted"` show `(Accepted)` instead of the year, matching the website. Under Software, a `\subsection{Claude Code Skills}` itemize lists each skill's name, description, and GitHub URL; the template emits `\section{Software}` itself if there are no software packages. Skill descriptions use `latex_escape|md_italic`, in that order, because `latex_escape` would escape the braces that `md_italic` adds. The header contact line (wrapped in `{\small ...}` with trailing `%` to avoid stray spaces) shows email, website, and GitHub (from `profile.social.github`) separated by `\enspace$\vert$\enspace`, with no "Email:" label; displayed URLs drop the `https://` prefix while the `\href` targets keep the full URL. |
 
 ### Site Theme (`site/assets/css/`)
 
@@ -247,7 +257,9 @@ academic-site/
 
 | File | Purpose |
 |---|---|
-| `tests/test_citations.py` | 27 pytest tests covering `format_authors()`, `_format_citation_html()`, `_html_escape()`, `_yaml_escape()`, and `latex_escape()` |
+| `tests/test_citations.py` | 34 pytest tests covering `format_authors()`, `_format_citation_html()`, `_html_escape()`, `_yaml_escape()`, `latex_escape()`, and `md_italic_to_latex()` |
+| `tests/test_build_order.py` | 1 pytest test confirming `build_all.py` copies the CV PDF into the site only after `build_cv` runs |
+| `tests/test_code_page.py` | 3 pytest tests for `_format_claude_skills()`: empty list omits the section, a skill renders heading, description, usage, and link, and a skill without `github` gets no link line |
 
 ---
 
@@ -274,6 +286,8 @@ academic-site/
 ```
 
 The `build_all.py` orchestrator imports both `sync_hugo` and `build_cv` as Python functions (no subprocess calls), loads the YAML data once, and passes it to both pipelines.
+
+Step order matters for the downloadable CV. `build_all.py` runs `sync_hugo` first with `copy_pdf=False`, then `build_cv`, then `sync_hugo.copy_cv_pdf()` to copy the new `cv/output/McEachin_CV.pdf` into `site/static/uploads/`. Earlier versions copied the PDF during `sync_hugo`, before the CV was rebuilt, so the site's CV was always one build behind. Running `sync_hugo.py` on its own (as CI does) still copies the committed PDF by default.
 
 ---
 
@@ -429,15 +443,20 @@ Run the test suite with:
 python -m pytest tests/
 ```
 
-The test file `tests/test_citations.py` contains 27 tests organized into 5 classes:
+The suite has 38 tests across three files. `tests/test_citations.py` contains 34 tests organized into 6 classes:
 
 | Class | Tests | Coverage |
 |---|---|---|
 | `TestFormatAuthors` | 6 | Author list formatting: single, two, many authors, empty list, truncation with "et al." |
-| `TestFormatCitationHtml` | 6 | Full citation strings: journal articles, accepted papers, book chapters, reports, article numbers, minimal fields |
+| `TestFormatCitationHtml` | 8 | Full citation strings: journal articles, accepted papers, book chapters, reports, article numbers, minimal fields |
 | `TestHtmlEscape` | 5 | HTML entity escaping: ampersands, angle brackets, quotes, empty strings, `None` |
 | `TestYamlEscape` | 5 | YAML string escaping: quotes, backslashes, newlines, tabs, control characters |
 | `TestLatexEscape` | 5 | LaTeX special character escaping: `&`, `%`, `#`, `None`, Unicode passthrough |
+| `TestMdItalicToLatex` | 5 | Markdown `*emphasis*` to `\textit{...}`: conversion, plain text unchanged, lone asterisks unchanged, correct output after `latex_escape`, `None` |
+
+`tests/test_build_order.py` contains 1 test, `test_cv_pdf_copied_after_cv_is_built`, which stubs out the pipeline steps and asserts `build_all.main()` calls them in the order sync (without PDF copy), CV build, then PDF copy.
+
+`tests/test_code_page.py` contains 3 tests for `_format_claude_skills()` in `sync_hugo.py`: an empty list returns no lines, a skill renders its heading, description, `**Usage:** /name` line, and GitHub link, and a skill without `github` gets no link line.
 
 ---
 

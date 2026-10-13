@@ -252,6 +252,8 @@ def validate_data(data: dict) -> list:
     sw = sw_data.get("software", [])
     if not isinstance(sw, list):
         errors.append("software.yaml: 'software' should be a list")
+    if not isinstance(sw_data.get("claude_skills", []), list):
+        errors.append("software.yaml: 'claude_skills' should be a list")
 
     return errors
 
@@ -293,6 +295,23 @@ def latex_escape(text) -> str:
         return ""
     text = str(text)
     return _LATEX_SPECIAL_RE.sub(lambda m: _LATEX_SPECIAL[m.group()], text)
+
+
+# Markdown-style *emphasis* (single asterisks, no spaces just inside them).
+_MD_ITALIC_RE = re.compile(r"\*([^*\s](?:[^*]*[^*\s])?)\*")
+
+
+def md_italic_to_latex(text) -> str:
+    """
+    Convert markdown *emphasis* to \\textit{...}.
+
+    Lets one YAML description carry italics for both outputs: Hugo renders
+    the asterisks as markdown, and the CV applies this filter. Apply it AFTER
+    latex_escape, which leaves `*` alone but would escape the braces this adds.
+    """
+    if text is None:
+        return ""
+    return _MD_ITALIC_RE.sub(r"\\textit{\1}", str(text))
 
 
 # ---------------------------------------------------------------------------

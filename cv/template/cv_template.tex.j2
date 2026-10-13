@@ -275,4 +275,17 @@ All code is available on GitHub: \url{<< profile.social.github >>}
 \end{itemize}
 <% endif %>
 
+<# Claude Code skills sit under the Software section as their own subsection #>
+<% if claude_skills %>
+<% if not software %>\section{Software}<% endif %>
+\subsection{Claude Code Skills}
+\begin{itemize}
+<% for skill in claude_skills %>
+  \item \textbf{<< skill.name|latex_escape >>}: << skill.description|latex_escape|md_italic >>
+<% if skill.github %>\url{<< skill.github >>}<% endif %>
+
+<% endfor %>
+\end{itemize}
+<% endif %>
+
 \end{document}

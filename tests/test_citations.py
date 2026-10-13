@@ -10,7 +10,7 @@ from pathlib import Path
 # Add scripts/ to path so we can import the modules under test
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
-from utils import format_authors, latex_escape
+from utils import format_authors, latex_escape, md_italic_to_latex
 from sync_hugo import _format_citation_html, _html_escape, _yaml_escape
 
 
@@ -218,3 +218,26 @@ class TestLatexEscape:
 
     def test_passthrough_unicode(self):
         assert latex_escape("Hernández") == "Hernández"
+
+
+# ---------------------------------------------------------------------------
+# md_italic_to_latex
+# ---------------------------------------------------------------------------
+
+class TestMdItalicToLatex:
+    def test_converts_emphasis(self):
+        assert md_italic_to_latex("Read *Some Book* now.") == r"Read \textit{Some Book} now."
+
+    def test_plain_text_unchanged(self):
+        assert md_italic_to_latex("No emphasis here.") == "No emphasis here."
+
+    def test_lone_asterisks_unchanged(self):
+        # Spaces inside the asterisks mean it is not emphasis (e.g. "2 * 3 * 4")
+        assert md_italic_to_latex("2 * 3 * 4") == "2 * 3 * 4"
+
+    def test_after_latex_escape(self):
+        text = latex_escape("*R&D Guide* costs $5")
+        assert md_italic_to_latex(text) == r"\textit{R\&D Guide} costs \$5"
+
+    def test_none_returns_empty(self):
+        assert md_italic_to_latex(None) == ""

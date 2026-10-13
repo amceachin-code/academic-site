@@ -23,3 +23,29 @@ Searches over candidate cutoffs on a discrete forcing variable to find the cutof
 **GitHub:** [https://github.com/amceachin-code/rdtp](https://github.com/amceachin-code/rdtp)
 
 **Reference:** McEachin, A., Domina, T., & Penner, A. (2020). Heterogeneous effects of early algebra across California middle schools. Journal of Policy Analysis and Management, 39(3), 772-800.
+
+## Claude Code Skills
+
+### writing-style
+
+A sentence-level prose editor grounded in Verlyn Klinkenborg's *Several Short Sentences About Writing*. Revises text from inline input, a file, or a URL in three passes: clarity, agency, and structure.
+
+**Usage:** `/writing-style`
+
+**GitHub:** [https://github.com/amceachin-code/claude_skills/tree/main/writing-style](https://github.com/amceachin-code/claude_skills/tree/main/writing-style)
+
+### datascience-reviewer
+
+Code review from the perspective of a senior data scientist. Evaluates structure, correctness risks, efficiency, usability, and maintainability, tags each finding by severity, and ends with a prioritized list of concrete changes.
+
+**Usage:** `/datascience-reviewer`
+
+**GitHub:** [https://github.com/amceachin-code/claude_skills/tree/main/datascience-reviewer](https://github.com/amceachin-code/claude_skills/tree/main/datascience-reviewer)
+
+### methods-reviewer
+
+Methodological review from a causal inference and semiparametric statistics perspective. Challenges identification assumptions, estimation strategies, and finite-sample claims before work goes to expert audiences.
+
+**Usage:** `/methods-reviewer`
+
+**GitHub:** [https://github.com/amceachin-code/claude_skills/tree/main/methods-reviewer](https://github.com/amceachin-code/claude_skills/tree/main/methods-reviewer)

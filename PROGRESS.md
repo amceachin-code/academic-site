@@ -1,6 +1,85 @@
 # Progress Log
 
-## Project Status: COMPLETE — Add Focus Columns to Article Tracking System
+## Project Status: COMPLETE: Media Additions, Publication Updates, CV Header, CV Build-Order Fix, and Claude Code Skills
+
+---
+
+## Previous Task: COMPLETE: Media Additions, Publication Updates, CV Header, CV Build-Order Fix, and Claude Code Skills (2026-10-11 to 2026-10-13)
+
+### Objective
+Add two recent articles that quote McEachin, bring two publications up to date, tidy the CV header (add GitHub, drop labels and `https://`), fix a build-order bug that left the site's downloadable CV one build behind, and list three public Claude Code skills on the Code page and the CV, with markdown italics in descriptions carried through to LaTeX.
+
+### Progress
+- [x] Step 1: Add The 74 and Scientific American articles to `data/media.yaml` (commit c7551bf)
+- [x] Step 2: Mark Bolyard et al. summer 2023 paper as accepted at Education Finance and Policy (commit fb1c37c)
+- [x] Step 3: Update Carbonari et al. to its published EEPA citation (commit 75769e6)
+- [x] Step 4: Revise CV header contact line and add GitHub link (commits 75769e6, 7155947)
+- [x] Step 5: Fix CV PDF copy order in `build_all.py` and add a regression test (commit 75769e6)
+- [x] Step 6: Add Claude Code skills to `data/software.yaml`, the Code page, and the CV (uncommitted)
+- [x] Step 7: Support markdown `*emphasis*` in descriptions on the CV via a `md_italic` filter (uncommitted)
+- [x] Step 8: Add tests for the skills section and the italics filter (uncommitted)
+
+### Status: ALL 8 STEPS COMPLETED SUCCESSFULLY.
+
+### Step Details
+
+**Step 1 (DONE):** Added the first two entries to `podcasts_interviews` in `data/media.yaml`: The 74 Million (2026-10-09) and Scientific American (2026-08-28). Both render on the website media page under "Podcasts & Interviews" and do not appear on the CV.
+
+**Step 2 (DONE):** Moved `bolyard-2025-summer-2023` in `data/publications.yaml` from `working_paper` to `journal`, journal Education Finance and Policy, `status: "Accepted"`, year 2026. Kept the id unchanged so the publication URL and PDF path stay stable.
+
+**Step 3 (DONE):** Updated `carbonari-2025-recovery-interventions` to its published citation: EEPA 48(3), 1045-1072, DOI `10.3102/01623737251400377`, year 2026, title ending "in 2022 to 2023". Removed the `status` field.
+
+**Step 4 (DONE):** Edited `cv/template/cv_template.tex.j2` header. Removed the "Email:" label; added a GitHub link from `profile.social.github` after the website; separators are now `\enspace$\vert$\enspace`; wrapped the contact line in `{\small ...}` with trailing `%` to avoid stray spaces; displayed URLs strip `https://` via the Jinja `replace` filter while each `\href` keeps the full URL.
+
+**Step 5 (DONE):** `scripts/build_all.py` used to run `sync_hugo` (which copies `cv/output/McEachin_CV.pdf` to `site/static/uploads/`) before `build_cv`, so the site's CV was always the previous build's. `sync_hugo.main` now takes `copy_pdf` (default `True` for standalone runs and CI); `build_all` passes `copy_pdf=False` and calls `sync_hugo.copy_cv_pdf()` after `build_cv`. Added `tests/test_build_order.py` to lock in the order.
+
+**Step 6 (DONE):** Added a `claude_skills` list to `data/software.yaml` with three skills from the public repo https://github.com/amceachin-code/claude_skills: `writing-style`, `datascience-reviewer`, and `methods-reviewer`. Each entry has `id`, `name`, `description`, and `github` (link to the skill's folder). `sync_hugo.py` gained `_format_claude_skills(skills)`, which `generate_code_page` calls after Software Packages to render a "## Claude Code Skills" section on `site/content/code/_index.md`: one heading per skill, its description, `**Usage:** /name`, and a GitHub link. The section is omitted when the list is empty. `utils.validate_data` checks that `claude_skills` is a list. On the CV, `build_cv.py` passes `claude_skills` into the template context, and `cv_template.tex.j2` renders a `\subsection{Claude Code Skills}` itemize under the Software section, emitting `\section{Software}` itself if there are no software packages.
+
+**Step 7 (DONE):** YAML descriptions can now use markdown `*emphasis*`, first used for the book title *Several Short Sentences About Writing* in the `writing-style` description. Hugo renders it natively. For the CV, new `md_italic_to_latex()` in `utils.py` converts `*x*` to `\textit{x}`, registered in `build_cv.py` as the Jinja filter `md_italic`. It runs after `latex_escape` (`latex_escape|md_italic`) because `latex_escape` would escape the braces it adds. Currently applied only to skill descriptions.
+
+**Step 8 (DONE):** Added `tests/test_code_page.py` (3 tests for `_format_claude_skills`: empty list, full render, no GitHub link) and a `TestMdItalicToLatex` class (5 tests) in `tests/test_citations.py`.
+
+### Verification
+- `python3 -m pytest -q tests` passes: 38 tests (34 in `test_citations.py`, 1 in `test_build_order.py`, 3 in `test_code_page.py`)
+- `make build` regenerated the CV PDF, site content, and the site's CV copy
+- Code page shows the Claude Code Skills section after Software Packages; the CV shows the Claude Code Skills subsection under Software with the book title in italics
+
+### Key Decisions
+- Articles that quote McEachin go in `podcasts_interviews`, not `commentary`. `commentary` is reserved for pieces he authored and feeds the CV.
+- Publication ids stay fixed when a paper changes type or status, so URLs and PDF links do not break.
+- `copy_pdf` defaults to `True` so standalone `sync_hugo.py` runs (including CI, which does not compile LaTeX) still publish the committed PDF.
+- Claude Code skills live in a separate `claude_skills` key rather than in `software`, so the CV's software package list format stays unchanged. They still appear on both outputs: the Code page and a CV subsection under Software.
+- Italics are written once in YAML as markdown `*emphasis*` and converted for LaTeX by a filter, rather than storing separate HTML and LaTeX versions of a description. The filter must follow `latex_escape`.
+
+### Files Modified
+- `data/media.yaml` (two `podcasts_interviews` entries)
+- `data/publications.yaml` (Bolyard et al. accepted; Carbonari et al. published citation)
+- `cv/template/cv_template.tex.j2` (header contact line)
+- `scripts/sync_hugo.py` (`copy_pdf` parameter, `copy_cv_pdf()` helper)
+- `scripts/build_all.py` (copy CV PDF after `build_cv`)
+- `tests/test_build_order.py` (new)
+- `data/software.yaml` (`claude_skills` list)
+- `scripts/sync_hugo.py` (`_format_claude_skills()`, called from `generate_code_page`)
+- `scripts/utils.py` (`claude_skills` validation, `md_italic_to_latex()`)
+- `scripts/build_cv.py` (`md_italic` filter, `claude_skills` in template context)
+- `cv/template/cv_template.tex.j2` (Claude Code Skills subsection)
+- `tests/test_code_page.py` (new)
+- `tests/test_citations.py` (`TestMdItalicToLatex`)
+
+### Files Regenerated by Build
+- `cv/output/McEachin_CV.tex`
+- `cv/output/McEachin_CV.pdf`
+- `site/static/uploads/McEachin_CV.pdf`
+- `site/content/media/_index.md`
+- `site/content/code/_index.md`
+- `site/content/publications/` (affected publication pages and index)
+
+### Next Steps
+- CV contact line is still `\small`; it likely fits at normal size now that labels and `https://` are gone.
+- Add volume, issue, and pages for Bolyard et al. once it is published in Education Finance and Policy.
+- Hugo emits deprecation warnings for top-level `doi` in publication front matter; move it to `hugoblox.ids: { doi: ... }` in `sync_hugo.py`.
+- `news_coverage` entries in `data/media.yaml` lack URLs.
+- Apply `md_italic` to software package descriptions in the CV template too, so italics work there as well.
 
 ---
 

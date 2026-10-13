@@ -305,10 +305,13 @@
     ],
     "ids": [
       "about",
+      "claude-code-skills",
       "commentary--op-eds",
+      "datascience-reviewer",
       "hb-notification-container",
       "hide-button",
       "horseshoe",
+      "methods-reviewer",
       "moon",
       "nav-menu",
       "nav-toggle",
@@ -326,7 +329,8 @@
       "site-header",
       "software-packages",
       "sun",
-      "top"
+      "top",
+      "writing-style"
     ]
   }
 }

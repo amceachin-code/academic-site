@@ -25,3 +25,32 @@ software:
       - R
     github: "https://github.com/amceachin-code/rdtp"
     reference: "McEachin, A., Domina, T., & Penner, A. (2020). Heterogeneous effects of early algebra across California middle schools. Journal of Policy Analysis and Management, 39(3), 772-800."
+
+# Claude Code skills, shown in their own section on the Code page and as a
+# subsection under Software on the CV. Descriptions may use *emphasis*.
+claude_skills:
+  - id: writing-style
+    name: writing-style
+    description: >
+      A sentence-level prose editor grounded in Verlyn Klinkenborg's *Several
+      Short Sentences About Writing*. Revises text from inline input, a file,
+      or a URL in three passes: clarity, agency, and structure.
+    github: "https://github.com/amceachin-code/claude_skills/tree/main/writing-style"
+
+  - id: datascience-reviewer
+    name: datascience-reviewer
+    description: >
+      Code review from the perspective of a senior data scientist. Evaluates
+      structure, correctness risks, efficiency, usability, and
+      maintainability, tags each finding by severity, and ends with a
+      prioritized list of concrete changes.
+    github: "https://github.com/amceachin-code/claude_skills/tree/main/datascience-reviewer"
+
+  - id: methods-reviewer
+    name: methods-reviewer
+    description: >
+      Methodological review from a causal inference and semiparametric
+      statistics perspective. Challenges identification assumptions,
+      estimation strategies, and finite-sample claims before work goes to
+      expert audiences.
+    github: "https://github.com/amceachin-code/claude_skills/tree/main/methods-reviewer"

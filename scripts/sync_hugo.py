@@ -612,9 +612,40 @@ def generate_code_page(software_data: dict):
             lines.append(f"**Reference:** {reference}")
             lines.append("")
 
+    lines.extend(_format_claude_skills(software_data.get("claude_skills", [])))
+
     content = "\n".join(lines)
     (CODE_DIR / "_index.md").write_text(content, encoding="utf-8")
     print(f"  Generated code page")
+
+
+def _format_claude_skills(skills: list) -> list:
+    """
+    Return markdown lines for the Claude Code Skills section of the Code page.
+
+    Each skill gets a heading, its description, the slash command that invokes
+    it, and a link to its folder on GitHub. Returns an empty list when there
+    are no skills so the section heading is omitted entirely.
+    """
+    if not skills:
+        return []
+
+    lines = ["## Claude Code Skills", ""]
+    for skill in skills:
+        name = skill.get("name", "")
+        desc = skill.get("description", "").strip()
+        github = skill.get("github", "")
+
+        lines.append(f"### {name}")
+        lines.append("")
+        lines.append(desc)
+        lines.append("")
+        lines.append(f"**Usage:** `/{name}`")
+        lines.append("")
+        if github:
+            lines.append(f"**GitHub:** [{github}]({github})")
+            lines.append("")
+    return lines
 
 
 # ---------------------------------------------------------------------------

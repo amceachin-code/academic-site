@@ -20,6 +20,7 @@ from utils import (
     load_all_data,
     validate_data,
     latex_escape,
+    md_italic_to_latex,
     format_authors,
     format_amount,
     filter_pubs_by_type,
@@ -66,6 +67,8 @@ def create_jinja_env() -> Environment:
 
     # Register the latex_escape filter
     env.filters["latex_escape"] = latex_escape
+    # Converts markdown *emphasis* in descriptions; use after latex_escape
+    env.filters["md_italic"] = md_italic_to_latex
 
     return env
 
@@ -91,6 +94,7 @@ def render_cv(data: dict) -> str:
         "presentations": data.get("presentations", {}).get("presentations", []),
         "media": data.get("media", {}),
         "software": data.get("software", {}).get("software", []),
+        "claude_skills": data.get("software", {}).get("claude_skills", []),
     }
 
     # Add helper functions to template context
