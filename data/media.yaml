@@ -1,6 +1,31 @@
 # media.yaml — Commentary, op-eds, and media coverage
 
 commentary:
+  - id: mceachin-2026-ai-skills-step
+    title: "The AI Skills Conversation Is Skipping a Step"
+    authors:
+      - "McEachin, A."
+    date: "2026-09-15"
+    outlet: "Insights and Perspectives, ETS"
+    url: "https://www.ets.org/insights-and-perspectives/the-ai-skills-conversation-is-missing-a-step.html"
+
+  - id: hamilton-2026-choice-information
+    title: "School Choice and Accountability: Why Families Need Better Information Systems"
+    authors:
+      - "Hamilton, L.S."
+      - "McEachin, A."
+    date: "2026-02-04"
+    outlet: "CenterLine Blog, Center for Assessment"
+    url: "https://www.nciea.org/blog/school-choice-and-reporting-systems/"
+
+  - id: mceachin-2025-recovering-forward
+    title: "Recovering Forward: Learning Recovery That Reaches Every Student"
+    authors:
+      - "McEachin, A."
+    date: "2025-05-28"
+    outlet: "Insights and Perspectives, ETS"
+    url: "https://www.ets.org/insights-and-perspectives/learningrecovery.html"
+
   - id: mceachin-2023-algebra-pros-cons
     title: "Research Reveals the Pros and Cons of Algebra in Eighth Grade"
     authors:
@@ -150,3 +175,8 @@ podcasts_interviews:
     outlet: "Scientific American"
     date: "2026-08-28"
     url: "https://www.scientificamerican.com/article/alpha-schools-ai-teaching-model-is-expanding-does-it-work/"
+
+  - title: "50CAN Education Talks: Andrew McEachin, ETS Research Institute"
+    outlet: "50CAN"
+    date: "2026-04-27"
+    url: "https://www.youtube.com/watch?v=SAJifHAykNg"

@@ -4,6 +4,12 @@ title: "Commentary & Media"
 
 ## Commentary & Op-Eds
 
+- McEachin, A. (September 15, 2026). "[The AI Skills Conversation Is Skipping a Step](https://www.ets.org/insights-and-perspectives/the-ai-skills-conversation-is-missing-a-step.html)." *Insights and Perspectives, ETS*.
+
+- Hamilton, L.S., & McEachin, A. (February 04, 2026). "[School Choice and Accountability: Why Families Need Better Information Systems](https://www.nciea.org/blog/school-choice-and-reporting-systems/)." *CenterLine Blog, Center for Assessment*.
+
+- McEachin, A. (May 28, 2025). "[Recovering Forward: Learning Recovery That Reaches Every Student](https://www.ets.org/insights-and-perspectives/learningrecovery.html)." *Insights and Perspectives, ETS*.
+
 - McEachin, A., & Domina, T. (April 27, 2023). "Research Reveals the Pros and Cons of Algebra in Eighth Grade." *Teach, Learn, Grow, NWEA*.
 
 - Goldhaber, D., Kane, T., McEachin, A., & Morton, E. (November 16, 2022). "To Help Students Shoot for the Moon, We Must Think Bigger and Bolder." *Washington Post*.
@@ -35,3 +41,5 @@ title: "Commentary & Media"
 - [Nearly 25% of Students Who Qualify for 8th-Grade Algebra Don't Take It](https://www.the74million.org/article/more-than-25-of-students-who-qualify-for-8th-grade-algebra-dont-take-it/) — *The 74 Million* (2026-10-09)
 
 - [Alpha School wants AI to teach a billion kids. Should it?](https://www.scientificamerican.com/article/alpha-schools-ai-teaching-model-is-expanding-does-it-work/) — *Scientific American* (2026-08-28)
+
+- [50CAN Education Talks: Andrew McEachin, ETS Research Institute](https://www.youtube.com/watch?v=SAJifHAykNg) — *50CAN* (2026-04-27)
