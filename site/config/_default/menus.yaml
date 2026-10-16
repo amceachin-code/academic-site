@@ -11,6 +11,9 @@ main:
     url: "/media/"
     weight: 30
 
+  - name: Students & Guardians
+    url: "/tools/"
+    weight: 40
 
   - name: Code
     url: "/code/"
