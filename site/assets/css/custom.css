@@ -338,6 +338,16 @@ section#about {
   margin-top: 1.5em;
 }
 
+/* Sub-headings in dark mode. The page stays white in dark mode (see .dark
+   above), but the theme's dark prose styles turn h3/h4 white, so they vanish.
+   Use the theme's light-mode heading color (slate-900) so both modes match. */
+.dark .article-container h3,
+.dark .article-container h4,
+.dark .prose h3,
+.dark .prose h4 {
+  color: oklch(20.8% 0.042 265.755);
+}
+
 /* ========================================
    Publication / Content Pages
    ======================================== */
