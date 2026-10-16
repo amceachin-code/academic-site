@@ -5,7 +5,8 @@ title: "Students & Guardians"
 <!--
 Hand-made page: there is no .generated marker in this folder, so
 scripts/sync_hugo.py never overwrites or deletes it. Each tool is its own
-GitHub repo served by GitHub Pages under this domain at /<repo-name>/.
+GitHub repo served by GitHub Pages under this domain at /<repo-name>/
+(a repo can hold more than one tool in subfolders, like /multiplication-worksheet/division/).
 To add a tool, add a section below in the same shape.
 -->
 
@@ -24,5 +25,13 @@ A guide for parents whose child's report card grades and test scores tell differ
 Printable multiplication practice. Pick the times tables and the number of problems, then print. Each sheet is shuffled so every fact appears about equally often.
 
 **Open the tool:** [Times Table Worksheets](/multiplication-worksheet/)
+
+**GitHub:** [https://github.com/amceachin-code/multiplication-worksheet](https://github.com/amceachin-code/multiplication-worksheet)
+
+## Division Worksheets
+
+Printable division practice, the partner to the times table sheets. Pick the numbers to divide by and the range of answers, then print. Every answer is a whole number, and each sheet is shuffled so every fact appears about equally often.
+
+**Open the tool:** [Division Worksheets](/multiplication-worksheet/division/)
 
 **GitHub:** [https://github.com/amceachin-code/multiplication-worksheet](https://github.com/amceachin-code/multiplication-worksheet)

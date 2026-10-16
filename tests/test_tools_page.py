@@ -36,3 +36,9 @@ def test_page_links_each_tool_by_repo_path():
     for repo in ["grade-inflation", "multiplication-worksheet"]:
         assert f"](/{repo}/)" in text
         assert f"https://github.com/amceachin-code/{repo}" in text
+
+
+def test_page_links_division_worksheet():
+    # The division tool lives in a subfolder of the multiplication-worksheet repo.
+    text = (TOOLS_DIR / "_index.md").read_text()
+    assert "](/multiplication-worksheet/division/)" in text
