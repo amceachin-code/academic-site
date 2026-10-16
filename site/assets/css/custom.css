@@ -66,11 +66,11 @@ nav.navbar {
   padding-top: 0.5rem !important;
 }
 
-/* Tighten the h1 on publications page */
+/* Tighten the h1 on publications page. Size comes from the shared page-title
+   rule (Source Serif 4) so every page title matches. */
 .page-body:has(.pub-theme-section) h1 {
   margin-top: 0 !important;
   margin-bottom: 0.5rem !important;
-  font-size: 2rem !important;
 }
 
 nav.navbar a,
@@ -329,6 +329,30 @@ section#about {
   background-color: #ffffff !important;
 }
 
+/* Page titles: a calmer serif in the site navy instead of the theme's heavy
+   800-weight Inter. The font is self-hosted from static/fonts (SIL Open Font
+   License, see SourceSerif4-OFL.txt), latin subset, weight 600 only.
+   The color applies in dark mode too, since the page stays white there. */
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/source-serif-4-600-latin.woff2") format("woff2");
+}
+.article-container h1,
+.prose h1 {
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: clamp(2.1rem, 1.6rem + 2vw, 2.9rem);  /* about 34px on phones, 46px on desktop */
+  line-height: 1.15;
+  color: #1b4965;
+  margin-bottom: 1rem;
+}
+.prose h1 + p {
+  margin-top: 0;
+}
+
 /* Section headings */
 .article-container h2,
 .prose h2 {
@@ -350,11 +374,9 @@ section#about {
 }
 
 /* Sub-headings in dark mode. The page stays white in dark mode (see .dark
-   above), but the theme's dark prose styles turn h1/h3/h4 white, so they vanish.
+   above), but the theme's dark prose styles turn h3/h4 white, so they vanish.
    Use the theme's light-mode heading color (slate-900) so both modes match.
-   h2 already has its own color rule above. */
-.dark .article-container h1,
-.dark .prose h1,
+   h1 and h2 already have their own color rules above. */
 .dark .article-container h3,
 .dark .article-container h4,
 .dark .prose h3,
