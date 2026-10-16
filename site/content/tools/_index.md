@@ -35,4 +35,4 @@ Pick the numbers to divide by and the range of answers, then print. Every answer
 
 **Open the tool:** [Division Worksheets](/multiplication-worksheet/division/)
 
-**GitHub:** [https://github.com/amceachin-code/multiplication-worksheet](https://github.com/amceachin-code/multiplication-worksheet)
+**Want your own copy?** The code is free on [GitHub](https://github.com/amceachin-code/multiplication-worksheet). You can download it to use offline, see how it works, or suggest a change.
