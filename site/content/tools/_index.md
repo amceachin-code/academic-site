@@ -19,8 +19,6 @@ A guide for parents whose child's report card grades and test scores tell differ
 
 **Open the tool:** [Making Sense of Grades and Test Scores](/grade-inflation/)
 
-**GitHub:** [https://github.com/amceachin-code/grade-inflation](https://github.com/amceachin-code/grade-inflation)
-
 ## Math Worksheets
 
 Printable fact practice for multiplication and division. Each sheet is shuffled so every fact appears about equally often.
