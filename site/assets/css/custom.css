@@ -338,9 +338,23 @@ section#about {
   margin-top: 1.5em;
 }
 
+/* Tighter headings on the Students & Guardians page. Headings there are
+   tagged {.tool-heading} in the Markdown, so other pages keep theme spacing. */
+.prose h2.tool-heading {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.prose h3.tool-heading {
+  margin-top: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+
 /* Sub-headings in dark mode. The page stays white in dark mode (see .dark
-   above), but the theme's dark prose styles turn h3/h4 white, so they vanish.
-   Use the theme's light-mode heading color (slate-900) so both modes match. */
+   above), but the theme's dark prose styles turn h1/h3/h4 white, so they vanish.
+   Use the theme's light-mode heading color (slate-900) so both modes match.
+   h2 already has its own color rule above. */
+.dark .article-container h1,
+.dark .prose h1,
 .dark .article-container h3,
 .dark .article-container h4,
 .dark .prose h3,
