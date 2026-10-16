@@ -36,7 +36,7 @@ title: "Commentary & Media"
 
 - **Student enrollment patterns and achievement in Ohio's online charter schools**: EdSurge, Education Week, Politico, The Hechinger Report, The 74 Million, USA Today, Vox
 
-## Podcasts & Interviews
+## Podcasts, Interviews, & Keynotes
 
 - [Nearly 25% of Students Who Qualify for 8th-Grade Algebra Don't Take It](https://www.the74million.org/article/more-than-25-of-students-who-qualify-for-8th-grade-algebra-dont-take-it/) — *The 74 Million* (2026-10-09)
 

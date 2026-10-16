@@ -545,9 +545,9 @@ def generate_media_page(media_data: dict, pubs: list = None):
                 lines.append(f"- **{pub_title}**: {', '.join(outlet_names)}")
                 lines.append("")
 
-    # Podcasts & Interviews
+    # Podcasts, Interviews, & Keynotes
     if podcasts:
-        lines.append("## Podcasts & Interviews")
+        lines.append("## Podcasts, Interviews, & Keynotes")
         lines.append("")
         for item in podcasts:
             title = item.get("title", "")

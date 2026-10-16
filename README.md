@@ -218,7 +218,7 @@ academic-site/
 | `positions.yaml` | Employment history in employer-grouped format. Multiple roles at the same organization (e.g., four positions at RAND Corporation) are nested under a single employer entry with date ranges for both the employer and each individual role. |
 | `publications.yaml` | 63 entries across journal articles, working papers, reports, and book chapters. Organized by 4 research themes via `theme_order` list + per-entry `theme` field. Optional per-entry fields: `summary` (string), `links` (list of `{label, url}` dicts), and `image` (filename for article image) |
 | `presentations.yaml` | Placeholder (empty list) for future conference talks and invited seminars |
-| `media.yaml` | Three lists: `commentary` (op-eds and pieces McEachin authored; also rendered on the CV), `news_coverage` (outlets covering his publications), and `podcasts_interviews` (podcasts, interviews, and articles that quote him; rendered on the website's "Podcasts & Interviews" section only, not the CV). Articles that quote him belong in `podcasts_interviews`, not `commentary`. |
+| `media.yaml` | Three lists: `commentary` (op-eds and pieces McEachin authored; also rendered on the CV), `news_coverage` (outlets covering his publications), and `podcasts_interviews` (podcasts, interviews, keynotes and other talks, and articles that quote him; rendered on the website's "Podcasts, Interviews, & Keynotes" section only, not the CV). Articles that quote him belong in `podcasts_interviews`, not `commentary`. |
 | `grants.yaml` | Grants and funding |
 | `awards.yaml` | Honors and awards |
 | `service.yaml` | Editorial boards, committee positions, journals reviewed for |
