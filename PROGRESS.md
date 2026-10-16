@@ -1,6 +1,57 @@
 # Progress Log
 
-## Project Status: COMPLETE: Media Additions, Publication Updates, CV Header, CV Build-Order Fix, and Claude Code Skills
+## Project Status: COMPLETE: Repo Rename to User Site and Students & Guardians Page
+
+---
+
+## Previous Task: COMPLETE: Repo Rename to User Site and Students & Guardians Page (2026-10-15)
+
+### Objective
+Serve standalone tool repos (grade inflation, multiplication worksheet) under the personal domain while keeping each tool in its own repo, and add a site page that links to them for students and guardians.
+
+### Progress
+- [x] Step 1: Rename the GitHub repo to `amceachin-code.github.io` so it becomes the GitHub user site
+- [x] Step 2: Update the local remote URL
+- [x] Step 3: Add the hand-made Students & Guardians page and menu entry (commit 80a25ef)
+- [x] Step 4: Add `tests/test_tools_page.py` (commit 80a25ef)
+- [x] Step 5: Turn off Pages for `intervention-simulation` so it does not appear on the personal domain
+
+### Status: ALL 5 STEPS COMPLETED SUCCESSFULLY.
+
+### Step Details
+
+**Step 1 (DONE):** Renamed the repo from `amceachin-code/academic-site` to `amceachin-code/amceachin-code.github.io`. This makes it the GitHub user site for the account. The custom domain `www.andrew-mceachin.com` carried over unchanged. The local folder is still `academic-site`.
+
+**Step 2 (DONE):** Pointed the local `origin` remote at the new repo URL. GitHub redirects the old URL, but the remote now uses the new name directly.
+
+**Step 3 (DONE):** Added `site/content/tools/_index.md`, titled "Students & Guardians". It links to `/grade-inflation/` and `/multiplication-worksheet/` on the personal domain and to each tool's GitHub repo. The page has no `.generated` marker, so `sync_hugo.py` leaves it alone. Added a menu entry in `site/config/_default/menus.yaml` at weight 40.
+
+**Step 4 (DONE):** Added `tests/test_tools_page.py` to check the page and its menu entry.
+
+**Step 5 (DONE):** Every Pages-enabled repo in the account now publishes under the user site's custom domain. `intervention-simulation` had Pages on, so it would have appeared at `www.andrew-mceachin.com/intervention-simulation/`. Its Pages site was turned off. Re-enabling it (Pages from `main`, `/docs`) would put it back on the personal domain; to keep it separate, host it elsewhere (for example Vercel).
+
+### Verification
+- `python3 -m pytest -q tests` passes: 41 tests
+- Tool repos resolve at `www.andrew-mceachin.com/<repo>/`
+- Old `amceachin-code.github.io/<repo>/` links return a 301 redirect to the personal domain
+
+### Key Decisions
+- Made this repo the GitHub user site because a user site's custom domain is inherited by every project Pages site in the account. Tool repos are then served at `www.andrew-mceachin.com/<repo>/` while staying in their own repos, with no change to their build or deploy setup.
+- Rejected per-tool subdomains (for example `grades.andrew-mceachin.com`): each tool would need its own DNS record and custom domain setup.
+- The tools page is hand-made, not generated from YAML. It is short, changes rarely, and has no CV counterpart.
+- Constraint: no repo may share a name with a site section (`code`, `media`, `publications`, `tools`), or its Pages site would collide with that path.
+- Constraint: any Pages-enabled repo in the account becomes public under the personal domain.
+
+### Files Modified
+- `site/content/tools/_index.md` (new, hand-made, no `.generated` marker)
+- `site/config/_default/menus.yaml` (Students & Guardians entry at weight 40)
+- `tests/test_tools_page.py` (new)
+- Git remote `origin` (new repo URL; not a tracked file)
+
+### Next Steps
+- Add a tools section to `README.md` covering the Students & Guardians page, the repo rename, and how tool repos map to `/<repo>/` URLs. The README header still links to the old repo name.
+- Add future tools as new sections on the tools page.
+- Decide where to host `intervention-simulation` if it should be public again.
 
 ---
 
